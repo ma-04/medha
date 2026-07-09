@@ -39,6 +39,201 @@ export type Database = {
   }
   public: {
     Tables: {
+      attempt_answers: {
+        Row: {
+          answered_at: string
+          attempt_id: string
+          question_id: string
+          selected_key: string
+        }
+        Insert: {
+          answered_at?: string
+          attempt_id: string
+          question_id: string
+          selected_key: string
+        }
+        Update: {
+          answered_at?: string
+          attempt_id?: string
+          question_id?: string
+          selected_key?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "attempt_answers_attempt_id_fkey"
+            columns: ["attempt_id"]
+            isOneToOne: false
+            referencedRelation: "exam_attempts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "attempt_answers_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      exam_attempts: {
+        Row: {
+          correct_count: number | null
+          deadline: string
+          exam_id: string
+          id: string
+          rank: number | null
+          score: number | null
+          skipped_count: number | null
+          started_at: string
+          subject_breakdown: Json | null
+          submitted_at: string | null
+          user_id: string
+          wrong_count: number | null
+        }
+        Insert: {
+          correct_count?: number | null
+          deadline: string
+          exam_id: string
+          id?: string
+          rank?: number | null
+          score?: number | null
+          skipped_count?: number | null
+          started_at?: string
+          subject_breakdown?: Json | null
+          submitted_at?: string | null
+          user_id: string
+          wrong_count?: number | null
+        }
+        Update: {
+          correct_count?: number | null
+          deadline?: string
+          exam_id?: string
+          id?: string
+          rank?: number | null
+          score?: number | null
+          skipped_count?: number | null
+          started_at?: string
+          subject_breakdown?: Json | null
+          submitted_at?: string | null
+          user_id?: string
+          wrong_count?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "exam_attempts_exam_id_fkey"
+            columns: ["exam_id"]
+            isOneToOne: false
+            referencedRelation: "exams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "exam_attempts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      exam_questions: {
+        Row: {
+          exam_id: string
+          order_index: number
+          question_id: string
+          subject_id: string
+        }
+        Insert: {
+          exam_id: string
+          order_index?: number
+          question_id: string
+          subject_id: string
+        }
+        Update: {
+          exam_id?: string
+          order_index?: number
+          question_id?: string
+          subject_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "exam_questions_exam_id_fkey"
+            columns: ["exam_id"]
+            isOneToOne: false
+            referencedRelation: "exams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "exam_questions_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "questions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "exam_questions_subject_id_fkey"
+            columns: ["subject_id"]
+            isOneToOne: false
+            referencedRelation: "subjects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      exams: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          description: string | null
+          ends_at: string | null
+          id: string
+          pattern: Json
+          results_published_at: string | null
+          starts_at: string | null
+          status: string
+          title_bn: string
+          title_en: string
+          type: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          ends_at?: string | null
+          id?: string
+          pattern?: Json
+          results_published_at?: string | null
+          starts_at?: string | null
+          status?: string
+          title_bn: string
+          title_en: string
+          type?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          ends_at?: string | null
+          id?: string
+          pattern?: Json
+          results_published_at?: string | null
+          starts_at?: string | null
+          status?: string
+          title_bn?: string
+          title_en?: string
+          type?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "exams_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       practice_answers: {
         Row: {
           answered_at: string
@@ -312,6 +507,11 @@ export type Database = {
       }
     }
     Functions: {
+      _grade_attempt: { Args: { p_attempt_id: string }; Returns: undefined }
+      admin_set_exam_questions: {
+        Args: { p_exam_id: string; p_question_ids: string[] }
+        Returns: number
+      }
       admin_upsert_question: {
         Args: {
           p_body: string
@@ -329,6 +529,7 @@ export type Database = {
         }
         Returns: string
       }
+      auto_submit_expired: { Args: never; Returns: undefined }
       check_practice_answer: {
         Args: { p_question_id: string; p_selected_key: string }
         Returns: {
@@ -337,9 +538,34 @@ export type Database = {
           is_correct: boolean
         }[]
       }
+      get_attempt_review: {
+        Args: { p_attempt_id: string }
+        Returns: {
+          body: string
+          correct_key: string
+          explanation: string
+          image_url: string
+          is_correct: boolean
+          options: Json
+          order_index: number
+          question_id: string
+          selected_key: string
+          subject_id: string
+        }[]
+      }
       is_admin: { Args: never; Returns: boolean }
+      save_answer: {
+        Args: {
+          p_attempt_id: string
+          p_question_id: string
+          p_selected_key: string
+        }
+        Returns: undefined
+      }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
+      start_exam_attempt: { Args: { p_exam_id: string }; Returns: Json }
+      submit_attempt: { Args: { p_attempt_id: string }; Returns: Json }
     }
     Enums: {
       [_ in never]: never
