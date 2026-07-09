@@ -1,0 +1,418 @@
+[
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "সংখ্যা ধারাটির পরবর্তী সংখ্যা কত? $3, 7, 15, 31, 63, ?$",
+    "options": [
+      {"key": "a", "text": "125"},
+      {"key": "b", "text": "127"},
+      {"key": "c", "text": "126"},
+      {"key": "d", "text": "129"}
+    ],
+    "correct_key": "b",
+    "explanation": "প্রতিটি পদকে ২ দিয়ে গুণ করে ১ যোগ করা হয়েছে; ৬৩×২+১ = ১২৭।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪১তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "অক্ষর ধারাটির পরবর্তী অক্ষর কোনটি? A, C, F, J, O, ?",
+    "options": [
+      {"key": "a", "text": "U"},
+      {"key": "b", "text": "T"},
+      {"key": "c", "text": "V"},
+      {"key": "d", "text": "P"}
+    ],
+    "correct_key": "a",
+    "explanation": "ব্যবধান ক্রমান্বয়ে +২, +৩, +৪, +৫, +৬; O(১৫)+৬ = ২১ = U।",
+    "source_exam": "Bank",
+    "source_year": 2019,
+    "source_label": "সমন্বিত ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "যদি CAT-এর সংকেত DBU হয়, তবে DOG-এর সংকেত কী হবে?",
+    "options": [
+      {"key": "a", "text": "FQH"},
+      {"key": "b", "text": "EPG"},
+      {"key": "c", "text": "EPH"},
+      {"key": "d", "text": "CNF"}
+    ],
+    "correct_key": "c",
+    "explanation": "প্রতিটি অক্ষরের পরবর্তী অক্ষর নেওয়া হয়েছে; D→E, O→P, G→H = EPH।",
+    "source_exam": "Primary",
+    "source_year": 2022,
+    "source_label": "সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "সাদৃশ্য অনুসারে শূন্যস্থান পূরণ করুন: $6 : 42 :: 8 : ?$",
+    "options": [
+      {"key": "a", "text": "48"},
+      {"key": "b", "text": "56"},
+      {"key": "c", "text": "64"},
+      {"key": "d", "text": "72"}
+    ],
+    "correct_key": "d",
+    "explanation": "সম্পর্কটি n×(n+1); ৬×৭ = ৪২ এবং ৮×৯ = ৭২।",
+    "source_exam": "Bank",
+    "source_year": 2020,
+    "source_label": "বাংলাদেশ ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "নিচের কোন সংখ্যাটি বেমানান? $3, 5, 7, 9, 11$",
+    "options": [
+      {"key": "a", "text": "9"},
+      {"key": "b", "text": "5"},
+      {"key": "c", "text": "7"},
+      {"key": "d", "text": "11"}
+    ],
+    "correct_key": "a",
+    "explanation": "৩, ৫, ৭, ১১ মৌলিক সংখ্যা কিন্তু ৯ (=৩×৩) মৌলিক নয়; তাই ৯ বেমানান।",
+    "source_exam": "NTRCA",
+    "source_year": 2018,
+    "source_label": "১৫তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "একজন লোক উত্তরে ৫ কিমি হেঁটে ডানে ঘুরে ৩ কিমি হাঁটেন, আবার ডানে ঘুরে ৫ কিমি হাঁটেন। যাত্রা শুরুর স্থান থেকে তিনি এখন কত দূরে আছেন?",
+    "options": [
+      {"key": "a", "text": "৫ কিমি"},
+      {"key": "b", "text": "৩ কিমি"},
+      {"key": "c", "text": "৮ কিমি"},
+      {"key": "d", "text": "৪ কিমি"}
+    ],
+    "correct_key": "b",
+    "explanation": "উত্তরে ৫ কিমি ও পরে দক্ষিণে ৫ কিমি পরস্পর কাটাকাটি হয়; শুধু পূর্বদিকে ৩ কিমি সরণ থাকে।",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "ধারাটির পরবর্তী সংখ্যা কত? $2, 3, 5, 8, 12, ?$",
+    "options": [
+      {"key": "a", "text": "15"},
+      {"key": "b", "text": "16"},
+      {"key": "c", "text": "17"},
+      {"key": "d", "text": "18"}
+    ],
+    "correct_key": "c",
+    "explanation": "ব্যবধান ক্রমান্বয়ে +১, +২, +৩, +৪, +৫; ১২+৫ = ১৭।",
+    "source_exam": "Bank",
+    "source_year": 2017,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (ক্যাশ)"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "আজ যদি সোমবার হয়, তবে আজ থেকে ৬১ দিন পর কী বার হবে?",
+    "options": [
+      {"key": "a", "text": "বৃহস্পতিবার"},
+      {"key": "b", "text": "শুক্রবার"},
+      {"key": "c", "text": "রবিবার"},
+      {"key": "d", "text": "শনিবার"}
+    ],
+    "correct_key": "d",
+    "explanation": "৬১ ÷ ৭ = ভাগশেষ ৫; সোমবার থেকে ৫ বার এগোলে শনিবার হয়।",
+    "source_exam": "Primary",
+    "source_year": 2019,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "ধারাটির পরবর্তী সংখ্যা কত? $1, 2, 6, 24, 120, ?$",
+    "options": [
+      {"key": "a", "text": "720"},
+      {"key": "b", "text": "600"},
+      {"key": "c", "text": "840"},
+      {"key": "d", "text": "480"}
+    ],
+    "correct_key": "a",
+    "explanation": "প্রতিটি পদকে যথাক্রমে ২, ৩, ৪, ৫, ৬ দিয়ে গুণ করা হয়েছে; ১২০×৬ = ৭২০।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "সাদৃশ্য নির্ণয় করুন: পাখি : ওড়া :: মাছ : ?",
+    "options": [
+      {"key": "a", "text": "জল"},
+      {"key": "b", "text": "সাঁতার"},
+      {"key": "c", "text": "লাফ"},
+      {"key": "d", "text": "দৌড়"}
+    ],
+    "correct_key": "b",
+    "explanation": "পাখির স্বাভাবিক চলন যেমন ওড়া, তেমনি মাছের স্বাভাবিক চলন সাঁতার।",
+    "source_exam": "NTRCA",
+    "source_year": 2016,
+    "source_label": "১২তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "ধারাটির পরবর্তী সংখ্যা কত? $7, 14, 28, 56, ?$",
+    "options": [
+      {"key": "a", "text": "108"},
+      {"key": "b", "text": "110"},
+      {"key": "c", "text": "112"},
+      {"key": "d", "text": "114"}
+    ],
+    "correct_key": "c",
+    "explanation": "প্রতিটি পদ পূর্বের পদের দ্বিগুণ; ৫৬×২ = ১১২।",
+    "source_exam": "Bank",
+    "source_year": 2021,
+    "source_label": "সোনালী ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "সব কুকুর প্রাণী; সব প্রাণী মরণশীল। এই দুটি বাক্য থেকে সঠিক সিদ্ধান্ত কোনটি?",
+    "options": [
+      {"key": "a", "text": "কিছু কুকুর মরণশীল"},
+      {"key": "b", "text": "কোনো কুকুর মরণশীল নয়"},
+      {"key": "c", "text": "সব মরণশীল প্রাণীই কুকুর"},
+      {"key": "d", "text": "সব কুকুর মরণশীল"}
+    ],
+    "correct_key": "d",
+    "explanation": "কুকুর প্রাণীর অন্তর্ভুক্ত এবং সব প্রাণী মরণশীল হওয়ায় সব কুকুরও মরণশীল হয়।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "সাদৃশ্য অনুসারে শূন্যস্থান পূরণ করুন: $7 : 49 :: 9 : ?$",
+    "options": [
+      {"key": "a", "text": "81"},
+      {"key": "b", "text": "72"},
+      {"key": "c", "text": "90"},
+      {"key": "d", "text": "63"}
+    ],
+    "correct_key": "a",
+    "explanation": "সম্পর্কটি সংখ্যার বর্গ; ৭²=৪৯ এবং ৯²=৮১।",
+    "source_exam": "Bank",
+    "source_year": 2015,
+    "source_label": "রূপালী ব্যাংক অফিসার"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "ঘড়িতে ঠিক ৬টা বাজলে ঘণ্টা ও মিনিটের কাঁটার মধ্যবর্তী কোণ কত?",
+    "options": [
+      {"key": "a", "text": "৯০°"},
+      {"key": "b", "text": "১৮০°"},
+      {"key": "c", "text": "১২০°"},
+      {"key": "d", "text": "১৫০°"}
+    ],
+    "correct_key": "b",
+    "explanation": "৬টায় ঘণ্টার কাঁটা ৬-এ ও মিনিটের কাঁটা ১২-তে থাকে, যা বিপরীত দিকে অবস্থানের কারণে ১৮০° কোণ তৈরি করে।",
+    "source_exam": "Primary",
+    "source_year": 2023,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "মূল্যবোধ বলতে কী বোঝায়?",
+    "options": [
+      {"key": "a", "text": "কেবল রাষ্ট্রের প্রণীত আইনের বিধান"},
+      {"key": "b", "text": "রাষ্ট্রীয় সম্পদের পরিমাণ"},
+      {"key": "c", "text": "সমাজে গ্রহণযোগ্য ও কাম্য আচরণের মানদণ্ড"},
+      {"key": "d", "text": "একটি অর্থনৈতিক নীতিমালা"}
+    ],
+    "correct_key": "c",
+    "explanation": "মূল্যবোধ হলো সমাজে গ্রহণযোগ্য, কাম্য ও কল্যাণকর আচরণের মানদণ্ড, যা ভালো-মন্দ বিচারের ভিত্তি।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪১তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "নিচের কোনটি সুশাসনের উপাদান নয়?",
+    "options": [
+      {"key": "a", "text": "স্বচ্ছতা"},
+      {"key": "b", "text": "জবাবদিহিতা"},
+      {"key": "c", "text": "আইনের শাসন"},
+      {"key": "d", "text": "দুর্নীতি"}
+    ],
+    "correct_key": "d",
+    "explanation": "স্বচ্ছতা, জবাবদিহিতা ও আইনের শাসন সুশাসনের উপাদান; দুর্নীতি সুশাসনের অন্তরায়, উপাদান নয়।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "বাংলাদেশে দুর্নীতি দমন কমিশন (দুদক) কোন সালে প্রতিষ্ঠিত হয়?",
+    "options": [
+      {"key": "a", "text": "২০০৪"},
+      {"key": "b", "text": "২০০২"},
+      {"key": "c", "text": "২০০৬"},
+      {"key": "d", "text": "২০০৮"}
+    ],
+    "correct_key": "a",
+    "explanation": "দুর্নীতি দমন কমিশন আইন ২০০৪ অনুযায়ী ২০০৪ সালে দুদক প্রতিষ্ঠিত হয়।",
+    "source_exam": "Bank",
+    "source_year": 2019,
+    "source_label": "সমন্বিত ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "আইনের শাসন বলতে মূলত কী বোঝায়?",
+    "options": [
+      {"key": "a", "text": "শাসকের ইচ্ছাই আইন"},
+      {"key": "b", "text": "আইনের দৃষ্টিতে সকল নাগরিক সমান"},
+      {"key": "c", "text": "ধনীদের জন্য বিশেষ সুবিধা"},
+      {"key": "d", "text": "আইন কেবল সাধারণ নাগরিকের জন্য প্রযোজ্য"}
+    ],
+    "correct_key": "b",
+    "explanation": "আইনের শাসনের মূল কথা হলো আইনের চোখে সবাই সমান এবং কেউ আইনের ঊর্ধ্বে নয়।",
+    "source_exam": "NTRCA",
+    "source_year": 2018,
+    "source_label": "১৫তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "একজন সুনাগরিকের অন্যতম মৌলিক দায়িত্ব কোনটি?",
+    "options": [
+      {"key": "a", "text": "ভোট বিক্রি করা"},
+      {"key": "b", "text": "কর ফাঁকি দেওয়া"},
+      {"key": "c", "text": "যথাসময়ে কর প্রদান ও আইন মান্য করা"},
+      {"key": "d", "text": "রাষ্ট্রীয় সম্পদ নষ্ট করা"}
+    ],
+    "correct_key": "c",
+    "explanation": "যথাসময়ে কর পরিশোধ ও দেশের আইন মান্য করা সুনাগরিকের অন্যতম মৌলিক দায়িত্ব।",
+    "source_exam": "Primary",
+    "source_year": 2022,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "সুশাসনের প্রেক্ষাপটে স্বচ্ছতা (Transparency) বলতে কী বোঝায়?",
+    "options": [
+      {"key": "a", "text": "সিদ্ধান্ত গোপন রাখা"},
+      {"key": "b", "text": "ক্ষমতার কেন্দ্রীকরণ"},
+      {"key": "c", "text": "তথ্য গোপন রাখা"},
+      {"key": "d", "text": "তথ্যের অবাধ প্রবাহ ও সিদ্ধান্ত গ্রহণের প্রকাশ্যতা"}
+    ],
+    "correct_key": "d",
+    "explanation": "স্বচ্ছতা মানে সিদ্ধান্ত গ্রহণ প্রক্রিয়া উন্মুক্ত রাখা ও নাগরিকের জন্য তথ্যের অবাধ প্রবাহ নিশ্চিত করা।",
+    "source_exam": "Bank",
+    "source_year": 2020,
+    "source_label": "বাংলাদেশ ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "জাতিসংঘের (UN ESCAP) মতে সুশাসনের বৈশিষ্ট্য কয়টি?",
+    "options": [
+      {"key": "a", "text": "৮টি"},
+      {"key": "b", "text": "৫টি"},
+      {"key": "c", "text": "১০টি"},
+      {"key": "d", "text": "৬টি"}
+    ],
+    "correct_key": "a",
+    "explanation": "UN ESCAP অনুযায়ী সুশাসনের ৮টি বৈশিষ্ট্য: অংশগ্রহণ, ঐকমত্য, জবাবদিহিতা, স্বচ্ছতা, সাড়াদান, কার্যকারিতা, সমতা ও আইনের শাসন।",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "নৈতিকতার প্রধান উৎস কোনটি?",
+    "options": [
+      {"key": "a", "text": "সম্পদের পরিমাণ"},
+      {"key": "b", "text": "বিবেক ও মূল্যবোধ"},
+      {"key": "c", "text": "রাজনৈতিক ক্ষমতা"},
+      {"key": "d", "text": "কেবল প্রচলিত আইন"}
+    ],
+    "correct_key": "b",
+    "explanation": "নৈতিকতার মূল উৎস মানুষের বিবেক ও তার লালিত মূল্যবোধ, যা ভালো-মন্দ নির্ধারণে সহায়তা করে।",
+    "source_exam": "NTRCA",
+    "source_year": 2016,
+    "source_label": "১২তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "দুর্নীতি প্রতিরোধে নিচের কোনটি সবচেয়ে বেশি সহায়ক?",
+    "options": [
+      {"key": "a", "text": "প্রশাসনিক গোপনীয়তা"},
+      {"key": "b", "text": "স্বজনপ্রীতি"},
+      {"key": "c", "text": "স্বচ্ছতা ও জবাবদিহিতা"},
+      {"key": "d", "text": "ক্ষমতার অপব্যবহার"}
+    ],
+    "correct_key": "c",
+    "explanation": "স্বচ্ছতা ও জবাবদিহিতা নিশ্চিত হলে ক্ষমতার অপব্যবহার কমে এবং দুর্নীতি প্রতিরোধ সহজ হয়।",
+    "source_exam": "Bank",
+    "source_year": 2017,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (ক্যাশ)"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "সুশাসনের উপাদান হিসেবে জবাবদিহিতা (Accountability) বলতে কী বোঝায়?",
+    "options": [
+      {"key": "a", "text": "নির্বিঘ্নে ক্ষমতা ভোগ করা"},
+      {"key": "b", "text": "দায়িত্ব এড়িয়ে চলা"},
+      {"key": "c", "text": "গোপনে সিদ্ধান্ত নেওয়া"},
+      {"key": "d", "text": "নিজ কাজের জন্য দায়ী থাকা ও জবাব দিতে বাধ্য থাকা"}
+    ],
+    "correct_key": "d",
+    "explanation": "জবাবদিহিতা হলো নিজের কাজ ও সিদ্ধান্তের জন্য দায়ী থাকা এবং সংশ্লিষ্ট কর্তৃপক্ষ ও জনগণের কাছে জবাব দিতে বাধ্য থাকা।",
+    "source_exam": "Primary",
+    "source_year": 2019,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "নিচের কোনটি সামাজিক মূল্যবোধের উদাহরণ?",
+    "options": [
+      {"key": "a", "text": "সততা ও পারস্পরিক শ্রদ্ধা"},
+      {"key": "b", "text": "দুর্নীতি"},
+      {"key": "c", "text": "স্বার্থপরতা"},
+      {"key": "d", "text": "হিংসা"}
+    ],
+    "correct_key": "a",
+    "explanation": "সততা ও পারস্পরিক শ্রদ্ধা ইতিবাচক সামাজিক মূল্যবোধের উদাহরণ, যা সমাজে শৃঙ্খলা বজায় রাখে।",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "সুশাসনে জনগণের অংশগ্রহণ (Participation) কেন গুরুত্বপূর্ণ?",
+    "options": [
+      {"key": "a", "text": "এতে সিদ্ধান্ত গ্রহণ বিলম্বিত হয়"},
+      {"key": "b", "text": "এতে জনগণের মতামত সিদ্ধান্তে প্রতিফলিত হয়"},
+      {"key": "c", "text": "এতে ক্ষমতা কেন্দ্রীভূত হয়"},
+      {"key": "d", "text": "এতে স্বচ্ছতা কমে যায়"}
+    ],
+    "correct_key": "b",
+    "explanation": "জনগণের অংশগ্রহণ থাকলে তাদের মতামত ও প্রয়োজন নীতি ও সিদ্ধান্তে প্রতিফলিত হয়, যা সুশাসন নিশ্চিত করে।",
+    "source_exam": "NTRCA",
+    "source_year": 2024,
+    "source_label": "১৮তম শিক্ষক নিবন্ধন পরীক্ষা"
+  }
+]

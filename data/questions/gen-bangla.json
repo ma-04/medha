@@ -1,0 +1,482 @@
+[
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'উল্লাস' শব্দের সঠিক সন্ধিবিচ্ছেদ কোনটি?",
+    "options": [
+      { "key": "a", "text": "উৎ + লাস" },
+      { "key": "b", "text": "উঃ + লাস" },
+      { "key": "c", "text": "উল + লাস" },
+      { "key": "d", "text": "উৎ + হ্লাস" }
+    ],
+    "correct_key": "a",
+    "explanation": "উৎ + লাস = উল্লাস; 'ৎ'-এর পরে 'ল' থাকায় 'ৎ' স্থানে 'ল' হয়ে ব্যঞ্জনসন্ধি হয়েছে।",
+    "source_exam": "BCS",
+    "source_year": 2016,
+    "source_label": "৩৭তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'ষড়ঋতু' শব্দের সঠিক সন্ধিবিচ্ছেদ কোনটি?",
+    "options": [
+      { "key": "a", "text": "ষড় + ঋতু" },
+      { "key": "b", "text": "ষট + ঋতু" },
+      { "key": "c", "text": "ষট্ + ঋতু" },
+      { "key": "d", "text": "ষড় + রিতু" }
+    ],
+    "correct_key": "c",
+    "explanation": "ষট্ + ঋতু = ষড়ঋতু; 'ট্'-এর পরে স্বরধ্বনি থাকায় 'ট্' স্থানে 'ড়' হয়েছে।",
+    "source_exam": "Bank",
+    "source_year": 2019,
+    "source_label": "সমন্বিত ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'তুষারশুভ্র' কোন সমাসের উদাহরণ?",
+    "options": [
+      { "key": "a", "text": "উপমিত কর্মধারয়" },
+      { "key": "b", "text": "উপমান কর্মধারয়" },
+      { "key": "c", "text": "রূপক কর্মধারয়" },
+      { "key": "d", "text": "মধ্যপদলোপী কর্মধারয়" }
+    ],
+    "correct_key": "b",
+    "explanation": "'তুষারের ন্যায় শুভ্র' = তুষারশুভ্র; উপমান ও সাধারণ ধর্মবাচক পদের সমাস হওয়ায় এটি উপমান কর্মধারয়।",
+    "source_exam": "NTRCA",
+    "source_year": 2018,
+    "source_label": "১৫তম শিক্ষক নিবন্ধন"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'দশানন' কোন সমাসের উদাহরণ?",
+    "options": [
+      { "key": "a", "text": "দ্বিগু" },
+      { "key": "b", "text": "দ্বন্দ্ব" },
+      { "key": "c", "text": "কর্মধারয়" },
+      { "key": "d", "text": "বহুব্রীহি" }
+    ],
+    "correct_key": "d",
+    "explanation": "'দশ আনন যার' = দশানন (রাবণ); সমস্তপদ অন্য কিছু বোঝানোয় এটি বহুব্রীহি সমাস।",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'ত্রিফলা' কোন সমাসের উদাহরণ?",
+    "options": [
+      { "key": "a", "text": "দ্বিগু" },
+      { "key": "b", "text": "বহুব্রীহি" },
+      { "key": "c", "text": "তৎপুরুষ" },
+      { "key": "d", "text": "অব্যয়ীভাব" }
+    ],
+    "correct_key": "a",
+    "explanation": "'তিন ফলের সমাহার' = ত্রিফলা; সংখ্যাবাচক পূর্বপদ ও সমাহার বোঝানোয় এটি দ্বিগু সমাস।",
+    "source_exam": "Primary",
+    "source_year": 2020,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'বনে বাঘ থাকে'—বাক্যে 'বনে' কোন কারকে কোন বিভক্তি?",
+    "options": [
+      { "key": "a", "text": "কর্তৃকারকে সপ্তমী" },
+      { "key": "b", "text": "কর্মকারকে সপ্তমী" },
+      { "key": "c", "text": "অধিকরণ কারকে সপ্তমী" },
+      { "key": "d", "text": "অপাদান কারকে সপ্তমী" }
+    ],
+    "correct_key": "c",
+    "explanation": "যেখানে ক্রিয়া সম্পন্ন হয় তা অধিকরণ কারক; 'বনে' বাঘ থাকার স্থান বোঝানোয় অধিকরণ কারকে সপ্তমী।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'তিলে তৈল আছে'—বাক্যে 'তিলে' কোন কারক?",
+    "options": [
+      { "key": "a", "text": "অপাদান কারক" },
+      { "key": "b", "text": "অধিকরণ কারক" },
+      { "key": "c", "text": "করণ কারক" },
+      { "key": "d", "text": "সম্প্রদান কারক" }
+    ],
+    "correct_key": "a",
+    "explanation": "যা থেকে কিছু উৎপন্ন হয় তা অপাদান কারক; তিল থেকে তৈল উৎপন্ন হয় বলে 'তিলে' অপাদান কারক।",
+    "source_exam": "NTRCA",
+    "source_year": 2017,
+    "source_label": "১৪তম শিক্ষক নিবন্ধন"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'নায়ক' শব্দের সঠিক প্রকৃতি-প্রত্যয় কোনটি?",
+    "options": [
+      { "key": "a", "text": "নে + অক" },
+      { "key": "b", "text": "√নী + অক" },
+      { "key": "c", "text": "নায় + ক" },
+      { "key": "d", "text": "√না + য়ক" }
+    ],
+    "correct_key": "b",
+    "explanation": "√নী + অক (ণক) = নায়ক; ধাতুর সঙ্গে কৃৎ-প্রত্যয় যুক্ত হয়ে শব্দটি গঠিত।",
+    "source_exam": "Bank",
+    "source_year": 2022,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'চলন্ত' শব্দের সঠিক প্রকৃতি-প্রত্যয় কোনটি?",
+    "options": [
+      { "key": "a", "text": "চল + অন্ত" },
+      { "key": "b", "text": "√চল্ + অন্ত" },
+      { "key": "c", "text": "চলা + ন্ত" },
+      { "key": "d", "text": "√চ + লন্ত" }
+    ],
+    "correct_key": "b",
+    "explanation": "√চল্ + অন্ত (অন্তক) = চলন্ত; ক্রিয়ামূলের সঙ্গে প্রত্যয় যুক্ত হয়ে বিশেষণ গঠিত।",
+    "source_exam": "Primary",
+    "source_year": 2019,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "খাঁটি বাংলা উপসর্গ মোট কয়টি?",
+    "options": [
+      { "key": "a", "text": "১৯টি" },
+      { "key": "b", "text": "২০টি" },
+      { "key": "c", "text": "২১টি" },
+      { "key": "d", "text": "৪০টি" }
+    ],
+    "correct_key": "c",
+    "explanation": "বাংলা ভাষায় খাঁটি বাংলা উপসর্গের সংখ্যা ২১টি; তৎসম উপসর্গ ২০টি।",
+    "source_exam": "BCS",
+    "source_year": 2015,
+    "source_label": "৩৬তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'শাঁখের করাত' বাগধারাটির অর্থ কী?",
+    "options": [
+      { "key": "a", "text": "অসম্ভব ব্যাপার" },
+      { "key": "b", "text": "উভয় সংকট" },
+      { "key": "c", "text": "নিরেট মূর্খ" },
+      { "key": "d", "text": "তীব্র শত্রুতা" }
+    ],
+    "correct_key": "b",
+    "explanation": "'শাঁখের করাত' বাগধারাটির অর্থ উভয় সংকট, অর্থাৎ যাওয়া-আসা উভয় দিকেই বিপদ।",
+    "source_exam": "NTRCA",
+    "source_year": 2016,
+    "source_label": "১৩তম শিক্ষক নিবন্ধন"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'গোবর গণেশ' বাগধারাটির অর্থ কী?",
+    "options": [
+      { "key": "a", "text": "অতিশয় চালাক" },
+      { "key": "b", "text": "মহাপণ্ডিত" },
+      { "key": "c", "text": "নিরেট মূর্খ" },
+      { "key": "d", "text": "কর্মনিপুণ ব্যক্তি" }
+    ],
+    "correct_key": "c",
+    "explanation": "'গোবর গণেশ' বাগধারাটির অর্থ নিরেট মূর্খ বা অকর্মণ্য ব্যক্তি।",
+    "source_exam": "Bank",
+    "source_year": 2020,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (ক্যাশ)"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'অর্জন' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      { "key": "a", "text": "বর্জন" },
+      { "key": "b", "text": "গঠন" },
+      { "key": "c", "text": "সঞ্চয়" },
+      { "key": "d", "text": "উপার্জন" }
+    ],
+    "correct_key": "a",
+    "explanation": "'অর্জন'-এর বিপরীত শব্দ 'বর্জন'।",
+    "source_exam": "Primary",
+    "source_year": 2018,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "নিচের কোনটি 'সমুদ্র' শব্দের সমার্থক শব্দ?",
+    "options": [
+      { "key": "a", "text": "তটিনী" },
+      { "key": "b", "text": "অর্ণব" },
+      { "key": "c", "text": "অনিল" },
+      { "key": "d", "text": "নীরদ" }
+    ],
+    "correct_key": "b",
+    "explanation": "'অর্ণব' শব্দের অর্থ সমুদ্র; তটিনী=নদী, অনিল=বাতাস, নীরদ=মেঘ।",
+    "source_exam": "BCS",
+    "source_year": 2017,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "নিচের কোন বানানটি শুদ্ধ?",
+    "options": [
+      { "key": "a", "text": "মুমুর্ষু" },
+      { "key": "b", "text": "মূমুর্ষু" },
+      { "key": "c", "text": "মুমূর্ষু" },
+      { "key": "d", "text": "মুমুর্ষূ" }
+    ],
+    "correct_key": "c",
+    "explanation": "শুদ্ধ বানান 'মুমূর্ষু', যার অর্থ মৃতপ্রায় বা মরণাপন্ন।",
+    "source_exam": "NTRCA",
+    "source_year": 2019,
+    "source_label": "১৬তম শিক্ষক নিবন্ধন"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'কপালকুণ্ডলা' উপন্যাসের রচয়িতা কে?",
+    "options": [
+      { "key": "a", "text": "বঙ্কিমচন্দ্র চট্টোপাধ্যায়" },
+      { "key": "b", "text": "শরৎচন্দ্র চট্টোপাধ্যায়" },
+      { "key": "c", "text": "রবীন্দ্রনাথ ঠাকুর" },
+      { "key": "d", "text": "মীর মশাররফ হোসেন" }
+    ],
+    "correct_key": "a",
+    "explanation": "'কপালকুণ্ডলা' (১৮৬৬) বঙ্কিমচন্দ্র চট্টোপাধ্যায় রচিত একটি রোমান্সধর্মী উপন্যাস।",
+    "source_exam": "BCS",
+    "source_year": 2014,
+    "source_label": "৩৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'নীলদর্পণ' নাটকের রচয়িতা কে?",
+    "options": [
+      { "key": "a", "text": "মাইকেল মধুসূদন দত্ত" },
+      { "key": "b", "text": "দীনবন্ধু মিত্র" },
+      { "key": "c", "text": "গিরিশচন্দ্র ঘোষ" },
+      { "key": "d", "text": "রামনারায়ণ তর্করত্ন" }
+    ],
+    "correct_key": "b",
+    "explanation": "'নীলদর্পণ' (১৮৬০) নাটকটি দীনবন্ধু মিত্র রচিত; এতে নীলকরদের অত্যাচার চিত্রিত হয়েছে।",
+    "source_exam": "NTRCA",
+    "source_year": 2015,
+    "source_label": "১১তম শিক্ষক নিবন্ধন"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'মেঘনাদবধ কাব্য' কার রচনা?",
+    "options": [
+      { "key": "a", "text": "হেমচন্দ্র বন্দ্যোপাধ্যায়" },
+      { "key": "b", "text": "নবীনচন্দ্র সেন" },
+      { "key": "c", "text": "মাইকেল মধুসূদন দত্ত" },
+      { "key": "d", "text": "ঈশ্বরচন্দ্র গুপ্ত" }
+    ],
+    "correct_key": "c",
+    "explanation": "'মেঘনাদবধ কাব্য' (১৮৬১) মাইকেল মধুসূদন দত্ত রচিত বাংলা সাহিত্যের প্রথম মহাকাব্য।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪২তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "কাজী নজরুল ইসলামের প্রথম কাব্যগ্রন্থ কোনটি?",
+    "options": [
+      { "key": "a", "text": "বিষের বাঁশি" },
+      { "key": "b", "text": "অগ্নিবীণা" },
+      { "key": "c", "text": "সাম্যবাদী" },
+      { "key": "d", "text": "দোলন চাঁপা" }
+    ],
+    "correct_key": "b",
+    "explanation": "'অগ্নিবীণা' (১৯২২) কাজী নজরুল ইসলামের প্রথম কাব্যগ্রন্থ; এতে বিখ্যাত 'বিদ্রোহী' কবিতা রয়েছে।",
+    "source_exam": "Bank",
+    "source_year": 2021,
+    "source_label": "সমন্বিত ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'নকশী কাঁথার মাঠ' কাব্যগ্রন্থের রচয়িতা কে?",
+    "options": [
+      { "key": "a", "text": "জসীমউদ্‌দীন" },
+      { "key": "b", "text": "জীবনানন্দ দাশ" },
+      { "key": "c", "text": "সুকান্ত ভট্টাচার্য" },
+      { "key": "d", "text": "কালিদাস রায়" }
+    ],
+    "correct_key": "a",
+    "explanation": "'নকশী কাঁথার মাঠ' (১৯২৯) পল্লীকবি জসীমউদ্‌দীন রচিত একটি কাব্যগ্রন্থ।",
+    "source_exam": "Primary",
+    "source_year": 2016,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'বীরবল' কার ছদ্মনাম?",
+    "options": [
+      { "key": "a", "text": "রবীন্দ্রনাথ ঠাকুর" },
+      { "key": "b", "text": "প্রমথ চৌধুরী" },
+      { "key": "c", "text": "মোজাম্মেল হক" },
+      { "key": "d", "text": "সৈয়দ মুজতবা আলী" }
+    ],
+    "correct_key": "b",
+    "explanation": "'বীরবল' প্রমথ চৌধুরীর ছদ্মনাম; তিনি বাংলা সাহিত্যে চলিত রীতির প্রবর্তক।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'ধূমকেতু' পত্রিকার সম্পাদক কে ছিলেন?",
+    "options": [
+      { "key": "a", "text": "মীর মশাররফ হোসেন" },
+      { "key": "b", "text": "মোহাম্মদ নাসিরউদ্দীন" },
+      { "key": "c", "text": "কাজী নজরুল ইসলাম" },
+      { "key": "d", "text": "প্রমথ চৌধুরী" }
+    ],
+    "correct_key": "c",
+    "explanation": "'ধূমকেতু' (১৯২২) পত্রিকার সম্পাদক ছিলেন কাজী নজরুল ইসলাম।",
+    "source_exam": "NTRCA",
+    "source_year": 2021,
+    "source_label": "১৭তম শিক্ষক নিবন্ধন"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'শ্রীকৃষ্ণকীর্তন' কাব্যের রচয়িতা কে?",
+    "options": [
+      { "key": "a", "text": "বড়ু চণ্ডীদাস" },
+      { "key": "b", "text": "বিদ্যাপতি" },
+      { "key": "c", "text": "জ্ঞানদাস" },
+      { "key": "d", "text": "গোবিন্দদাস" }
+    ],
+    "correct_key": "a",
+    "explanation": "মধ্যযুগের কাব্য 'শ্রীকৃষ্ণকীর্তন'-এর রচয়িতা বড়ু চণ্ডীদাস।",
+    "source_exam": "BCS",
+    "source_year": 2017,
+    "source_label": "৩৯তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'পদ্মাবতী' কাব্যের রচয়িতা কে?",
+    "options": [
+      { "key": "a", "text": "দৌলত কাজী" },
+      { "key": "b", "text": "আলাওল" },
+      { "key": "c", "text": "সৈয়দ সুলতান" },
+      { "key": "d", "text": "শাহ মুহম্মদ সগীর" }
+    ],
+    "correct_key": "b",
+    "explanation": "মধ্যযুগে আরাকান রাজসভার কবি আলাওল 'পদ্মাবতী' কাব্য রচনা করেন।",
+    "source_exam": "Bank",
+    "source_year": 2018,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'ভানুসিংহ' কার ছদ্মনাম?",
+    "options": [
+      { "key": "a", "text": "মধুসূদন দত্ত" },
+      { "key": "b", "text": "বঙ্কিমচন্দ্র চট্টোপাধ্যায়" },
+      { "key": "c", "text": "রবীন্দ্রনাথ ঠাকুর" },
+      { "key": "d", "text": "দ্বিজেন্দ্রলাল রায়" }
+    ],
+    "correct_key": "c",
+    "explanation": "'ভানুসিংহ ঠাকুর' রবীন্দ্রনাথ ঠাকুরের ছদ্মনাম; এই নামে তিনি 'ভানুসিংহ ঠাকুরের পদাবলী' রচনা করেন।",
+    "source_exam": "Primary",
+    "source_year": 2022,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'কবর' নাটকের রচয়িতা কে?",
+    "options": [
+      { "key": "a", "text": "মুনীর চৌধুরী" },
+      { "key": "b", "text": "সেলিম আল দীন" },
+      { "key": "c", "text": "নুরুল মোমেন" },
+      { "key": "d", "text": "আসকার ইবনে শাইখ" }
+    ],
+    "correct_key": "a",
+    "explanation": "ভাষা আন্দোলনভিত্তিক 'কবর' নাটকটি রচনা করেন মুনীর চৌধুরী।",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "৪৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "চর্যাপদ বাংলা সাহিত্যের কোন যুগের নিদর্শন?",
+    "options": [
+      { "key": "a", "text": "মধ্যযুগ" },
+      { "key": "b", "text": "আধুনিক যুগ" },
+      { "key": "c", "text": "প্রাচীন যুগ" },
+      { "key": "d", "text": "অন্ধকার যুগ" }
+    ],
+    "correct_key": "c",
+    "explanation": "চর্যাপদ বাংলা সাহিত্যের প্রাচীন বা আদি যুগের একমাত্র নিদর্শন।",
+    "source_exam": "NTRCA",
+    "source_year": 2020,
+    "source_label": "১৬তম শিক্ষক নিবন্ধন"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'বঙ্গদর্শন' পত্রিকার প্রতিষ্ঠাতা সম্পাদক কে?",
+    "options": [
+      { "key": "a", "text": "ঈশ্বরচন্দ্র বিদ্যাসাগর" },
+      { "key": "b", "text": "বঙ্কিমচন্দ্র চট্টোপাধ্যায়" },
+      { "key": "c", "text": "রবীন্দ্রনাথ ঠাকুর" },
+      { "key": "d", "text": "অক্ষয়কুমার দত্ত" }
+    ],
+    "correct_key": "b",
+    "explanation": "'বঙ্গদর্শন' পত্রিকা ১৮৭২ সালে বঙ্কিমচন্দ্র চট্টোপাধ্যায়ের সম্পাদনায় প্রকাশিত হয়।",
+    "source_exam": "Bank",
+    "source_year": 2024,
+    "source_label": "সমন্বিত ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "বাংলা সাহিত্যের প্রথম সার্থক ট্র্যাজেডি নাটক 'কৃষ্ণকুমারী' কার রচনা?",
+    "options": [
+      { "key": "a", "text": "দীনবন্ধু মিত্র" },
+      { "key": "b", "text": "রামনারায়ণ তর্করত্ন" },
+      { "key": "c", "text": "মাইকেল মধুসূদন দত্ত" },
+      { "key": "d", "text": "গিরিশচন্দ্র ঘোষ" }
+    ],
+    "correct_key": "c",
+    "explanation": "'কৃষ্ণকুমারী' (১৮৬১) বাংলা সাহিত্যের প্রথম সার্থক ট্র্যাজেডি নাটক, যার রচয়িতা মাইকেল মধুসূদন দত্ত।",
+    "source_exam": "BCS",
+    "source_year": 2024,
+    "source_label": "৪৬তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'বনফুল' কার ছদ্মনাম?",
+    "options": [
+      { "key": "a", "text": "বলাইচাঁদ মুখোপাধ্যায়" },
+      { "key": "b", "text": "সুকুমার রায়" },
+      { "key": "c", "text": "প্রেমেন্দ্র মিত্র" },
+      { "key": "d", "text": "মানিক বন্দ্যোপাধ্যায়" }
+    ],
+    "correct_key": "a",
+    "explanation": "'বনফুল' খ্যাতিমান কথাসাহিত্যিক বলাইচাঁদ মুখোপাধ্যায়ের ছদ্মনাম।",
+    "source_exam": "Primary",
+    "source_year": 2023,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  }
+]

@@ -1,0 +1,258 @@
+[
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "১ গিগাবাইট (GB) সমান কত মেগাবাইট (MB)?",
+    "options": [
+      {"key": "a", "text": "১০০০ MB"},
+      {"key": "b", "text": "১০২৪ MB"},
+      {"key": "c", "text": "৫১২ MB"},
+      {"key": "d", "text": "২০৪৮ MB"}
+    ],
+    "correct_key": "b",
+    "explanation": "কম্পিউটারে বাইনারি হিসাবে ১ গিগাবাইট = ১০২৪ মেগাবাইট, কারণ ১ ধাপ = ২^১০ = ১০২৪।",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "প্রথম প্রজন্মের কম্পিউটারে প্রধান উপাদান হিসেবে কোনটি ব্যবহৃত হতো?",
+    "options": [
+      {"key": "a", "text": "ভ্যাকুয়াম টিউব"},
+      {"key": "b", "text": "ট্রানজিস্টর"},
+      {"key": "c", "text": "ইন্টিগ্রেটেড সার্কিট (IC)"},
+      {"key": "d", "text": "মাইক্রোপ্রসেসর"}
+    ],
+    "correct_key": "a",
+    "explanation": "প্রথম প্রজন্মের (১৯৪০–১৯৫৬) কম্পিউটারে ভ্যাকুয়াম টিউব ব্যবহৃত হতো; ট্রানজিস্টর দ্বিতীয় প্রজন্মে আসে।",
+    "source_exam": "NTRCA",
+    "source_year": 2019,
+    "source_label": "১৫তম শিক্ষক নিবন্ধন (কলেজ পর্যায়)"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "CPU-এর কোন অংশ গাণিতিক ও যৌক্তিক (arithmetic & logic) কাজ সম্পাদন করে?",
+    "options": [
+      {"key": "a", "text": "কন্ট্রোল ইউনিট (CU)"},
+      {"key": "b", "text": "মেমরি ইউনিট"},
+      {"key": "c", "text": "অ্যারিথমেটিক লজিক ইউনিট (ALU)"},
+      {"key": "d", "text": "রেজিস্টার"}
+    ],
+    "correct_key": "c",
+    "explanation": "ALU (Arithmetic Logic Unit) সকল গাণিতিক ও যৌক্তিক অপারেশন সম্পন্ন করে; CU নির্দেশনা নিয়ন্ত্রণ করে।",
+    "source_exam": "Bank",
+    "source_year": 2021,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "ROM-এর পূর্ণরূপ কোনটি?",
+    "options": [
+      {"key": "a", "text": "Random Only Memory"},
+      {"key": "b", "text": "Read Out Memory"},
+      {"key": "c", "text": "Rapid Online Memory"},
+      {"key": "d", "text": "Read Only Memory"}
+    ],
+    "correct_key": "d",
+    "explanation": "ROM অর্থ Read Only Memory, যেখানে সংরক্ষিত তথ্য শুধু পড়া যায় এবং বিদ্যুৎ চলে গেলেও তথ্য মুছে যায় না।",
+    "source_exam": "Primary",
+    "source_year": 2019,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "নিচের কোনটি ইনপুট ডিভাইস নয়?",
+    "options": [
+      {"key": "a", "text": "কীবোর্ড"},
+      {"key": "b", "text": "মাউস"},
+      {"key": "c", "text": "স্ক্যানার"},
+      {"key": "d", "text": "মনিটর"}
+    ],
+    "correct_key": "d",
+    "explanation": "মনিটর একটি আউটপুট ডিভাইস; কীবোর্ড, মাউস ও স্ক্যানার ইনপুট ডিভাইস।",
+    "source_exam": "BCS",
+    "source_year": 2016,
+    "source_label": "৩৬তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "নিচের কোনটি সিস্টেম সফটওয়্যার?",
+    "options": [
+      {"key": "a", "text": "মাইক্রোসফট ওয়ার্ড"},
+      {"key": "b", "text": "অপারেটিং সিস্টেম"},
+      {"key": "c", "text": "অ্যাডোবি ফটোশপ"},
+      {"key": "d", "text": "মাইক্রোসফট এক্সেল"}
+    ],
+    "correct_key": "b",
+    "explanation": "অপারেটিং সিস্টেম সিস্টেম সফটওয়্যার, যা হার্ডওয়্যার পরিচালনা করে; ওয়ার্ড, এক্সেল, ফটোশপ অ্যাপ্লিকেশন সফটওয়্যার।",
+    "source_exam": "NTRCA",
+    "source_year": 2020,
+    "source_label": "১৬তম শিক্ষক নিবন্ধন (স্কুল পর্যায়)"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "LAN-এর পূর্ণরূপ কোনটি?",
+    "options": [
+      {"key": "a", "text": "Local Area Network"},
+      {"key": "b", "text": "Large Area Network"},
+      {"key": "c", "text": "Long Access Network"},
+      {"key": "d", "text": "Linked Area Node"}
+    ],
+    "correct_key": "a",
+    "explanation": "LAN অর্থ Local Area Network, যা সীমিত এলাকা (যেমন অফিস বা ভবন) জুড়ে কম্পিউটার সংযুক্ত করে।",
+    "source_exam": "Bank",
+    "source_year": 2022,
+    "source_label": "সমন্বিত ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "HTTP-এর পূর্ণরূপ কোনটি?",
+    "options": [
+      {"key": "a", "text": "High Text Transfer Protocol"},
+      {"key": "b", "text": "HyperText Transmission Protocol"},
+      {"key": "c", "text": "HyperText Transfer Protocol"},
+      {"key": "d", "text": "Hyperlink Text Transfer Protocol"}
+    ],
+    "correct_key": "c",
+    "explanation": "HTTP অর্থ HyperText Transfer Protocol, যা ওয়েব ব্রাউজার ও সার্ভারের মধ্যে ওয়েবপেজ আদান-প্রদানে ব্যবহৃত হয়।",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "ইন্টারনেটে এক কম্পিউটার থেকে অন্য কম্পিউটারে ফাইল স্থানান্তরের জন্য কোন প্রোটোকল ব্যবহৃত হয়?",
+    "options": [
+      {"key": "a", "text": "HTTP"},
+      {"key": "b", "text": "SMTP"},
+      {"key": "c", "text": "FTP"},
+      {"key": "d", "text": "SNMP"}
+    ],
+    "correct_key": "c",
+    "explanation": "FTP (File Transfer Protocol) নেটওয়ার্কে ফাইল আপলোড ও ডাউনলোডের জন্য ব্যবহৃত হয়।",
+    "source_exam": "Bank",
+    "source_year": 2020,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (ক্যাশ)"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "ই-মেইল পাঠানোর জন্য কোন প্রোটোকল ব্যবহৃত হয়?",
+    "options": [
+      {"key": "a", "text": "POP3"},
+      {"key": "b", "text": "SMTP"},
+      {"key": "c", "text": "IMAP"},
+      {"key": "d", "text": "FTP"}
+    ],
+    "correct_key": "b",
+    "explanation": "SMTP (Simple Mail Transfer Protocol) ই-মেইল পাঠাতে ব্যবহৃত হয়; POP3 ও IMAP মেইল গ্রহণে ব্যবহৃত হয়।",
+    "source_exam": "NTRCA",
+    "source_year": 2022,
+    "source_label": "১৭তম শিক্ষক নিবন্ধন"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "বাইনারি সংখ্যা পদ্ধতির ভিত্তি (base) কত?",
+    "options": [
+      {"key": "a", "text": "২"},
+      {"key": "b", "text": "৮"},
+      {"key": "c", "text": "১০"},
+      {"key": "d", "text": "১৬"}
+    ],
+    "correct_key": "a",
+    "explanation": "বাইনারি সংখ্যা পদ্ধতির ভিত্তি ২, যেখানে শুধু ০ ও ১ ব্যবহৃত হয়; অক্টাল ৮, দশমিক ১০, হেক্সাডেসিমাল ১৬।",
+    "source_exam": "Primary",
+    "source_year": 2018,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "স্ট্যান্ডার্ড ASCII কোডে প্রতিটি অক্ষর প্রকাশে কত বিট ব্যবহৃত হয়?",
+    "options": [
+      {"key": "a", "text": "৮ বিট"},
+      {"key": "b", "text": "১৬ বিট"},
+      {"key": "c", "text": "৭ বিট"},
+      {"key": "d", "text": "৩২ বিট"}
+    ],
+    "correct_key": "c",
+    "explanation": "স্ট্যান্ডার্ড ASCII ৭ বিট ব্যবহার করে ১২৮টি ভিন্ন অক্ষর/চিহ্ন প্রকাশ করে; বর্ধিত (extended) ASCII ৮ বিট ব্যবহার করে।",
+    "source_exam": "BCS",
+    "source_year": 2015,
+    "source_label": "৩৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "কম্পিউটারের CPU-এর অভ্যন্তরে সবচেয়ে দ্রুতগতির মেমরি কোনটি?",
+    "options": [
+      {"key": "a", "text": "RAM"},
+      {"key": "b", "text": "রেজিস্টার (Register)"},
+      {"key": "c", "text": "হার্ডডিস্ক"},
+      {"key": "d", "text": "অপটিক্যাল ডিস্ক"}
+    ],
+    "correct_key": "b",
+    "explanation": "রেজিস্টার CPU-এর অভ্যন্তরীণ সবচেয়ে দ্রুতগতির মেমরি; এরপর ক্যাশ, RAM এবং সবচেয়ে ধীর সেকেন্ডারি স্টোরেজ।",
+    "source_exam": "Bank",
+    "source_year": 2019,
+    "source_label": "বাংলাদেশ ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "নেটওয়ার্কে অননুমোদিত প্রবেশ ঠেকাতে নিরাপত্তা ব্যবস্থা হিসেবে কোনটি ব্যবহৃত হয়?",
+    "options": [
+      {"key": "a", "text": "ফায়ারওয়াল (Firewall)"},
+      {"key": "b", "text": "রাউটার"},
+      {"key": "c", "text": "মডেম"},
+      {"key": "d", "text": "সুইচ"}
+    ],
+    "correct_key": "a",
+    "explanation": "ফায়ারওয়াল একটি নিরাপত্তা ব্যবস্থা যা নেটওয়ার্কে অননুমোদিত প্রবেশ ও অবাঞ্ছিত ট্রাফিক ফিল্টার করে ঠেকায়।",
+    "source_exam": "NTRCA",
+    "source_year": 2021,
+    "source_label": "১৬তম শিক্ষক নিবন্ধন (কলেজ পর্যায়)"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "GUI-এর পূর্ণরূপ কোনটি?",
+    "options": [
+      {"key": "a", "text": "General User Interface"},
+      {"key": "b", "text": "Graphical User Interface"},
+      {"key": "c", "text": "Graphic Unit Interface"},
+      {"key": "d", "text": "Global User Interface"}
+    ],
+    "correct_key": "b",
+    "explanation": "GUI অর্থ Graphical User Interface, যেখানে আইকন, মেনু ও উইন্ডোর মাধ্যমে ব্যবহারকারী কম্পিউটার পরিচালনা করে।",
+    "source_exam": "Primary",
+    "source_year": 2020,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "স্প্রেডশিট তৈরি ও হিসাব-নিকাশের জন্য মাইক্রোসফট অফিসের কোন প্রোগ্রামটি ব্যবহৃত হয়?",
+    "options": [
+      {"key": "a", "text": "MS Word"},
+      {"key": "b", "text": "MS PowerPoint"},
+      {"key": "c", "text": "MS Access"},
+      {"key": "d", "text": "MS Excel"}
+    ],
+    "correct_key": "d",
+    "explanation": "MS Excel একটি স্প্রেডশিট প্রোগ্রাম, যা সারি-কলামে তথ্য সাজানো, হিসাব ও চার্ট তৈরিতে ব্যবহৃত হয়।",
+    "source_exam": "BCS",
+    "source_year": 2017,
+    "source_label": "৩৭তম বিসিএস প্রিলিমিনারি"
+  }
+]

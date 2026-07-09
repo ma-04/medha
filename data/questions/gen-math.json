@@ -1,0 +1,434 @@
+[
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "কোনো পরীক্ষায় ৬০% শিক্ষার্থী পাস করল। যদি ফেল করা শিক্ষার্থীর সংখ্যা ৮০ জন হয়, তবে মোট পরীক্ষার্থী কতজন ছিল?",
+    "options": [
+      {"key": "a", "text": "২০০"},
+      {"key": "b", "text": "১৬০"},
+      {"key": "c", "text": "১৮০"},
+      {"key": "d", "text": "২৪০"}
+    ],
+    "correct_key": "a",
+    "explanation": "ফেল করেছে $(100-60)\\% = 40\\%$ শিক্ষার্থী। মোট শিক্ষার্থী $= x$ হলে $40\\%$ of $x = 80$, অর্থাৎ $\\frac{40}{100}\\times x = 80$, সুতরাং $x = \\frac{80\\times 100}{40} = 200$ জন।",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "একটি দ্রব্য ৪৫০ টাকায় বিক্রি করলে ২৫% লাভ হয়। দ্রব্যটির ক্রয়মূল্য কত?",
+    "options": [
+      {"key": "a", "text": "৩৭৫"},
+      {"key": "b", "text": "৩৬০"},
+      {"key": "c", "text": "৩৪০"},
+      {"key": "d", "text": "৩৩৭.৫০"}
+    ],
+    "correct_key": "b",
+    "explanation": "ক্রয়মূল্য $= \\frac{\\text{বিক্রয়মূল্য}}{1 + \\text{লাভের হার}} = \\frac{450}{1.25} = 360$ টাকা। যাচাই: $360$ এর $25\\% = 90$, তাই বিক্রয়মূল্য $360 + 90 = 450$ টাকা।",
+    "source_exam": "Bank",
+    "source_year": 2021,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "দুটি সংখ্যার অনুপাত ৩ঃ৫ এবং তাদের যোগফল ৬৪। বড় সংখ্যাটি কত?",
+    "options": [
+      {"key": "a", "text": "৩২"},
+      {"key": "b", "text": "২৪"},
+      {"key": "c", "text": "৪০"},
+      {"key": "d", "text": "৪৫"}
+    ],
+    "correct_key": "c",
+    "explanation": "অনুপাতের রাশি $3+5 = 8$ ভাগ, যা $= 64$। প্রতি ভাগ $= \\frac{64}{8} = 8$। বড় সংখ্যা $= 5\\times 8 = 40$।",
+    "source_exam": "Primary",
+    "source_year": 2018,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "একটি শ্রেণির ৩০ জন ছাত্রের গড় বয়স ১৫ বছর। ২ জন শিক্ষক যুক্ত হলে গড় বয়স ১৬ বছর হয়। শিক্ষকদ্বয়ের গড় বয়স কত?",
+    "options": [
+      {"key": "a", "text": "৩০"},
+      {"key": "b", "text": "৩২"},
+      {"key": "c", "text": "২৮"},
+      {"key": "d", "text": "৩১"}
+    ],
+    "correct_key": "d",
+    "explanation": "ছাত্রদের মোট বয়স $= 30\\times 15 = 450$ বছর। শিক্ষকসহ মোট বয়স $= 32\\times 16 = 512$ বছর। শিক্ষকদ্বয়ের মোট বয়স $= 512 - 450 = 62$ বছর, গড় $= \\frac{62}{2} = 31$ বছর।",
+    "source_exam": "NTRCA",
+    "source_year": 2020,
+    "source_label": "১৬তম শিক্ষক নিবন্ধন (স্কুল পর্যায়)"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "কত টাকা ৮% সরল সুদে ৫ বছরে সুদে-আসলে ৭০০ টাকা হবে?",
+    "options": [
+      {"key": "a", "text": "৫০০"},
+      {"key": "b", "text": "৪৫০"},
+      {"key": "c", "text": "৫৫০"},
+      {"key": "d", "text": "৪৮০"}
+    ],
+    "correct_key": "a",
+    "explanation": "সুদে-আসল $= P\\left(1 + \\frac{r\\times t}{100}\\right) = P\\left(1 + \\frac{8\\times 5}{100}\\right) = 1.4P$। সুতরাং $1.4P = 700$, $P = \\frac{700}{1.4} = 500$ টাকা।",
+    "source_exam": "Bank",
+    "source_year": 2017,
+    "source_label": "সোনালী ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "১০০০ টাকার ২ বছরের চক্রবৃদ্ধি সুদ কত হবে, যদি বার্ষিক সুদের হার ১০% হয়?",
+    "options": [
+      {"key": "a", "text": "২০০"},
+      {"key": "b", "text": "২১০"},
+      {"key": "c", "text": "২২০"},
+      {"key": "d", "text": "১২১"}
+    ],
+    "correct_key": "b",
+    "explanation": "চক্রবৃদ্ধি মূলধন $= P\\left(1 + \\frac{r}{100}\\right)^t = 1000\\times (1.1)^2 = 1000\\times 1.21 = 1210$ টাকা। চক্রবৃদ্ধি সুদ $= 1210 - 1000 = 210$ টাকা।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "একটি কাজ ক ১২ দিনে এবং খ ১৮ দিনে করতে পারে। উভয়ে একসাথে কাজটি কত দিনে শেষ করবে?",
+    "options": [
+      {"key": "a", "text": "৭.৫"},
+      {"key": "b", "text": "৬"},
+      {"key": "c", "text": "৭.২"},
+      {"key": "d", "text": "৮"}
+    ],
+    "correct_key": "c",
+    "explanation": "একদিনে একসাথে করে $\\frac{1}{12} + \\frac{1}{18} = \\frac{3+2}{36} = \\frac{5}{36}$ অংশ। মোট সময় $= \\frac{36}{5} = 7.2$ দিন।",
+    "source_exam": "Bank",
+    "source_year": 2019,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (ক্যাশ)"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "একজন লোক ৬০ কিমি পথ ঘণ্টায় ৪০ কিমি বেগে গিয়ে ঘণ্টায় ৬০ কিমি বেগে ফিরে এল। সমগ্র যাত্রায় তার গড় বেগ কত কিমি/ঘণ্টা?",
+    "options": [
+      {"key": "a", "text": "৫০"},
+      {"key": "b", "text": "৪৫"},
+      {"key": "c", "text": "৫২"},
+      {"key": "d", "text": "৪৮"}
+    ],
+    "correct_key": "d",
+    "explanation": "সমান দূরত্বে গড় বেগ $= \\frac{2\\times v_1\\times v_2}{v_1 + v_2} = \\frac{2\\times 40\\times 60}{40 + 60} = \\frac{4800}{100} = 48$ কিমি/ঘণ্টা।",
+    "source_exam": "Primary",
+    "source_year": 2019,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "পিতা ও পুত্রের বয়সের সমষ্টি ৬০ বছর। পিতার বয়স পুত্রের বয়সের ৩ গুণ হলে পুত্রের বয়স কত?",
+    "options": [
+      {"key": "a", "text": "১৫"},
+      {"key": "b", "text": "২০"},
+      {"key": "c", "text": "১২"},
+      {"key": "d", "text": "১৮"}
+    ],
+    "correct_key": "a",
+    "explanation": "পুত্রের বয়স $= x$ হলে পিতার বয়স $= 3x$। সমষ্টি $x + 3x = 4x = 60$, সুতরাং $x = 15$ বছর।",
+    "source_exam": "NTRCA",
+    "source_year": 2018,
+    "source_label": "১৪তম শিক্ষক নিবন্ধন (স্কুল পর্যায়)"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "দুটি সংখ্যার ল.সা.গু ৭২ এবং গ.সা.গু ৬। একটি সংখ্যা ২৪ হলে অপর সংখ্যাটি কত?",
+    "options": [
+      {"key": "a", "text": "৩৬"},
+      {"key": "b", "text": "১৮"},
+      {"key": "c", "text": "১২"},
+      {"key": "d", "text": "২৪"}
+    ],
+    "correct_key": "b",
+    "explanation": "দুটি সংখ্যার গুণফল $=$ ল.সা.গু $\\times$ গ.সা.গু $= 72\\times 6 = 432$। অপর সংখ্যা $= \\frac{432}{24} = 18$।",
+    "source_exam": "BCS",
+    "source_year": 2016,
+    "source_label": "৩৭তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "$\\frac{3}{4}$ এর $\\frac{2}{3}$ অংশ কত?",
+    "options": [
+      {"key": "a", "text": "$\\frac{3}{8}$"},
+      {"key": "b", "text": "$\\frac{1}{4}$"},
+      {"key": "c", "text": "$\\frac{1}{2}$"},
+      {"key": "d", "text": "$\\frac{2}{3}$"}
+    ],
+    "correct_key": "c",
+    "explanation": "$\\frac{3}{4}\\times \\frac{2}{3} = \\frac{6}{12} = \\frac{1}{2}$।",
+    "source_exam": "Primary",
+    "source_year": 2020,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "দুটি সংখ্যার যোগফল ২৪ এবং বিয়োগফল ৬। বড় সংখ্যাটি কত?",
+    "options": [
+      {"key": "a", "text": "৯"},
+      {"key": "b", "text": "১৮"},
+      {"key": "c", "text": "১২"},
+      {"key": "d", "text": "১৫"}
+    ],
+    "correct_key": "d",
+    "explanation": "বড় সংখ্যা $= \\frac{\\text{যোগফল} + \\text{বিয়োগফল}}{2} = \\frac{24 + 6}{2} = 15$। (ছোট সংখ্যা $= \\frac{24-6}{2} = 9$।)",
+    "source_exam": "Bank",
+    "source_year": 2015,
+    "source_label": "রূপালী ব্যাংক অফিসার"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "একটি জামা ১০% ছাড়ে ৯০০ টাকায় বিক্রি হলো। জামাটির প্রকৃত (তালিকা) মূল্য কত?",
+    "options": [
+      {"key": "a", "text": "১০০০"},
+      {"key": "b", "text": "৯৯০"},
+      {"key": "c", "text": "৮১০"},
+      {"key": "d", "text": "১১০০"}
+    ],
+    "correct_key": "a",
+    "explanation": "১০% ছাড়ের পর মূল্য প্রকৃত মূল্যের $90\\%$। সুতরাং $90\\%$ of তালিকা মূল্য $= 900$, তালিকা মূল্য $= \\frac{900}{0.9} = 1000$ টাকা।",
+    "source_exam": "NTRCA",
+    "source_year": 2021,
+    "source_label": "১৭তম শিক্ষক নিবন্ধন (কলেজ পর্যায়)"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "৪০ লিটার মিশ্রণে দুধ ও পানির অনুপাত ৩ঃ১। এতে কত লিটার পানি মেশালে অনুপাত ৩ঃ২ হবে?",
+    "options": [
+      {"key": "a", "text": "৫"},
+      {"key": "b", "text": "১০"},
+      {"key": "c", "text": "১৫"},
+      {"key": "d", "text": "২০"}
+    ],
+    "correct_key": "b",
+    "explanation": "দুধ $= 40\\times \\frac{3}{4} = 30$ লিটার, পানি $= 10$ লিটার। দুধ অপরিবর্তিত থেকে নতুন অনুপাত $3:2$ হলে পানি $= 30\\times \\frac{2}{3} = 20$ লিটার হতে হবে। তাই মেশাতে হবে $20 - 10 = 10$ লিটার।",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "৫ কেজি চাল ৪০ টাকা দরে এবং ৩ কেজি চাল ৫৬ টাকা দরে কিনে মেশানো হলো। মিশ্রিত চালের প্রতি কেজির গড় দাম কত টাকা?",
+    "options": [
+      {"key": "a", "text": "৪৮"},
+      {"key": "b", "text": "৪৫"},
+      {"key": "c", "text": "৪৬"},
+      {"key": "d", "text": "৪৪"}
+    ],
+    "correct_key": "c",
+    "explanation": "মোট মূল্য $= 5\\times 40 + 3\\times 56 = 200 + 168 = 368$ টাকা। মোট চাল $= 5 + 3 = 8$ কেজি। গড় দাম $= \\frac{368}{8} = 46$ টাকা।",
+    "source_exam": "Bank",
+    "source_year": 2022,
+    "source_label": "বাংলাদেশ ব্যাংক অ্যাসিস্ট্যান্ট ডিরেক্টর"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$x^2 - 5x + 6 = 0$ সমীকরণের মূলদ্বয় কত?",
+    "options": [
+      {"key": "a", "text": "১, ৬"},
+      {"key": "b", "text": "-২, -৩"},
+      {"key": "c", "text": "২, -৩"},
+      {"key": "d", "text": "২, ৩"}
+    ],
+    "correct_key": "d",
+    "explanation": "$x^2 - 5x + 6 = (x-2)(x-3) = 0$। সুতরাং $x = 2$ অথবা $x = 3$। যাচাই: $2+3 = 5$, $2\\times 3 = 6$।",
+    "source_exam": "NTRCA",
+    "source_year": 2019,
+    "source_label": "১৫তম শিক্ষক নিবন্ধন (স্কুল পর্যায়)"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$\\frac{2^5 \\times 2^3}{2^6}$ এর মান কত?",
+    "options": [
+      {"key": "a", "text": "৪"},
+      {"key": "b", "text": "৮"},
+      {"key": "c", "text": "১৬"},
+      {"key": "d", "text": "২"}
+    ],
+    "correct_key": "a",
+    "explanation": "$\\frac{2^5 \\times 2^3}{2^6} = 2^{5+3-6} = 2^2 = 4$।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪১তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "যদি $a + b = 5$ এবং $ab = 6$ হয়, তবে $a^2 + b^2$ এর মান কত?",
+    "options": [
+      {"key": "a", "text": "১১"},
+      {"key": "b", "text": "১৩"},
+      {"key": "c", "text": "৩৭"},
+      {"key": "d", "text": "১৭"}
+    ],
+    "correct_key": "b",
+    "explanation": "$a^2 + b^2 = (a+b)^2 - 2ab = 5^2 - 2\\times 6 = 25 - 12 = 13$।",
+    "source_exam": "Bank",
+    "source_year": 2018,
+    "source_label": "অগ্রণী ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$x^2 - 9$ এর উৎপাদক বিশ্লেষণ কোনটি?",
+    "options": [
+      {"key": "a", "text": "$(x-3)^2$"},
+      {"key": "b", "text": "$(x+3)^2$"},
+      {"key": "c", "text": "$(x+3)(x-3)$"},
+      {"key": "d", "text": "$(x+9)(x-1)$"}
+    ],
+    "correct_key": "c",
+    "explanation": "$a^2 - b^2 = (a+b)(a-b)$ সূত্র অনুসারে $x^2 - 9 = x^2 - 3^2 = (x+3)(x-3)$।",
+    "source_exam": "Primary",
+    "source_year": 2021,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$\\frac{a^2 - b^2}{a - b}$ এর সরলীকৃত মান কত (যেখানে $a \\neq b$)?",
+    "options": [
+      {"key": "a", "text": "$a - b$"},
+      {"key": "b", "text": "$ab$"},
+      {"key": "c", "text": "$a^2 + b^2$"},
+      {"key": "d", "text": "$a + b$"}
+    ],
+    "correct_key": "d",
+    "explanation": "$\\frac{a^2 - b^2}{a - b} = \\frac{(a+b)(a-b)}{a-b} = a + b$।",
+    "source_exam": "NTRCA",
+    "source_year": 2022,
+    "source_label": "১৮তম শিক্ষক নিবন্ধন (স্কুল পর্যায়)"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$\\sqrt{50} + \\sqrt{18}$ এর মান কত?",
+    "options": [
+      {"key": "a", "text": "$8\\sqrt{2}$"},
+      {"key": "b", "text": "$7\\sqrt{2}$"},
+      {"key": "c", "text": "$\\sqrt{68}$"},
+      {"key": "d", "text": "$8\\sqrt{3}$"}
+    ],
+    "correct_key": "a",
+    "explanation": "$\\sqrt{50} = \\sqrt{25\\times 2} = 5\\sqrt{2}$ এবং $\\sqrt{18} = \\sqrt{9\\times 2} = 3\\sqrt{2}$। সুতরাং যোগফল $= 5\\sqrt{2} + 3\\sqrt{2} = 8\\sqrt{2}$।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪২তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$\\log_2 32$ এর মান কত?",
+    "options": [
+      {"key": "a", "text": "৪"},
+      {"key": "b", "text": "৫"},
+      {"key": "c", "text": "৬"},
+      {"key": "d", "text": "১৬"}
+    ],
+    "correct_key": "b",
+    "explanation": "$\\log_2 32 = \\log_2 2^5 = 5$, কারণ $2^5 = 32$।",
+    "source_exam": "Bank",
+    "source_year": 2020,
+    "source_label": "সমন্বিত ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$x + y = 10$ এবং $x - y = 4$ হলে $xy$ এর মান কত?",
+    "options": [
+      {"key": "a", "text": "২৪"},
+      {"key": "b", "text": "২০"},
+      {"key": "c", "text": "২১"},
+      {"key": "d", "text": "২৮"}
+    ],
+    "correct_key": "c",
+    "explanation": "দুই সমীকরণ যোগ করে $2x = 14$, $x = 7$; বিয়োগ করে $2y = 6$, $y = 3$। সুতরাং $xy = 7\\times 3 = 21$।",
+    "source_exam": "Primary",
+    "source_year": 2022,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$3x - 7 = 2x + 5$ হলে $x$ এর মান কত?",
+    "options": [
+      {"key": "a", "text": "২"},
+      {"key": "b", "text": "-১২"},
+      {"key": "c", "text": "৬"},
+      {"key": "d", "text": "১২"}
+    ],
+    "correct_key": "d",
+    "explanation": "$3x - 2x = 5 + 7$, অর্থাৎ $x = 12$।",
+    "source_exam": "NTRCA",
+    "source_year": 2017,
+    "source_label": "১৩তম শিক্ষক নিবন্ধন (স্কুল পর্যায়)"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$x^2 - 7x + 12 = 0$ সমীকরণের মূলদ্বয়ের সমষ্টি কত?",
+    "options": [
+      {"key": "a", "text": "৭"},
+      {"key": "b", "text": "১২"},
+      {"key": "c", "text": "-৭"},
+      {"key": "d", "text": "৫"}
+    ],
+    "correct_key": "a",
+    "explanation": "$ax^2 + bx + c = 0$ সমীকরণে মূলদ্বয়ের সমষ্টি $= -\\frac{b}{a} = -\\frac{-7}{1} = 7$। (মূল দুটি $3$ ও $4$, সমষ্টি $7$।)",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$a - \\frac{1}{a} = 3$ হলে $a^2 + \\frac{1}{a^2}$ এর মান কত?",
+    "options": [
+      {"key": "a", "text": "৭"},
+      {"key": "b", "text": "১১"},
+      {"key": "c", "text": "৯"},
+      {"key": "d", "text": "১৩"}
+    ],
+    "correct_key": "b",
+    "explanation": "$a^2 + \\frac{1}{a^2} = \\left(a - \\frac{1}{a}\\right)^2 + 2 = 3^2 + 2 = 9 + 2 = 11$।",
+    "source_exam": "Bank",
+    "source_year": 2023,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$27^{\\frac{2}{3}}$ এর মান কত?",
+    "options": [
+      {"key": "a", "text": "৬"},
+      {"key": "b", "text": "১৮"},
+      {"key": "c", "text": "৯"},
+      {"key": "d", "text": "৩"}
+    ],
+    "correct_key": "c",
+    "explanation": "$27^{\\frac{2}{3}} = (3^3)^{\\frac{2}{3}} = 3^{3\\times \\frac{2}{3}} = 3^2 = 9$।",
+    "source_exam": "NTRCA",
+    "source_year": 2023,
+    "source_label": "১৯তম শিক্ষক নিবন্ধন (স্কুল পর্যায়)"
+  }
+]

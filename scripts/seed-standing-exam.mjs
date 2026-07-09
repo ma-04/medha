@@ -28,13 +28,32 @@ const { data: qs, error: qErr } = await svc
 if (qErr) throw qErr;
 if (!qs?.length) throw new Error("No published questions — run seed-questions.mjs first.");
 
-// Flatten and order by subject so the paper flows subject-by-subject.
-const flat = qs.map((q) => ({
-  id: q.id,
-  subject_id: q.subject_id.subject_id,
-  order: q.subject_id.subjects?.order_index ?? 99,
-}));
-flat.sort((a, b) => a.order - b.order);
+// Balanced full-length paper: cap the total and sample proportionally across
+// subjects (round-robin) so no single subject dominates. A 283-question dump
+// would be a 3.5-hour exam; 100 questions is a realistic practice length.
+const CAP = 100;
+const bySubject = new Map();
+for (const q of qs) {
+  const sid = q.subject_id.subject_id;
+  const order = q.subject_id.subjects?.order_index ?? 99;
+  if (!bySubject.has(sid)) bySubject.set(sid, { order, items: [] });
+  bySubject.get(sid).items.push({ id: q.id, subject_id: sid });
+}
+const groups = [...bySubject.values()].sort((a, b) => a.order - b.order);
+const flat = [];
+for (let round = 0; flat.length < Math.min(CAP, qs.length); round++) {
+  let added = false;
+  for (const g of groups) {
+    if (round < g.items.length && flat.length < CAP) {
+      flat.push(g.items[round]);
+      added = true;
+    }
+  }
+  if (!added) break;
+}
+// Order the chosen questions subject-by-subject for a clean paper flow.
+const subjOrder = new Map(groups.map((g, i) => [g.items[0]?.subject_id, i]));
+flat.sort((a, b) => subjOrder.get(a.subject_id) - subjOrder.get(b.subject_id));
 
 // Replace any prior copy of this exam (cascade clears exam_questions/attempts).
 await svc.from("exams").delete().eq("title_en", TITLE_EN);

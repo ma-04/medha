@@ -1,0 +1,290 @@
+[
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "আন্তর্জাতিক শ্রম সংস্থা (ILO) কোন সালে প্রতিষ্ঠিত হয়?",
+    "options": [
+      { "key": "a", "text": "১৯১৯" },
+      { "key": "b", "text": "১৯৪৫" },
+      { "key": "c", "text": "১৯৪৬" },
+      { "key": "d", "text": "১৯৪৮" }
+    ],
+    "correct_key": "a",
+    "explanation": "ILO ১৯১৯ সালে ভার্সাই চুক্তির অধীনে প্রতিষ্ঠিত হয়; এটি জাতিসংঘের প্রাচীনতম বিশেষায়িত সংস্থা, সদর দপ্তর জেনেভা।",
+    "source_exam": "BCS",
+    "source_year": 2017,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "ইউনিসেফ (UNICEF)-এর সদর দপ্তর কোথায় অবস্থিত?",
+    "options": [
+      { "key": "a", "text": "জেনেভা" },
+      { "key": "b", "text": "নিউইয়র্ক" },
+      { "key": "c", "text": "ভিয়েনা" },
+      { "key": "d", "text": "রোম" }
+    ],
+    "correct_key": "b",
+    "explanation": "ইউনিসেফ ১৯৪৬ সালে প্রতিষ্ঠিত হয় এবং এর সদর দপ্তর নিউইয়র্কে অবস্থিত।",
+    "source_exam": "Primary",
+    "source_year": 2019,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "আন্তর্জাতিক পরমাণু শক্তি সংস্থা (IAEA)-এর সদর দপ্তর কোথায়?",
+    "options": [
+      { "key": "a", "text": "রোম" },
+      { "key": "b", "text": "প্যারিস" },
+      { "key": "c", "text": "ভিয়েনা" },
+      { "key": "d", "text": "জেনেভা" }
+    ],
+    "correct_key": "c",
+    "explanation": "IAEA ১৯৫৭ সালে প্রতিষ্ঠিত হয় এবং এর সদর দপ্তর অস্ট্রিয়ার রাজধানী ভিয়েনায় অবস্থিত।",
+    "source_exam": "Bank",
+    "source_year": 2021,
+    "source_label": "সমন্বিত ব্যাংক সিনিয়র অফিসার"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "খাদ্য ও কৃষি সংস্থা (FAO)-এর সদর দপ্তর কোন শহরে অবস্থিত?",
+    "options": [
+      { "key": "a", "text": "জেনেভা" },
+      { "key": "b", "text": "ভিয়েনা" },
+      { "key": "c", "text": "নিউইয়র্ক" },
+      { "key": "d", "text": "রোম" }
+    ],
+    "correct_key": "d",
+    "explanation": "FAO ১৯৪৫ সালে প্রতিষ্ঠিত হয় এবং এর সদর দপ্তর ইতালির রাজধানী রোমে অবস্থিত।",
+    "source_exam": "NTRCA",
+    "source_year": 2018,
+    "source_label": "১৫তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "বিশ্ব বাণিজ্য সংস্থা (WTO) কোন সালে প্রতিষ্ঠিত হয়?",
+    "options": [
+      { "key": "a", "text": "১৯৯৫" },
+      { "key": "b", "text": "১৯৪৮" },
+      { "key": "c", "text": "১৯৯৪" },
+      { "key": "d", "text": "২০০১" }
+    ],
+    "correct_key": "a",
+    "explanation": "WTO ১৯৯৫ সালের ১ জানুয়ারি GATT-এর স্থলাভিষিক্ত হয়ে প্রতিষ্ঠিত হয়; সদর দপ্তর জেনেভা।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "আসিয়ান (ASEAN) কোন সালে প্রতিষ্ঠিত হয়?",
+    "options": [
+      { "key": "a", "text": "১৯৬৫" },
+      { "key": "b", "text": "১৯৬৭" },
+      { "key": "c", "text": "১৯৭৭" },
+      { "key": "d", "text": "১৯৮৫" }
+    ],
+    "correct_key": "b",
+    "explanation": "১৯৬৭ সালে ব্যাংকক ঘোষণার মাধ্যমে আসিয়ান প্রতিষ্ঠিত হয়।",
+    "source_exam": "Bank",
+    "source_year": 2016,
+    "source_label": "সোনালী ব্যাংক অফিসার (ক্যাশ)"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "আসিয়ান (ASEAN)-এর সচিবালয় কোথায় অবস্থিত?",
+    "options": [
+      { "key": "a", "text": "ব্যাংকক" },
+      { "key": "b", "text": "ম্যানিলা" },
+      { "key": "c", "text": "জাকার্তা" },
+      { "key": "d", "text": "সিঙ্গাপুর" }
+    ],
+    "correct_key": "c",
+    "explanation": "আসিয়ানের স্থায়ী সচিবালয় ইন্দোনেশিয়ার রাজধানী জাকার্তায় অবস্থিত।",
+    "source_exam": "NTRCA",
+    "source_year": 2022,
+    "source_label": "১৭তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "সার্ক (SAARC) কোন শহরে প্রতিষ্ঠিত হয়?",
+    "options": [
+      { "key": "a", "text": "কাঠমান্ডু" },
+      { "key": "b", "text": "ঢাকা" },
+      { "key": "c", "text": "নয়াদিল্লি" },
+      { "key": "d", "text": "ইসলামাবাদ" }
+    ],
+    "correct_key": "b",
+    "explanation": "১৯৮৫ সালে ঢাকায় প্রথম শীর্ষ সম্মেলনে সার্ক প্রতিষ্ঠিত হয়; সচিবালয় কাঠমান্ডুতে।",
+    "source_exam": "BCS",
+    "source_year": 2015,
+    "source_label": "৩৬তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "ইসলামিক সহযোগিতা সংস্থা (OIC)-এর সদর দপ্তর কোথায় অবস্থিত?",
+    "options": [
+      { "key": "a", "text": "রিয়াদ" },
+      { "key": "b", "text": "মক্কা" },
+      { "key": "c", "text": "কায়রো" },
+      { "key": "d", "text": "জেদ্দা" }
+    ],
+    "correct_key": "d",
+    "explanation": "OIC ১৯৬৯ সালে প্রতিষ্ঠিত হয় এবং এর সদর দপ্তর সৌদি আরবের জেদ্দায় অবস্থিত।",
+    "source_exam": "Primary",
+    "source_year": 2018,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "ন্যাটো (NATO) কোন সালে প্রতিষ্ঠিত হয়?",
+    "options": [
+      { "key": "a", "text": "১৯৪৫" },
+      { "key": "b", "text": "১৯৪৭" },
+      { "key": "c", "text": "১৯৪৯" },
+      { "key": "d", "text": "১৯৫৫" }
+    ],
+    "correct_key": "c",
+    "explanation": "ন্যাটো ১৯৪৯ সালে প্রতিষ্ঠিত হয়; সদর দপ্তর বেলজিয়ামের ব্রাসেলসে।",
+    "source_exam": "Bank",
+    "source_year": 2019,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "তেল রপ্তানিকারক দেশগুলোর সংগঠন (OPEC)-এর সদর দপ্তর কোথায়?",
+    "options": [
+      { "key": "a", "text": "রিয়াদ" },
+      { "key": "b", "text": "বাগদাদ" },
+      { "key": "c", "text": "জেনেভা" },
+      { "key": "d", "text": "ভিয়েনা" }
+    ],
+    "correct_key": "d",
+    "explanation": "OPEC ১৯৬০ সালে বাগদাদে প্রতিষ্ঠিত হলেও এর সদর দপ্তর বর্তমানে অস্ট্রিয়ার ভিয়েনায়।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "আন্তর্জাতিক মুদ্রা তহবিল (IMF) ও বিশ্বব্যাংক কোন সম্মেলনের সিদ্ধান্তে প্রতিষ্ঠিত হয়?",
+    "options": [
+      { "key": "a", "text": "ব্রেটন উডস সম্মেলন" },
+      { "key": "b", "text": "ইয়াল্টা সম্মেলন" },
+      { "key": "c", "text": "পটসডাম সম্মেলন" },
+      { "key": "d", "text": "সান ফ্রান্সিসকো সম্মেলন" }
+    ],
+    "correct_key": "a",
+    "explanation": "১৯৪৪ সালে ব্রেটন উডস সম্মেলনে IMF ও বিশ্বব্যাংক প্রতিষ্ঠার সিদ্ধান্ত হয়; উভয়ের সদর দপ্তর ওয়াশিংটন ডিসি।",
+    "source_exam": "NTRCA",
+    "source_year": 2016,
+    "source_label": "১২তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "আন্তর্জাতিক রেড ক্রস সোসাইটির প্রতিষ্ঠাতা কে?",
+    "options": [
+      { "key": "a", "text": "ফ্লোরেন্স নাইটিঙ্গেল" },
+      { "key": "b", "text": "উড্রো উইলসন" },
+      { "key": "c", "text": "ফ্র্যাঙ্কলিন রুজভেল্ট" },
+      { "key": "d", "text": "হেনরি ডুনান্ট" }
+    ],
+    "correct_key": "d",
+    "explanation": "সুইস মানবতাবাদী হেনরি ডুনান্ট ১৮৬৩ সালে রেড ক্রস প্রতিষ্ঠা করেন এবং প্রথম নোবেল শান্তি পুরস্কার লাভ করেন।",
+    "source_exam": "BCS",
+    "source_year": 2014,
+    "source_label": "৩৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "আন্তর্জাতিক পুলিশ সংস্থা ইন্টারপোল (INTERPOL)-এর সদর দপ্তর কোথায়?",
+    "options": [
+      { "key": "a", "text": "প্যারিস" },
+      { "key": "b", "text": "লিও (ফ্রান্স)" },
+      { "key": "c", "text": "হেগ" },
+      { "key": "d", "text": "ব্রাসেলস" }
+    ],
+    "correct_key": "b",
+    "explanation": "ইন্টারপোলের সদর দপ্তর ফ্রান্সের লিও (Lyon) শহরে অবস্থিত।",
+    "source_exam": "Bank",
+    "source_year": 2023,
+    "source_label": "সমন্বিত ব্যাংক অফিসার (জেনারেল)"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "আন্তর্জাতিক বিচার আদালত (ICJ)-এর সদর দপ্তর কোথায় অবস্থিত?",
+    "options": [
+      { "key": "a", "text": "হেগ" },
+      { "key": "b", "text": "জেনেভা" },
+      { "key": "c", "text": "নিউইয়র্ক" },
+      { "key": "d", "text": "ভিয়েনা" }
+    ],
+    "correct_key": "a",
+    "explanation": "জাতিসংঘের প্রধান বিচারিক অঙ্গ আন্তর্জাতিক বিচার আদালতের সদর দপ্তর নেদারল্যান্ডসের হেগ শহরে (শান্তি প্রাসাদ) অবস্থিত।",
+    "source_exam": "Primary",
+    "source_year": 2020,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "কোন চুক্তির মাধ্যমে ইউরোপীয় ইউনিয়ন (EU) আনুষ্ঠানিকভাবে গঠিত হয়?",
+    "options": [
+      { "key": "a", "text": "রোম চুক্তি" },
+      { "key": "b", "text": "ম্যাসট্রিচট চুক্তি" },
+      { "key": "c", "text": "লিসবন চুক্তি" },
+      { "key": "d", "text": "শেনজেন চুক্তি" }
+    ],
+    "correct_key": "b",
+    "explanation": "১৯৯২ সালে স্বাক্ষরিত ম্যাসট্রিচট চুক্তির মাধ্যমে ১৯৯৩ সালে ইউরোপীয় ইউনিয়ন গঠিত হয়।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪১তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "কমনওয়েলথ অব নেশনস-এর সদর দপ্তর কোথায় অবস্থিত?",
+    "options": [
+      { "key": "a", "text": "নিউইয়র্ক" },
+      { "key": "b", "text": "ব্রাসেলস" },
+      { "key": "c", "text": "লন্ডন" },
+      { "key": "d", "text": "জেনেভা" }
+    ],
+    "correct_key": "c",
+    "explanation": "কমনওয়েলথের সদর দপ্তর লন্ডনের মার্লবরো হাউসে অবস্থিত।",
+    "source_exam": "NTRCA",
+    "source_year": 2023,
+    "source_label": "১৮তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "ভারত ও পাকিস্তানের মধ্যকার সীমানা নির্ধারণকারী রেখার নাম কী?",
+    "options": [
+      { "key": "a", "text": "ডুরান্ড লাইন" },
+      { "key": "b", "text": "ম্যাকমোহন লাইন" },
+      { "key": "c", "text": "র‍্যাডক্লিফ লাইন" },
+      { "key": "d", "text": "ম্যাজিনো লাইন" }
+    ],
+    "correct_key": "c",
+    "explanation": "১৯৪৭ সালে স্যার সিরিল র‍্যাডক্লিফ কর্তৃক নির্ধারিত র‍্যাডক্লিফ লাইন ভারত ও পাকিস্তানের সীমারেখা।",
+    "source_exam": "Bank",
+    "source_year": 2017,
+    "source_label": "রূপালী ব্যাংক সিনিয়র অফিসার"
+  }
+]

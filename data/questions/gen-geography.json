@@ -1,0 +1,258 @@
+[
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "কর্কটক্রান্তি রেখা (Tropic of Cancer) বাংলাদেশের কোন অংশ দিয়ে অতিক্রম করেছে?",
+    "options": [
+      {"key": "a", "text": "মধ্যভাগ দিয়ে"},
+      {"key": "b", "text": "দক্ষিণ প্রান্ত দিয়ে"},
+      {"key": "c", "text": "উত্তর-পূর্ব কোণ দিয়ে"},
+      {"key": "d", "text": "সুন্দরবনের ওপর দিয়ে"}
+    ],
+    "correct_key": "a",
+    "explanation": "কর্কটক্রান্তি রেখা প্রায় ২৩.৫ ডিগ্রি উত্তর অক্ষাংশে অবস্থিত এবং এটি বাংলাদেশের প্রায় মধ্যভাগ দিয়ে অতিক্রম করেছে।",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের আদর্শ সময় (Bangladesh Standard Time) গ্রিনিচ মান সময় (GMT) থেকে কত ঘণ্টা এগিয়ে?",
+    "options": [
+      {"key": "a", "text": "৫ ঘণ্টা"},
+      {"key": "b", "text": "৬ ঘণ্টা"},
+      {"key": "c", "text": "৭ ঘণ্টা"},
+      {"key": "d", "text": "৫ ঘণ্টা ৩০ মিনিট"}
+    ],
+    "correct_key": "b",
+    "explanation": "বাংলাদেশের সময় অঞ্চল GMT+6, অর্থাৎ গ্রিনিচ মান সময় থেকে ৬ ঘণ্টা এগিয়ে।",
+    "source_exam": "Bank",
+    "source_year": 2018,
+    "source_label": "সোনালী ব্যাংক অফিসার নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "ব্রহ্মপুত্র নদ বাংলাদেশে প্রবেশের পর প্রধান শাখা কোন নামে পরিচিত?",
+    "options": [
+      {"key": "a", "text": "পদ্মা"},
+      {"key": "b", "text": "মেঘনা"},
+      {"key": "c", "text": "যমুনা"},
+      {"key": "d", "text": "কর্ণফুলী"}
+    ],
+    "correct_key": "c",
+    "explanation": "ব্রহ্মপুত্রের প্রধান স্রোতধারা বাংলাদেশে প্রবেশের পর যমুনা নামে দক্ষিণে প্রবাহিত হয়ে গোয়ালন্দে পদ্মার সাথে মিলিত হয়।",
+    "source_exam": "NTRCA",
+    "source_year": 2017,
+    "source_label": "১৪তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "কোন নদী বাংলাদেশ ও মিয়ানমারের মধ্যে সীমারেখা নির্ধারণ করেছে?",
+    "options": [
+      {"key": "a", "text": "সাঙ্গু"},
+      {"key": "b", "text": "মাতামুহুরী"},
+      {"key": "c", "text": "কর্ণফুলী"},
+      {"key": "d", "text": "নাফ"}
+    ],
+    "correct_key": "d",
+    "explanation": "নাফ নদী টেকনাফের পাশ দিয়ে প্রবাহিত হয়ে বাংলাদেশ ও মিয়ানমারের মধ্যে সীমারেখা তৈরি করেছে।",
+    "source_exam": "BCS",
+    "source_year": 2016,
+    "source_label": "৩৭তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের সাথে ভারতের কয়টি রাজ্যের সীমান্ত রয়েছে?",
+    "options": [
+      {"key": "a", "text": "৫টি"},
+      {"key": "b", "text": "৪টি"},
+      {"key": "c", "text": "৬টি"},
+      {"key": "d", "text": "৭টি"}
+    ],
+    "correct_key": "a",
+    "explanation": "বাংলাদেশের সাথে ভারতের ৫টি রাজ্যের—পশ্চিমবঙ্গ, আসাম, মেঘালয়, ত্রিপুরা ও মিজোরাম—সীমান্ত রয়েছে।",
+    "source_exam": "Primary",
+    "source_year": 2019,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বর্তমানে বাংলাদেশে প্রশাসনিক বিভাগের সংখ্যা কতটি?",
+    "options": [
+      {"key": "a", "text": "৭টি"},
+      {"key": "b", "text": "৮টি"},
+      {"key": "c", "text": "৯টি"},
+      {"key": "d", "text": "৬টি"}
+    ],
+    "correct_key": "b",
+    "explanation": "২০১৫ সালে ময়মনসিংহ বিভাগ গঠনের পর বাংলাদেশে মোট প্রশাসনিক বিভাগের সংখ্যা দাঁড়ায় ৮টি।",
+    "source_exam": "NTRCA",
+    "source_year": 2021,
+    "source_label": "১৭তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "পার্বত্য চট্টগ্রাম কয়টি জেলা নিয়ে গঠিত?",
+    "options": [
+      {"key": "a", "text": "১টি"},
+      {"key": "b", "text": "২টি"},
+      {"key": "c", "text": "৩টি"},
+      {"key": "d", "text": "৪টি"}
+    ],
+    "correct_key": "c",
+    "explanation": "পার্বত্য চট্টগ্রাম রাঙামাটি, খাগড়াছড়ি ও বান্দরবান—এই ৩টি জেলা নিয়ে গঠিত।",
+    "source_exam": "BCS",
+    "source_year": 2015,
+    "source_label": "৩৬তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের বৃহত্তম হ্রদ কোনটি?",
+    "options": [
+      {"key": "a", "text": "বগা লেক"},
+      {"key": "b", "text": "রাধানগর হ্রদ"},
+      {"key": "c", "text": "ফয়েজ লেক"},
+      {"key": "d", "text": "কাপ্তাই হ্রদ"}
+    ],
+    "correct_key": "d",
+    "explanation": "রাঙামাটিতে কর্ণফুলী নদীর ওপর বাঁধ দিয়ে সৃষ্ট কাপ্তাই হ্রদ বাংলাদেশের বৃহত্তম কৃত্রিম হ্রদ।",
+    "source_exam": "Bank",
+    "source_year": 2020,
+    "source_label": "বাংলাদেশ ব্যাংক অফিসার নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের তৃতীয় সমুদ্রবন্দর পায়রা কোন জেলায় অবস্থিত?",
+    "options": [
+      {"key": "a", "text": "পটুয়াখালী"},
+      {"key": "b", "text": "বরগুনা"},
+      {"key": "c", "text": "ভোলা"},
+      {"key": "d", "text": "বাগেরহাট"}
+    ],
+    "correct_key": "a",
+    "explanation": "পায়রা সমুদ্রবন্দর পটুয়াখালী জেলার কলাপাড়ায় অবস্থিত এবং এটি বাংলাদেশের তৃতীয় সমুদ্রবন্দর।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশে প্রথম আবিষ্কৃত গ্যাসক্ষেত্র কোনটি?",
+    "options": [
+      {"key": "a", "text": "তিতাস"},
+      {"key": "b", "text": "সিলেট (হরিপুর)"},
+      {"key": "c", "text": "বিবিয়ানা"},
+      {"key": "d", "text": "কৈলাসটিলা"}
+    ],
+    "correct_key": "b",
+    "explanation": "১৯৫৫ সালে সিলেটের হরিপুরে বাংলাদেশের প্রথম গ্যাসক্ষেত্র আবিষ্কৃত হয়।",
+    "source_exam": "NTRCA",
+    "source_year": 2016,
+    "source_label": "১২তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের বৃহত্তম হাওর কোনটি?",
+    "options": [
+      {"key": "a", "text": "টাঙ্গুয়ার হাওর"},
+      {"key": "b", "text": "কাওয়াদিঘি হাওর"},
+      {"key": "c", "text": "হাকালুকি হাওর"},
+      {"key": "d", "text": "হাইল হাওর"}
+    ],
+    "correct_key": "c",
+    "explanation": "মৌলভীবাজার ও সিলেট জেলাজুড়ে বিস্তৃত হাকালুকি হাওর বাংলাদেশের বৃহত্তম হাওর।",
+    "source_exam": "Primary",
+    "source_year": 2018,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের বৃহত্তম বিল কোনটি?",
+    "options": [
+      {"key": "a", "text": "আড়িয়াল বিল"},
+      {"key": "b", "text": "তামাবিল"},
+      {"key": "c", "text": "বাইক্কা বিল"},
+      {"key": "d", "text": "চলনবিল"}
+    ],
+    "correct_key": "d",
+    "explanation": "নাটোর, পাবনা ও সিরাজগঞ্জ জেলাজুড়ে বিস্তৃত চলনবিল বাংলাদেশের বৃহত্তম বিল।",
+    "source_exam": "Bank",
+    "source_year": 2017,
+    "source_label": "রূপালী ব্যাংক অফিসার নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "মধুপুর বনাঞ্চল কোন ধরনের বনের জন্য বিখ্যাত?",
+    "options": [
+      {"key": "a", "text": "শাল (গজারি) বন"},
+      {"key": "b", "text": "ম্যানগ্রোভ বন"},
+      {"key": "c", "text": "চিরসবুজ বন"},
+      {"key": "d", "text": "পাতাঝরা মিশ্র বন"}
+    ],
+    "correct_key": "a",
+    "explanation": "টাঙ্গাইল ও ময়মনসিংহ অঞ্চলের মধুপুর বনাঞ্চল মূলত শাল বা গজারি গাছের পর্ণমোচী বনের জন্য বিখ্যাত।",
+    "source_exam": "BCS",
+    "source_year": 2014,
+    "source_label": "৩৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "কোন ঘূর্ণিঝড়টি ২০০৭ সালে বাংলাদেশের দক্ষিণ-পশ্চিম উপকূলে আঘাত হানে?",
+    "options": [
+      {"key": "a", "text": "আইলা"},
+      {"key": "b", "text": "সিডর"},
+      {"key": "c", "text": "নার্গিস"},
+      {"key": "d", "text": "রোয়ানু"}
+    ],
+    "correct_key": "b",
+    "explanation": "ঘূর্ণিঝড় সিডর ২০০৭ সালের ১৫ নভেম্বর বাংলাদেশের দক্ষিণ-পশ্চিম উপকূলে আঘাত হানে এবং ব্যাপক ক্ষয়ক্ষতি করে।",
+    "source_exam": "Primary",
+    "source_year": 2020,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের সবচেয়ে বড় ক্ষুদ্র নৃগোষ্ঠী কোনটি?",
+    "options": [
+      {"key": "a", "text": "মারমা"},
+      {"key": "b", "text": "সাঁওতাল"},
+      {"key": "c", "text": "চাকমা"},
+      {"key": "d", "text": "গারো"}
+    ],
+    "correct_key": "c",
+    "explanation": "মূলত রাঙামাটিসহ পার্বত্য চট্টগ্রামে বসবাসকারী চাকমা সম্প্রদায় বাংলাদেশের বৃহত্তম ক্ষুদ্র নৃগোষ্ঠী।",
+    "source_exam": "NTRCA",
+    "source_year": 2019,
+    "source_label": "১৬তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের একমাত্র প্রবাল দ্বীপ কোনটি?",
+    "options": [
+      {"key": "a", "text": "সন্দ্বীপ"},
+      {"key": "b", "text": "নিঝুম দ্বীপ"},
+      {"key": "c", "text": "হাতিয়া"},
+      {"key": "d", "text": "সেন্ট মার্টিন"}
+    ],
+    "correct_key": "d",
+    "explanation": "বঙ্গোপসাগরে অবস্থিত সেন্ট মার্টিন দ্বীপ বাংলাদেশের একমাত্র প্রবাল দ্বীপ, যা স্থানীয়ভাবে নারিকেল জিঞ্জিরা নামে পরিচিত।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  }
+]

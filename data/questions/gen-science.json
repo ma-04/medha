@@ -1,0 +1,482 @@
+[
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "বলের এসআই একক কোনটি?",
+    "options": [
+      {"key": "a", "text": "নিউটন"},
+      {"key": "b", "text": "জুল"},
+      {"key": "c", "text": "ওয়াট"},
+      {"key": "d", "text": "প্যাসকেল"}
+    ],
+    "correct_key": "a",
+    "explanation": "বলের এসআই একক নিউটন ($N$); $1\\ N = 1\\ kg\\cdot m/s^2$।",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "ক্ষমতা (Power) পরিমাপের একক কোনটি?",
+    "options": [
+      {"key": "a", "text": "নিউটন"},
+      {"key": "b", "text": "ওয়াট"},
+      {"key": "c", "text": "জুল"},
+      {"key": "d", "text": "অ্যাম্পিয়ার"}
+    ],
+    "correct_key": "b",
+    "explanation": "ক্ষমতার একক ওয়াট; $1\\ W = 1\\ J/s$।",
+    "source_exam": "Bank",
+    "source_year": 2018,
+    "source_label": "সোনালী ব্যাংক অফিসার নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "চাপ (Pressure) পরিমাপের এসআই একক কোনটি?",
+    "options": [
+      {"key": "a", "text": "নিউটন"},
+      {"key": "b", "text": "জুল"},
+      {"key": "c", "text": "প্যাসকেল"},
+      {"key": "d", "text": "ওয়াট"}
+    ],
+    "correct_key": "c",
+    "explanation": "চাপের একক প্যাসকেল; $1\\ Pa = 1\\ N/m^2$।",
+    "source_exam": "Primary",
+    "source_year": 2022,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "তড়িৎ রোধ (Resistance) পরিমাপের একক কোনটি?",
+    "options": [
+      {"key": "a", "text": "ভোল্ট"},
+      {"key": "b", "text": "অ্যাম্পিয়ার"},
+      {"key": "c", "text": "ওয়াট"},
+      {"key": "d", "text": "ওহম"}
+    ],
+    "correct_key": "d",
+    "explanation": "তড়িৎ রোধের একক ওহম ($\\Omega$); ওহমের সূত্র অনুসারে $V = IR$।",
+    "source_exam": "NTRCA",
+    "source_year": 2021,
+    "source_label": "১৭তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "নিচের কোনটি শূন্য মাধ্যমে (ভ্যাকুয়ামে) চলতে পারে না?",
+    "options": [
+      {"key": "a", "text": "শব্দ"},
+      {"key": "b", "text": "আলো"},
+      {"key": "c", "text": "এক্স-রশ্মি"},
+      {"key": "d", "text": "বেতার তরঙ্গ"}
+    ],
+    "correct_key": "a",
+    "explanation": "শব্দ একটি যান্ত্রিক তরঙ্গ, সঞ্চালনের জন্য জড় মাধ্যম প্রয়োজন; তাই শূন্য মাধ্যমে চলতে পারে না।",
+    "source_exam": "BCS",
+    "source_year": 2017,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "আকাশে রংধনু সৃষ্টি হয় আলোর কোন ধর্মের কারণে?",
+    "options": [
+      {"key": "a", "text": "প্রতিফলন"},
+      {"key": "b", "text": "বিচ্ছুরণ"},
+      {"key": "c", "text": "অপবর্তন"},
+      {"key": "d", "text": "সমবর্তন"}
+    ],
+    "correct_key": "b",
+    "explanation": "বৃষ্টির ফোঁটায় সূর্যালোকের বিচ্ছুরণ (dispersion) ও অভ্যন্তরীণ প্রতিফলনের ফলে রংধনু সৃষ্টি হয়।",
+    "source_exam": "Bank",
+    "source_year": 2020,
+    "source_label": "বাংলাদেশ ব্যাংক সহকারী পরিচালক নিয়োগ"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "উত্তল লেন্স (Convex lens) আলোক রশ্মির উপর কী প্রভাব ফেলে?",
+    "options": [
+      {"key": "a", "text": "রশ্মিকে অপসারী করে"},
+      {"key": "b", "text": "কোনো প্রভাব ফেলে না"},
+      {"key": "c", "text": "রশ্মিকে অভিসারী করে"},
+      {"key": "d", "text": "রশ্মি শোষণ করে"}
+    ],
+    "correct_key": "c",
+    "explanation": "উত্তল লেন্স অভিসারী লেন্স; এটি সমান্তরাল রশ্মিকে একটি বিন্দুতে কেন্দ্রীভূত করে।",
+    "source_exam": "NTRCA",
+    "source_year": 2019,
+    "source_label": "১৫তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "স্বাভাবিক বায়ুচাপে বিশুদ্ধ পানির স্ফুটনাঙ্ক কত?",
+    "options": [
+      {"key": "a", "text": "$0^\\circ C$"},
+      {"key": "b", "text": "$50^\\circ C$"},
+      {"key": "c", "text": "$90^\\circ C$"},
+      {"key": "d", "text": "$100^\\circ C$"}
+    ],
+    "correct_key": "d",
+    "explanation": "১ বায়ুমণ্ডল চাপে বিশুদ্ধ পানি $100^\\circ C$ তাপমাত্রায় ফুটতে শুরু করে।",
+    "source_exam": "Primary",
+    "source_year": 2018,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "পানির ঘনত্ব সর্বোচ্চ হয় কোন তাপমাত্রায়?",
+    "options": [
+      {"key": "a", "text": "$4^\\circ C$"},
+      {"key": "b", "text": "$0^\\circ C$"},
+      {"key": "c", "text": "$25^\\circ C$"},
+      {"key": "d", "text": "$100^\\circ C$"}
+    ],
+    "correct_key": "a",
+    "explanation": "পানির ব্যতিক্রমী আচরণের কারণে $4^\\circ C$ তাপমাত্রায় এর ঘনত্ব সর্বোচ্চ ও আয়তন সর্বনিম্ন হয়।",
+    "source_exam": "BCS",
+    "source_year": 2015,
+    "source_label": "৩৬তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "ত্বরণের (Acceleration) এসআই একক কোনটি?",
+    "options": [
+      {"key": "a", "text": "$m/s$"},
+      {"key": "b", "text": "$m/s^2$"},
+      {"key": "c", "text": "$m^2/s$"},
+      {"key": "d", "text": "$kg\\cdot m/s$"}
+    ],
+    "correct_key": "b",
+    "explanation": "ত্বরণ হলো বেগের পরিবর্তনের হার, তাই এর একক $m/s^2$।",
+    "source_exam": "Bank",
+    "source_year": 2016,
+    "source_label": "রূপালী ব্যাংক সিনিয়র অফিসার নিয়োগ"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "পর্যায় সারণিতে সবচেয়ে হালকা মৌল কোনটি?",
+    "options": [
+      {"key": "a", "text": "হিলিয়াম"},
+      {"key": "b", "text": "অক্সিজেন"},
+      {"key": "c", "text": "হাইড্রোজেন"},
+      {"key": "d", "text": "নাইট্রোজেন"}
+    ],
+    "correct_key": "c",
+    "explanation": "হাইড্রোজেনের পারমাণবিক সংখ্যা ১ এবং এটি সবচেয়ে হালকা মৌল।",
+    "source_exam": "NTRCA",
+    "source_year": 2023,
+    "source_label": "১৮তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "খাবার লবণের রাসায়নিক নাম কী?",
+    "options": [
+      {"key": "a", "text": "সোডিয়াম বাইকার্বনেট"},
+      {"key": "b", "text": "ক্যালসিয়াম কার্বনেট"},
+      {"key": "c", "text": "পটাশিয়াম ক্লোরাইড"},
+      {"key": "d", "text": "সোডিয়াম ক্লোরাইড"}
+    ],
+    "correct_key": "d",
+    "explanation": "খাবার লবণ হলো সোডিয়াম ক্লোরাইড, যার সংকেত $NaCl$।",
+    "source_exam": "Primary",
+    "source_year": 2020,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "লোহায় মরিচা পড়ার প্রধান উপাদান কোনটি?",
+    "options": [
+      {"key": "a", "text": "আয়রন অক্সাইড"},
+      {"key": "b", "text": "আয়রন সালফেট"},
+      {"key": "c", "text": "আয়রন ক্লোরাইড"},
+      {"key": "d", "text": "আয়রন কার্বাইড"}
+    ],
+    "correct_key": "a",
+    "explanation": "আর্দ্র বাতাসে অক্সিজেন ও পানির উপস্থিতিতে লোহা জারিত হয়ে হাইড্রেটেড আয়রন অক্সাইড বা মরিচা তৈরি করে।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪১তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "বেকিং সোডার রাসায়নিক নাম কী?",
+    "options": [
+      {"key": "a", "text": "সোডিয়াম ক্লোরাইড"},
+      {"key": "b", "text": "সোডিয়াম বাইকার্বনেট"},
+      {"key": "c", "text": "ক্যালসিয়াম অক্সাইড"},
+      {"key": "d", "text": "সোডিয়াম হাইড্রোক্সাইড"}
+    ],
+    "correct_key": "b",
+    "explanation": "বেকিং সোডা হলো সোডিয়াম বাইকার্বনেট, যার সংকেত $NaHCO_3$।",
+    "source_exam": "Bank",
+    "source_year": 2019,
+    "source_label": "অগ্রণী ব্যাংক সিনিয়র অফিসার নিয়োগ"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "তড়িৎ প্রবাহ (Electric current) পরিমাপের একক কোনটি?",
+    "options": [
+      {"key": "a", "text": "ভোল্ট"},
+      {"key": "b", "text": "ওহম"},
+      {"key": "c", "text": "অ্যাম্পিয়ার"},
+      {"key": "d", "text": "কুলম্ব"}
+    ],
+    "correct_key": "c",
+    "explanation": "তড়িৎ প্রবাহের একক অ্যাম্পিয়ার; এটি প্রতি সেকেন্ডে প্রবাহিত আধানের পরিমাণ নির্দেশ করে।",
+    "source_exam": "NTRCA",
+    "source_year": 2022,
+    "source_label": "১৭তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "কোষের কোন অঙ্গাণুকে 'শক্তিঘর' বলা হয়?",
+    "options": [
+      {"key": "a", "text": "রাইবোজোম"},
+      {"key": "b", "text": "নিউক্লিয়াস"},
+      {"key": "c", "text": "গলজি বডি"},
+      {"key": "d", "text": "মাইটোকন্ড্রিয়া"}
+    ],
+    "correct_key": "d",
+    "explanation": "মাইটোকন্ড্রিয়ায় শ্বসন প্রক্রিয়ায় ATP উৎপন্ন হয়, তাই একে কোষের শক্তিঘর বলা হয়।",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "৩৯তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "রক্তে অক্সিজেন পরিবহনকারী উপাদান কোনটি?",
+    "options": [
+      {"key": "a", "text": "হিমোগ্লোবিন"},
+      {"key": "b", "text": "শ্বেত রক্তকণিকা"},
+      {"key": "c", "text": "অণুচক্রিকা"},
+      {"key": "d", "text": "প্লাজমা"}
+    ],
+    "correct_key": "a",
+    "explanation": "লোহিত রক্তকণিকায় থাকা হিমোগ্লোবিন অক্সিজেনের সাথে যুক্ত হয়ে তা দেহে পরিবহন করে।",
+    "source_exam": "Bank",
+    "source_year": 2017,
+    "source_label": "জনতা ব্যাংক এক্সিকিউটিভ অফিসার নিয়োগ"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "কোন ভিটামিনের অভাবে রাতকানা রোগ হয়?",
+    "options": [
+      {"key": "a", "text": "ভিটামিন ডি"},
+      {"key": "b", "text": "ভিটামিন এ"},
+      {"key": "c", "text": "ভিটামিন কে"},
+      {"key": "d", "text": "ভিটামিন বি"}
+    ],
+    "correct_key": "b",
+    "explanation": "ভিটামিন এ চোখের রেটিনার রড কোষের রোডপসিন তৈরিতে প্রয়োজন; এর অভাবে রাতকানা হয়।",
+    "source_exam": "Primary",
+    "source_year": 2019,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "শিশুদের রিকেটস রোগ কোন ভিটামিনের অভাবে হয়?",
+    "options": [
+      {"key": "a", "text": "ভিটামিন এ"},
+      {"key": "b", "text": "ভিটামিন সি"},
+      {"key": "c", "text": "ভিটামিন ডি"},
+      {"key": "d", "text": "ভিটামিন বি১২"}
+    ],
+    "correct_key": "c",
+    "explanation": "ভিটামিন ডি ক্যালসিয়াম শোষণে সাহায্য করে; এর অভাবে হাড় নরম হয়ে রিকেটস রোগ হয়।",
+    "source_exam": "NTRCA",
+    "source_year": 2020,
+    "source_label": "১৬তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "কোন খনিজ উপাদানের অভাবে গলগণ্ড (Goitre) রোগ হয়?",
+    "options": [
+      {"key": "a", "text": "ক্যালসিয়াম"},
+      {"key": "b", "text": "লৌহ"},
+      {"key": "c", "text": "সোডিয়াম"},
+      {"key": "d", "text": "আয়োডিন"}
+    ],
+    "correct_key": "d",
+    "explanation": "আয়োডিন থাইরয়েড হরমোন তৈরিতে প্রয়োজন; এর অভাবে থাইরয়েড গ্রন্থি ফুলে গিয়ে গলগণ্ড হয়।",
+    "source_exam": "BCS",
+    "source_year": 2016,
+    "source_label": "৩৭তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "ম্যালেরিয়া রোগের জীবাণু বহনকারী মশা কোনটি?",
+    "options": [
+      {"key": "a", "text": "স্ত্রী অ্যানোফিলিস মশা"},
+      {"key": "b", "text": "এডিস মশা"},
+      {"key": "c", "text": "কিউলেক্স মশা"},
+      {"key": "d", "text": "পুরুষ অ্যানোফিলিস মশা"}
+    ],
+    "correct_key": "a",
+    "explanation": "ম্যালেরিয়ার জীবাণু প্লাজমোডিয়াম স্ত্রী অ্যানোফিলিস মশার কামড়ে মানুষের দেহে ছড়ায়।",
+    "source_exam": "Bank",
+    "source_year": 2015,
+    "source_label": "বাংলাদেশ কৃষি ব্যাংক অফিসার নিয়োগ"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "যক্ষ্মা (Tuberculosis) রোগের জন্য দায়ী জীবাণু কোন শ্রেণির?",
+    "options": [
+      {"key": "a", "text": "ভাইরাস"},
+      {"key": "b", "text": "ব্যাকটেরিয়া"},
+      {"key": "c", "text": "ছত্রাক"},
+      {"key": "d", "text": "প্রোটোজোয়া"}
+    ],
+    "correct_key": "b",
+    "explanation": "যক্ষ্মা Mycobacterium tuberculosis নামক ব্যাকটেরিয়া দ্বারা সৃষ্ট রোগ।",
+    "source_exam": "NTRCA",
+    "source_year": 2018,
+    "source_label": "১৪তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "একজন পূর্ণবয়স্ক মানুষের দেহে হাড়ের সংখ্যা কত?",
+    "options": [
+      {"key": "a", "text": "২৩০টি"},
+      {"key": "b", "text": "৩০৬টি"},
+      {"key": "c", "text": "২০৬টি"},
+      {"key": "d", "text": "১৮৬টি"}
+    ],
+    "correct_key": "c",
+    "explanation": "একজন পূর্ণবয়স্ক মানুষের কঙ্কালতন্ত্রে মোট ২০৬টি হাড় থাকে।",
+    "source_exam": "Primary",
+    "source_year": 2021,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "রক্তে শর্করার মাত্রা নিয়ন্ত্রণকারী ইনসুলিন হরমোন কোন অঙ্গ থেকে নিঃসৃত হয়?",
+    "options": [
+      {"key": "a", "text": "যকৃত"},
+      {"key": "b", "text": "বৃক্ক"},
+      {"key": "c", "text": "থাইরয়েড গ্রন্থি"},
+      {"key": "d", "text": "অগ্ন্যাশয়"}
+    ],
+    "correct_key": "d",
+    "explanation": "অগ্ন্যাশয়ের বিটা কোষ থেকে নিঃসৃত ইনসুলিন রক্তে গ্লুকোজের মাত্রা কমায়।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "জীবের বংশগতির বৈশিষ্ট্য বহনকারী উপাদান কোনটি?",
+    "options": [
+      {"key": "a", "text": "DNA"},
+      {"key": "b", "text": "ATP"},
+      {"key": "c", "text": "হিমোগ্লোবিন"},
+      {"key": "d", "text": "গ্লুকোজ"}
+    ],
+    "correct_key": "a",
+    "explanation": "DNA-তে জিন আকারে বংশগতির তথ্য সংরক্ষিত থাকে ও এক প্রজন্ম থেকে অন্য প্রজন্মে সঞ্চারিত হয়।",
+    "source_exam": "Bank",
+    "source_year": 2021,
+    "source_label": "সোনালী ব্যাংক সিনিয়র অফিসার নিয়োগ"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "মানবদেহের সবচেয়ে কঠিন অংশ কোনটি?",
+    "options": [
+      {"key": "a", "text": "নখ"},
+      {"key": "b", "text": "দাঁতের এনামেল"},
+      {"key": "c", "text": "ঊরুর হাড়"},
+      {"key": "d", "text": "মাথার খুলি"}
+    ],
+    "correct_key": "b",
+    "explanation": "দাঁতের বাইরের আবরণ এনামেল প্রধানত ক্যালসিয়াম ফসফেট দিয়ে গঠিত এবং এটি দেহের সবচেয়ে কঠিন অংশ।",
+    "source_exam": "NTRCA",
+    "source_year": 2023,
+    "source_label": "১৮তম শিক্ষক নিবন্ধন পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "কোন ভিটামিনের অভাবে স্কার্ভি রোগ হয়?",
+    "options": [
+      {"key": "a", "text": "ভিটামিন এ"},
+      {"key": "b", "text": "ভিটামিন ডি"},
+      {"key": "c", "text": "ভিটামিন সি"},
+      {"key": "d", "text": "ভিটামিন কে"}
+    ],
+    "correct_key": "c",
+    "explanation": "ভিটামিন সি-এর অভাবে মাড়ি ফুলে রক্তপাত হয় ও স্কার্ভি রোগ দেখা দেয়।",
+    "source_exam": "Primary",
+    "source_year": 2017,
+    "source_label": "প্রাথমিক সহকারী শিক্ষক নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "সালোকসংশ্লেষণ প্রক্রিয়ায় উদ্ভিদ কোন গ্যাস নির্গত করে?",
+    "options": [
+      {"key": "a", "text": "নাইট্রোজেন"},
+      {"key": "b", "text": "হাইড্রোজেন"},
+      {"key": "c", "text": "মিথেন"},
+      {"key": "d", "text": "অক্সিজেন"}
+    ],
+    "correct_key": "d",
+    "explanation": "সালোকসংশ্লেষণে পানির বিয়োজনের ফলে উপজাত হিসেবে অক্সিজেন নির্গত হয়।",
+    "source_exam": "BCS",
+    "source_year": 2014,
+    "source_label": "৩৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "রক্ত জমাট বাঁধতে কোন ভিটামিন প্রয়োজন?",
+    "options": [
+      {"key": "a", "text": "ভিটামিন কে"},
+      {"key": "b", "text": "ভিটামিন এ"},
+      {"key": "c", "text": "ভিটামিন ই"},
+      {"key": "d", "text": "ভিটামিন ডি"}
+    ],
+    "correct_key": "a",
+    "explanation": "ভিটামিন কে যকৃতে প্রোথ্রম্বিন তৈরিতে সাহায্য করে, যা রক্ত জমাট বাঁধায় ভূমিকা রাখে।",
+    "source_exam": "Bank",
+    "source_year": 2024,
+    "source_label": "কম্বাইন্ড ব্যাংক অফিসার নিয়োগ পরীক্ষা"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "কোষের কোন অংশকে কোষের নিয়ন্ত্রণকেন্দ্র বলা হয়?",
+    "options": [
+      {"key": "a", "text": "সাইটোপ্লাজম"},
+      {"key": "b", "text": "নিউক্লিয়াস"},
+      {"key": "c", "text": "কোষপ্রাচীর"},
+      {"key": "d", "text": "লাইসোজোম"}
+    ],
+    "correct_key": "b",
+    "explanation": "নিউক্লিয়াসে ক্রোমোজোম ও DNA থাকে যা কোষের সকল কার্যক্রম নিয়ন্ত্রণ করে।",
+    "source_exam": "NTRCA",
+    "source_year": 2024,
+    "source_label": "১৯তম শিক্ষক নিবন্ধন পরীক্ষা"
+  }
+]

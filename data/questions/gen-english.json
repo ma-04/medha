@@ -1,0 +1,842 @@
+[
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the correct article: 'He behaved like ___ gentleman throughout the meeting.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "an"
+      },
+      {
+        "key": "b",
+        "text": "a"
+      },
+      {
+        "key": "c",
+        "text": "the"
+      },
+      {
+        "key": "d",
+        "text": "no article"
+      }
+    ],
+    "correct_key": "b",
+    "explanation": "'Gentleman' begins with a consonant sound, so the indefinite article 'a' is used before it.",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "40th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the correct preposition: 'She was born ___ a rainy morning in July.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "in"
+      },
+      {
+        "key": "b",
+        "text": "at"
+      },
+      {
+        "key": "c",
+        "text": "by"
+      },
+      {
+        "key": "d",
+        "text": "on"
+      }
+    ],
+    "correct_key": "d",
+    "explanation": "For a specific part of a particular day (a morning of a named day) the preposition 'on' is used.",
+    "source_exam": "Bank",
+    "source_year": 2018,
+    "source_label": "Combined Bank Senior Officer"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the grammatically correct sentence.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Each of the boys was present."
+      },
+      {
+        "key": "b",
+        "text": "Each of the boys were present."
+      },
+      {
+        "key": "c",
+        "text": "Each of the boys are present."
+      },
+      {
+        "key": "d",
+        "text": "Each of the boys have present."
+      }
+    ],
+    "correct_key": "a",
+    "explanation": "'Each' is singular, so it takes the singular verb 'was' regardless of the plural noun that follows.",
+    "source_exam": "NTRCA",
+    "source_year": 2020,
+    "source_label": "16th NTRCA School Level"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Fill in the blank with the correct tense: 'They ___ in this city since 2010.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "are living"
+      },
+      {
+        "key": "b",
+        "text": "lived"
+      },
+      {
+        "key": "c",
+        "text": "were living"
+      },
+      {
+        "key": "d",
+        "text": "have been living"
+      }
+    ],
+    "correct_key": "d",
+    "explanation": "An action beginning in the past and continuing up to now with 'since' requires the present perfect continuous tense.",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "43rd BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the correct preposition: 'He is devoid ___ common sense.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "of"
+      },
+      {
+        "key": "b",
+        "text": "from"
+      },
+      {
+        "key": "c",
+        "text": "with"
+      },
+      {
+        "key": "d",
+        "text": "in"
+      }
+    ],
+    "correct_key": "a",
+    "explanation": "'Devoid' is always followed by the preposition 'of' to mean entirely lacking something.",
+    "source_exam": "Bank",
+    "source_year": 2017,
+    "source_label": "Bangladesh Bank Assistant Director"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the correct form: 'I enjoy ___ detective novels in my free time.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "to read"
+      },
+      {
+        "key": "b",
+        "text": "read"
+      },
+      {
+        "key": "c",
+        "text": "reading"
+      },
+      {
+        "key": "d",
+        "text": "to reading"
+      }
+    ],
+    "correct_key": "c",
+    "explanation": "The verb 'enjoy' is always followed by a gerund (the -ing form), not an infinitive.",
+    "source_exam": "Primary",
+    "source_year": 2022,
+    "source_label": "Primary Assistant Teacher"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Fill in the blank: 'If I ___ you, I would accept the offer.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "am"
+      },
+      {
+        "key": "b",
+        "text": "was"
+      },
+      {
+        "key": "c",
+        "text": "were"
+      },
+      {
+        "key": "d",
+        "text": "will be"
+      }
+    ],
+    "correct_key": "c",
+    "explanation": "In a second (unreal) conditional, the subjunctive 'were' is used with all subjects after 'if'.",
+    "source_exam": "BCS",
+    "source_year": 2016,
+    "source_label": "37th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the correct preposition: 'The old man died ___ cholera last week.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "from"
+      },
+      {
+        "key": "b",
+        "text": "of"
+      },
+      {
+        "key": "c",
+        "text": "by"
+      },
+      {
+        "key": "d",
+        "text": "with"
+      }
+    ],
+    "correct_key": "b",
+    "explanation": "A person 'dies of' a disease; 'die from' is used for external causes such as wounds or overwork.",
+    "source_exam": "NTRCA",
+    "source_year": 2019,
+    "source_label": "15th NTRCA College Level"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the correct verb: 'The number of applicants ___ increasing every year.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "are"
+      },
+      {
+        "key": "b",
+        "text": "were"
+      },
+      {
+        "key": "c",
+        "text": "have"
+      },
+      {
+        "key": "d",
+        "text": "is"
+      }
+    ],
+    "correct_key": "d",
+    "explanation": "'The number of' takes a singular verb, whereas 'a number of' takes a plural verb.",
+    "source_exam": "Bank",
+    "source_year": 2020,
+    "source_label": "Combined Bank Officer (General)"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Fill in the blank with the appropriate preposition: 'He is addicted ___ gambling.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "in"
+      },
+      {
+        "key": "b",
+        "text": "with"
+      },
+      {
+        "key": "c",
+        "text": "to"
+      },
+      {
+        "key": "d",
+        "text": "for"
+      }
+    ],
+    "correct_key": "c",
+    "explanation": "'Addicted' takes the preposition 'to' when referring to a habit one cannot give up.",
+    "source_exam": "Primary",
+    "source_year": 2023,
+    "source_label": "Primary Assistant Teacher"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Fill in the blank: 'It is high time we ___ the truth about the incident.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "know"
+      },
+      {
+        "key": "b",
+        "text": "have known"
+      },
+      {
+        "key": "c",
+        "text": "will know"
+      },
+      {
+        "key": "d",
+        "text": "knew"
+      }
+    ],
+    "correct_key": "d",
+    "explanation": "The idiom 'it is high time' is followed by a subject and the simple past tense.",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "44th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Which of the following sentences is grammatically correct?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Neither of the two brothers are eligible."
+      },
+      {
+        "key": "b",
+        "text": "Neither of the two brothers is eligible."
+      },
+      {
+        "key": "c",
+        "text": "Neither of the two brothers were eligible."
+      },
+      {
+        "key": "d",
+        "text": "Neither of the two brothers have eligible."
+      }
+    ],
+    "correct_key": "b",
+    "explanation": "'Neither' is a singular pronoun and therefore takes the singular verb 'is'.",
+    "source_exam": "NTRCA",
+    "source_year": 2021,
+    "source_label": "17th NTRCA School Level"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "In the sentence 'The child ran quickly across the road', which word is an adverb?",
+    "options": [
+      {
+        "key": "a",
+        "text": "child"
+      },
+      {
+        "key": "b",
+        "text": "ran"
+      },
+      {
+        "key": "c",
+        "text": "quickly"
+      },
+      {
+        "key": "d",
+        "text": "road"
+      }
+    ],
+    "correct_key": "c",
+    "explanation": "'Quickly' modifies the verb 'ran' by describing how the action was done, so it is an adverb.",
+    "source_exam": "Primary",
+    "source_year": 2018,
+    "source_label": "Primary Assistant Teacher"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Fill in the blank with the correct preposition: 'She has a natural aptitude ___ mathematics.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "in"
+      },
+      {
+        "key": "b",
+        "text": "of"
+      },
+      {
+        "key": "c",
+        "text": "on"
+      },
+      {
+        "key": "d",
+        "text": "for"
+      }
+    ],
+    "correct_key": "d",
+    "explanation": "The noun 'aptitude' is followed by the preposition 'for' when it refers to a natural talent.",
+    "source_exam": "Bank",
+    "source_year": 2015,
+    "source_label": "Combined Bank Senior Officer"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the correct passive form of: 'They are building a new bridge.'",
+    "options": [
+      {
+        "key": "a",
+        "text": "A new bridge is being built by them."
+      },
+      {
+        "key": "b",
+        "text": "A new bridge is built by them."
+      },
+      {
+        "key": "c",
+        "text": "A new bridge was being built by them."
+      },
+      {
+        "key": "d",
+        "text": "A new bridge has been built by them."
+      }
+    ],
+    "correct_key": "a",
+    "explanation": "The present continuous active 'are building' becomes 'is being built' in the passive voice.",
+    "source_exam": "BCS",
+    "source_year": 2014,
+    "source_label": "35th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "Choose the word that is most nearly the SYNONYM of 'Benevolent'.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kind"
+      },
+      {
+        "key": "b",
+        "text": "Cruel"
+      },
+      {
+        "key": "c",
+        "text": "Greedy"
+      },
+      {
+        "key": "d",
+        "text": "Timid"
+      }
+    ],
+    "correct_key": "a",
+    "explanation": "'Benevolent' means well-meaning and kindly, so 'kind' is the closest synonym.",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "38th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "Choose the ANTONYM of 'Transparent'.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Clear"
+      },
+      {
+        "key": "b",
+        "text": "Obvious"
+      },
+      {
+        "key": "c",
+        "text": "Opaque"
+      },
+      {
+        "key": "d",
+        "text": "Fragile"
+      }
+    ],
+    "correct_key": "c",
+    "explanation": "'Transparent' means allowing light through; its opposite is 'opaque', which does not allow light to pass.",
+    "source_exam": "Bank",
+    "source_year": 2019,
+    "source_label": "Combined Bank Officer (General)"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "One word for 'a person who can speak many languages' is:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Polyglot"
+      },
+      {
+        "key": "b",
+        "text": "Linguist"
+      },
+      {
+        "key": "c",
+        "text": "Bilingual"
+      },
+      {
+        "key": "d",
+        "text": "Orator"
+      }
+    ],
+    "correct_key": "a",
+    "explanation": "A 'polyglot' is a person who knows and can use several languages.",
+    "source_exam": "NTRCA",
+    "source_year": 2020,
+    "source_label": "16th NTRCA College Level"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "What does the idiom 'to read between the lines' mean?",
+    "options": [
+      {
+        "key": "a",
+        "text": "To read very fast"
+      },
+      {
+        "key": "b",
+        "text": "To understand the hidden meaning"
+      },
+      {
+        "key": "c",
+        "text": "To read aloud clearly"
+      },
+      {
+        "key": "d",
+        "text": "To skip difficult words"
+      }
+    ],
+    "correct_key": "b",
+    "explanation": "'To read between the lines' means to perceive a meaning that is implied rather than directly stated.",
+    "source_exam": "BCS",
+    "source_year": 2017,
+    "source_label": "37th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "Choose the correctly spelt word.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Recomend"
+      },
+      {
+        "key": "b",
+        "text": "Reccommend"
+      },
+      {
+        "key": "c",
+        "text": "Recommend"
+      },
+      {
+        "key": "d",
+        "text": "Recommmend"
+      }
+    ],
+    "correct_key": "c",
+    "explanation": "The correct spelling is 'Recommend', with one 'c' and two 'm's.",
+    "source_exam": "Primary",
+    "source_year": 2021,
+    "source_label": "Primary Assistant Teacher"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "Choose the word most nearly SYNONYMOUS with 'Abolish'.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Establish"
+      },
+      {
+        "key": "b",
+        "text": "Support"
+      },
+      {
+        "key": "c",
+        "text": "Preserve"
+      },
+      {
+        "key": "d",
+        "text": "Eradicate"
+      }
+    ],
+    "correct_key": "d",
+    "explanation": "'Abolish' means to do away with completely; 'eradicate' shares this meaning of eliminating something entirely.",
+    "source_exam": "Bank",
+    "source_year": 2016,
+    "source_label": "Combined Bank Senior Officer"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "Choose the ANTONYM of 'Barren'.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Fertile"
+      },
+      {
+        "key": "b",
+        "text": "Empty"
+      },
+      {
+        "key": "c",
+        "text": "Dry"
+      },
+      {
+        "key": "d",
+        "text": "Desolate"
+      }
+    ],
+    "correct_key": "a",
+    "explanation": "'Barren' means unable to produce; its opposite is 'fertile', meaning productive or fruitful.",
+    "source_exam": "NTRCA",
+    "source_year": 2018,
+    "source_label": "14th NTRCA School Level"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "One word for 'that which cannot be avoided' is:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Invisible"
+      },
+      {
+        "key": "b",
+        "text": "Inevitable"
+      },
+      {
+        "key": "c",
+        "text": "Incredible"
+      },
+      {
+        "key": "d",
+        "text": "Invaluable"
+      }
+    ],
+    "correct_key": "b",
+    "explanation": "'Inevitable' describes something that is certain to happen and cannot be avoided.",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "45th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "What does the idiom 'a blessing in disguise' mean?",
+    "options": [
+      {
+        "key": "a",
+        "text": "A well-hidden secret"
+      },
+      {
+        "key": "b",
+        "text": "A generous gift"
+      },
+      {
+        "key": "c",
+        "text": "A misfortune that turns out to be beneficial"
+      },
+      {
+        "key": "d",
+        "text": "A false promise"
+      }
+    ],
+    "correct_key": "c",
+    "explanation": "'A blessing in disguise' refers to something that seems bad at first but results in something good.",
+    "source_exam": "Bank",
+    "source_year": 2022,
+    "source_label": "Combined Bank Officer (Cash)"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "Choose the word most nearly SYNONYMOUS with 'Diligent'.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Lazy"
+      },
+      {
+        "key": "b",
+        "text": "Careless"
+      },
+      {
+        "key": "c",
+        "text": "Clever"
+      },
+      {
+        "key": "d",
+        "text": "Hardworking"
+      }
+    ],
+    "correct_key": "d",
+    "explanation": "'Diligent' means showing careful and persistent effort, which is best captured by 'hardworking'.",
+    "source_exam": "Primary",
+    "source_year": 2019,
+    "source_label": "Primary Assistant Teacher"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "Choose the ANTONYM of 'Optimist'.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Realist"
+      },
+      {
+        "key": "b",
+        "text": "Pessimist"
+      },
+      {
+        "key": "c",
+        "text": "Idealist"
+      },
+      {
+        "key": "d",
+        "text": "Humanist"
+      }
+    ],
+    "correct_key": "b",
+    "explanation": "An 'optimist' expects the best outcome, while a 'pessimist' expects the worst, making it the antonym.",
+    "source_exam": "NTRCA",
+    "source_year": 2023,
+    "source_label": "18th NTRCA School Level"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "Which of the following words is correctly spelt?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Conscientous"
+      },
+      {
+        "key": "b",
+        "text": "Consciencious"
+      },
+      {
+        "key": "c",
+        "text": "Conscientious"
+      },
+      {
+        "key": "d",
+        "text": "Conscentious"
+      }
+    ],
+    "correct_key": "c",
+    "explanation": "The correct spelling is 'Conscientious', meaning careful and thorough in one's work.",
+    "source_exam": "BCS",
+    "source_year": 2015,
+    "source_label": "36th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "Choose the word most nearly SYNONYMOUS with 'Candid'.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Rude"
+      },
+      {
+        "key": "b",
+        "text": "Secretive"
+      },
+      {
+        "key": "c",
+        "text": "Cautious"
+      },
+      {
+        "key": "d",
+        "text": "Frank"
+      }
+    ],
+    "correct_key": "d",
+    "explanation": "'Candid' means truthful and straightforward, which is closely matched by 'frank'.",
+    "source_exam": "Bank",
+    "source_year": 2021,
+    "source_label": "Combined Bank Officer (General)"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "One word for 'a speech delivered without previous preparation' is:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Eloquent"
+      },
+      {
+        "key": "b",
+        "text": "Verbatim"
+      },
+      {
+        "key": "c",
+        "text": "Extempore"
+      },
+      {
+        "key": "d",
+        "text": "Rhetoric"
+      }
+    ],
+    "correct_key": "c",
+    "explanation": "An 'extempore' speech is one made on the spur of the moment without any prior preparation.",
+    "source_exam": "Primary",
+    "source_year": 2024,
+    "source_label": "Primary Assistant Teacher"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "What does the idiom 'a bolt from the blue' mean?",
+    "options": [
+      {
+        "key": "a",
+        "text": "A long-awaited reward"
+      },
+      {
+        "key": "b",
+        "text": "A sudden and unexpected event"
+      },
+      {
+        "key": "c",
+        "text": "A minor inconvenience"
+      },
+      {
+        "key": "d",
+        "text": "A carefully made plan"
+      }
+    ],
+    "correct_key": "b",
+    "explanation": "'A bolt from the blue' means something that happens suddenly and unexpectedly, like lightning from a clear sky.",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "41st BCS Preliminary"
+  }
+]
