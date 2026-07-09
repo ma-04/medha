@@ -566,6 +566,13 @@ export type Database = {
         }[]
       }
       is_admin: { Args: never; Returns: boolean }
+      reveal_answer: {
+        Args: { p_question_id: string }
+        Returns: {
+          correct_key: string
+          explanation: string
+        }[]
+      }
       save_answer: {
         Args: {
           p_attempt_id: string
