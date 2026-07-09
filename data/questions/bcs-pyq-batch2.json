@@ -1,0 +1,386 @@
+[
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "চর্যাপদ কে আবিষ্কার করেন?",
+    "options": [
+      { "key": "a", "text": "হরপ্রসাদ শাস্ত্রী" },
+      { "key": "b", "text": "মুহম্মদ শহীদুল্লাহ" },
+      { "key": "c", "text": "সুনীতিকুমার চট্টোপাধ্যায়" },
+      { "key": "d", "text": "দীনেশচন্দ্র সেন" }
+    ],
+    "correct_key": "a",
+    "explanation": "১৯০৭ সালে মহামহোপাধ্যায় হরপ্রসাদ শাস্ত্রী নেপালের রাজদরবারের গ্রন্থাগার থেকে চর্যাপদ আবিষ্কার করেন।",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "৪৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "বাংলা একাডেমি কত সালে প্রতিষ্ঠিত হয়?",
+    "options": [
+      { "key": "a", "text": "১৯৫২" },
+      { "key": "b", "text": "১৯৫৫" },
+      { "key": "c", "text": "১৯৬১" },
+      { "key": "d", "text": "১৯৭২" }
+    ],
+    "correct_key": "b",
+    "explanation": "বাংলা একাডেমি ১৯৫৫ সালের ৩ ডিসেম্বর প্রতিষ্ঠিত হয়।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'গায়ক' শব্দের সঠিক সন্ধিবিচ্ছেদ কোনটি?",
+    "options": [
+      { "key": "a", "text": "গা + অক" },
+      { "key": "b", "text": "গৈ + অক" },
+      { "key": "c", "text": "গায় + অক" },
+      { "key": "d", "text": "গো + অক" }
+    ],
+    "correct_key": "b",
+    "explanation": "'গায়ক' = গৈ + অক; এটি আয়াদি সন্ধির উদাহরণ (ঐ → আয়্‌)।",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'বিদ্যালয়' শব্দটি কোন সন্ধির উদাহরণ?",
+    "options": [
+      { "key": "a", "text": "ব্যঞ্জনসন্ধি" },
+      { "key": "b", "text": "স্বরসন্ধি" },
+      { "key": "c", "text": "বিসর্গসন্ধি" },
+      { "key": "d", "text": "নিপাতনে সিদ্ধ" }
+    ],
+    "correct_key": "b",
+    "explanation": "'বিদ্যালয়' = বিদ্যা + আলয় (আ + আ = আ); দুটি স্বরের মিলন হওয়ায় এটি স্বরসন্ধি।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "I am looking forward to ___ you.",
+    "options": [
+      { "key": "a", "text": "see" },
+      { "key": "b", "text": "seeing" },
+      { "key": "c", "text": "have seen" },
+      { "key": "d", "text": "saw" }
+    ],
+    "correct_key": "b",
+    "explanation": "In 'look forward to', 'to' is a preposition, so it is followed by a gerund (verb + ing) — 'seeing'.",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "40th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the correct passive form: 'Who did this?'",
+    "options": [
+      { "key": "a", "text": "By whom was this done?" },
+      { "key": "b", "text": "By whom this was done?" },
+      { "key": "c", "text": "Whom was this done?" },
+      { "key": "d", "text": "By who this done was?" }
+    ],
+    "correct_key": "a",
+    "explanation": "The interrogative 'Who did this?' becomes 'By whom was this done?' in the passive voice.",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "37th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "The word 'Panacea' means —",
+    "options": [
+      { "key": "a", "text": "a deadly poison" },
+      { "key": "b", "text": "a universal remedy" },
+      { "key": "c", "text": "a rare disease" },
+      { "key": "d", "text": "a fictional place" }
+    ],
+    "correct_key": "b",
+    "explanation": "'Panacea' means a cure-all — a remedy for all diseases or problems.",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "44th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "The synonym of 'Bounty' is —",
+    "options": [
+      { "key": "a", "text": "cruelty" },
+      { "key": "b", "text": "poverty" },
+      { "key": "c", "text": "generosity" },
+      { "key": "d", "text": "penalty" }
+    ],
+    "correct_key": "c",
+    "explanation": "'Bounty' means generosity or liberality in giving; hence 'generosity' is the closest synonym.",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "38th BCS Preliminary"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "একটি দ্রব্য ২০% ক্ষতিতে ৮০ টাকায় বিক্রি করা হলো। দ্রব্যটির ক্রয়মূল্য কত?",
+    "options": [
+      { "key": "a", "text": "৯৬ টাকা" },
+      { "key": "b", "text": "১০০ টাকা" },
+      { "key": "c", "text": "১২০ টাকা" },
+      { "key": "d", "text": "৬৪ টাকা" }
+    ],
+    "correct_key": "b",
+    "explanation": "২০% ক্ষতিতে বিক্রয়মূল্য = ক্রয়মূল্যের ৮০%। তাই ক্রয়মূল্য $= 80 \\div 0.8 = 100$ টাকা।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "$a^2 - b^2 = 40$ এবং $a + b = 8$ হলে $a - b$ এর মান কত?",
+    "options": [
+      { "key": "a", "text": "৪" },
+      { "key": "b", "text": "৫" },
+      { "key": "c", "text": "৬" },
+      { "key": "d", "text": "৮" }
+    ],
+    "correct_key": "b",
+    "explanation": "$a^2 - b^2 = (a+b)(a-b)$, তাই $a - b = 40 \\div 8 = 5$।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-bd",
+    "topic_slug": "liberation-war",
+    "body": "মুজিবনগর সরকার কবে শপথ গ্রহণ করে?",
+    "options": [
+      { "key": "a", "text": "১০ এপ্রিল ১৯৭১" },
+      { "key": "b", "text": "১৭ এপ্রিল ১৯৭১" },
+      { "key": "c", "text": "২৬ মার্চ ১৯৭১" },
+      { "key": "d", "text": "১৬ ডিসেম্বর ১৯৭১" }
+    ],
+    "correct_key": "b",
+    "explanation": "মুজিবনগর সরকার ১৭ এপ্রিল ১৯৭১ সালে মেহেরপুরের বৈদ্যনাথতলায় (মুজিবনগর) শপথ গ্রহণ করে।",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "৪৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-bd",
+    "topic_slug": "liberation-war",
+    "body": "মুক্তিযুদ্ধকালীন মুজিবনগর সরকারের রাষ্ট্রপতি কে ছিলেন?",
+    "options": [
+      { "key": "a", "text": "তাজউদ্দীন আহমদ" },
+      { "key": "b", "text": "সৈয়দ নজরুল ইসলাম" },
+      { "key": "c", "text": "বঙ্গবন্ধু শেখ মুজিবুর রহমান" },
+      { "key": "d", "text": "এম মনসুর আলী" }
+    ],
+    "correct_key": "c",
+    "explanation": "মুজিবনগর সরকারের রাষ্ট্রপতি ছিলেন বঙ্গবন্ধু শেখ মুজিবুর রহমান; তাঁর অনুপস্থিতিতে সৈয়দ নজরুল ইসলাম উপরাষ্ট্রপতি হিসেবে ভারপ্রাপ্ত রাষ্ট্রপতির দায়িত্ব পালন করেন।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-bd",
+    "topic_slug": "constitution",
+    "body": "বাংলাদেশের সংবিধানের মূলনীতি কয়টি?",
+    "options": [
+      { "key": "a", "text": "৩টি" },
+      { "key": "b", "text": "৪টি" },
+      { "key": "c", "text": "৫টি" },
+      { "key": "d", "text": "৭টি" }
+    ],
+    "correct_key": "b",
+    "explanation": "সংবিধানের মূলনীতি ৪টি — জাতীয়তাবাদ, সমাজতন্ত্র, গণতন্ত্র ও ধর্মনিরপেক্ষতা।",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "সার্ক (SAARC)-এর সদর দপ্তর কোথায় অবস্থিত?",
+    "options": [
+      { "key": "a", "text": "নয়াদিল্লি" },
+      { "key": "b", "text": "কাঠমান্ডু" },
+      { "key": "c", "text": "ঢাকা" },
+      { "key": "d", "text": "ইসলামাবাদ" }
+    ],
+    "correct_key": "b",
+    "explanation": "১৯৮৫ সালে প্রতিষ্ঠিত সার্কের স্থায়ী সচিবালয় নেপালের কাঠমান্ডুতে অবস্থিত।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "বিশ্ব স্বাস্থ্য সংস্থা (WHO)-এর সদর দপ্তর কোথায়?",
+    "options": [
+      { "key": "a", "text": "নিউইয়র্ক" },
+      { "key": "b", "text": "জেনেভা" },
+      { "key": "c", "text": "রোম" },
+      { "key": "d", "text": "ভিয়েনা" }
+    ],
+    "correct_key": "b",
+    "explanation": "বিশ্ব স্বাস্থ্য সংস্থার সদর দপ্তর সুইজারল্যান্ডের জেনেভায় অবস্থিত।",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "৩৭তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "স্বাভাবিক তাপমাত্রায় বাতাসে শব্দের গতিবেগ প্রায় কত?",
+    "options": [
+      { "key": "a", "text": "৩৪০ মি/সে" },
+      { "key": "b", "text": "১১২০ মি/সে" },
+      { "key": "c", "text": "১৫০০ মি/সে" },
+      { "key": "d", "text": "৩০০০ মি/সে" }
+    ],
+    "correct_key": "a",
+    "explanation": "স্বাভাবিক তাপমাত্রায় (প্রায় ২০°C) বাতাসে শব্দের বেগ প্রায় ৩৪০ মিটার/সেকেন্ড।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "ভিটামিন 'সি' এর রাসায়নিক নাম কী?",
+    "options": [
+      { "key": "a", "text": "অ্যাসকরবিক অ্যাসিড" },
+      { "key": "b", "text": "সাইট্রিক অ্যাসিড" },
+      { "key": "c", "text": "ফলিক অ্যাসিড" },
+      { "key": "d", "text": "অ্যাসিটিক অ্যাসিড" }
+    ],
+    "correct_key": "a",
+    "explanation": "ভিটামিন সি-এর রাসায়নিক নাম অ্যাসকরবিক অ্যাসিড; এর অভাবে স্কার্ভি রোগ হয়।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "ওয়ার্ল্ড ওয়াইড ওয়েব (WWW) এর উদ্ভাবক কে?",
+    "options": [
+      { "key": "a", "text": "টিম বার্নার্স-লি" },
+      { "key": "b", "text": "বিল গেটস" },
+      { "key": "c", "text": "চার্লস ব্যাবেজ" },
+      { "key": "d", "text": "ভিন্ট সার্ফ" }
+    ],
+    "correct_key": "a",
+    "explanation": "১৯৮৯ সালে ব্রিটিশ বিজ্ঞানী টিম বার্নার্স-লি ওয়ার্ল্ড ওয়াইড ওয়েব উদ্ভাবন করেন।",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "৪৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "১ বাইট (Byte) সমান কত বিট (Bit)?",
+    "options": [
+      { "key": "a", "text": "৪ বিট" },
+      { "key": "b", "text": "৮ বিট" },
+      { "key": "c", "text": "১৬ বিট" },
+      { "key": "d", "text": "৩২ বিট" }
+    ],
+    "correct_key": "b",
+    "explanation": "১ বাইট = ৮ বিট। বিট হলো তথ্যের ক্ষুদ্রতম একক (০ বা ১)।",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "৩৭তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "ধারাটির পরবর্তী সংখ্যা কোনটি: ১, ৪, ৯, ১৬, ২৫, ?",
+    "options": [
+      { "key": "a", "text": "৩০" },
+      { "key": "b", "text": "৩৪" },
+      { "key": "c", "text": "৩৬" },
+      { "key": "d", "text": "৪৯" }
+    ],
+    "correct_key": "c",
+    "explanation": "এগুলো পূর্ণসংখ্যার বর্গ: $1^2, 2^2, 3^2, 4^2, 5^2$; পরবর্তীটি $6^2 = 36$।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "ঘড়িতে যখন ৩টা বাজে, তখন ঘণ্টা ও মিনিটের কাঁটার মধ্যবর্তী কোণ কত ডিগ্রি?",
+    "options": [
+      { "key": "a", "text": "৩০°" },
+      { "key": "b", "text": "৪৫°" },
+      { "key": "c", "text": "৬০°" },
+      { "key": "d", "text": "৯০°" }
+    ],
+    "correct_key": "d",
+    "explanation": "ঘড়ির প্রতিটি ঘণ্টার ব্যবধান ৩০°। ৩টার সময় কাঁটা দুটির মাঝে ৩টি ঘর, তাই কোণ $= 3 \\times 30° = 90°$।",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের বৃহত্তম দ্বীপ কোনটি?",
+    "options": [
+      { "key": "a", "text": "ভোলা" },
+      { "key": "b", "text": "হাতিয়া" },
+      { "key": "c", "text": "সন্দ্বীপ" },
+      { "key": "d", "text": "নিঝুম দ্বীপ" }
+    ],
+    "correct_key": "a",
+    "explanation": "ভোলা বাংলাদেশের বৃহত্তম দ্বীপ, যা একটি পূর্ণাঙ্গ জেলা।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "পদ্মা সেতুর দৈর্ঘ্য কত?",
+    "options": [
+      { "key": "a", "text": "৪.৮ কিলোমিটার" },
+      { "key": "b", "text": "৬.১৫ কিলোমিটার" },
+      { "key": "c", "text": "৮.০ কিলোমিটার" },
+      { "key": "d", "text": "৯.৮৩ কিলোমিটার" }
+    ],
+    "correct_key": "b",
+    "explanation": "পদ্মা বহুমুখী সেতুর দৈর্ঘ্য ৬.১৫ কিলোমিটার; এটি ২৫ জুন ২০২২ সালে উদ্বোধন করা হয়।",
+    "source_exam": "BCS",
+    "source_year": 2023,
+    "source_label": "৪৫তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "'সুশাসন' (Good Governance) ধারণাটি সর্বপ্রথম প্রবর্তন করে কোন সংস্থা?",
+    "options": [
+      { "key": "a", "text": "বিশ্বব্যাংক" },
+      { "key": "b", "text": "জাতিসংঘ" },
+      { "key": "c", "text": "আইএমএফ" },
+      { "key": "d", "text": "ইউনেস্কো" }
+    ],
+    "correct_key": "a",
+    "explanation": "১৯৮৯ সালে বিশ্বব্যাংক তার এক প্রতিবেদনে সর্বপ্রথম 'সুশাসন' (Good Governance) ধারণাটি ব্যবহার করে।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  }
+]
