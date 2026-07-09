@@ -1,0 +1,82 @@
+import Link from "next/link";
+import { FileText } from "lucide-react";
+import { createClient } from "@/lib/supabase/server";
+import { requireUser } from "@/lib/auth";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { examTypeLabels } from "@/lib/exams";
+import { formatDateTimeBn } from "@/lib/format";
+
+export default async function ExamsPage() {
+  const user = await requireUser();
+  const supabase = await createClient();
+
+  const { data: exams } = await supabase
+    .from("exams")
+    .select("id, title_bn, description, type, status, pattern, starts_at, ends_at")
+    .in("status", ["scheduled", "published"])
+    .order("starts_at", { ascending: true, nullsFirst: false })
+    .order("created_at", { ascending: false });
+
+  const { data: attempts } = await supabase
+    .from("exam_attempts")
+    .select("exam_id, submitted_at")
+    .eq("user_id", user.id);
+  const attemptMap = new Map(
+    (attempts ?? []).map((a) => [a.exam_id, a.submitted_at])
+  );
+
+  const list = exams ?? [];
+
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-bold">পরীক্ষা</h1>
+
+      {list.length === 0 && (
+        <p className="text-sm text-muted-foreground">
+          এখন কোনো পরীক্ষা নেই। শীঘ্রই আসছে।
+        </p>
+      )}
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        {list.map((e) => {
+          const pattern = e.pattern as {
+            duration_minutes?: number;
+            total_questions?: number;
+          } | null;
+          const hasAttempt = attemptMap.has(e.id);
+          const submitted = attemptMap.get(e.id);
+          return (
+            <Link key={e.id} href={`/exams/${e.id}`}>
+              <Card className="h-full transition-colors hover:border-primary">
+                <CardContent className="space-y-2 p-4">
+                  <div className="flex items-center gap-2">
+                    <FileText className="size-4 text-primary" />
+                    <Badge variant="outline">{examTypeLabels[e.type]}</Badge>
+                    {submitted ? (
+                      <Badge>সম্পন্ন</Badge>
+                    ) : hasAttempt ? (
+                      <Badge variant="secondary">চলমান</Badge>
+                    ) : null}
+                  </div>
+                  <p className="font-bengali-serif text-lg font-medium">
+                    {e.title_bn}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {pattern?.total_questions ?? 0} প্রশ্ন ·{" "}
+                    {pattern?.duration_minutes ?? 0} মিনিট
+                  </p>
+                  {e.type === "live" && e.starts_at && (
+                    <p className="text-xs text-muted-foreground">
+                      শুরু: {formatDateTimeBn(e.starts_at)}
+                    </p>
+                  )}
+                </CardContent>
+              </Card>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
