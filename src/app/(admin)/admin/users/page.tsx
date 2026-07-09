@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { requireAdmin, type Role } from "@/lib/auth";
 import { RoleToggle } from "./role-toggle";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -10,7 +11,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
+// User management is admin-exclusive — guarded here as well as in the layout so
+// a teacher cannot reach it by direct URL.
 export default async function UsersPage() {
+  await requireAdmin();
   const supabase = await createClient();
   const { data: users } = await supabase
     .from("profiles")
@@ -36,16 +40,19 @@ export default async function UsersPage() {
                 <TableCell>{u.full_name ?? "—"}</TableCell>
                 <TableCell>
                   <Badge
-                    variant={u.role === "admin" ? "default" : "secondary"}
+                    variant={
+                      u.role === "admin"
+                        ? "default"
+                        : u.role === "teacher"
+                          ? "outline"
+                          : "secondary"
+                    }
                   >
                     {u.role}
                   </Badge>
                 </TableCell>
                 <TableCell className="text-right">
-                  <RoleToggle
-                    id={u.id}
-                    role={u.role as "student" | "admin"}
-                  />
+                  <RoleToggle id={u.id} role={u.role as Role} />
                 </TableCell>
               </TableRow>
             ))}
