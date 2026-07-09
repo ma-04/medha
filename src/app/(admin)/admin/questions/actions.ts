@@ -3,13 +3,13 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { requireAdmin } from "@/lib/auth";
+import { requireStaff } from "@/lib/auth";
 import { questionInputSchema, type QuestionInput } from "@/lib/questions";
 
 export type SaveResult = { error?: string; ok?: boolean };
 
 export async function saveQuestion(input: QuestionInput): Promise<SaveResult> {
-  await requireAdmin();
+  await requireStaff();
   const parsed = questionInputSchema.safeParse(input);
   if (!parsed.success) {
     return { error: parsed.error.issues[0]?.message ?? "অবৈধ তথ্য" };
@@ -43,7 +43,7 @@ export async function saveQuestion(input: QuestionInput): Promise<SaveResult> {
 }
 
 export async function deleteQuestion(id: string) {
-  await requireAdmin();
+  await requireStaff();
   const supabase = await createClient();
   await supabase.from("questions").delete().eq("id", id);
   revalidatePath("/admin/questions");

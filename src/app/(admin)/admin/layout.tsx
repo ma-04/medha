@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { requireAdmin } from "@/lib/auth";
+import { requireStaff } from "@/lib/auth";
 import { signOut } from "@/app/(auth)/actions";
 import {
   LayoutDashboard,
@@ -13,11 +13,11 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const adminNav = [
-  { href: "/admin", label: "ড্যাশবোর্ড", icon: LayoutDashboard },
-  { href: "/admin/questions", label: "প্রশ্ন", icon: FileQuestion },
-  { href: "/admin/taxonomy", label: "বিষয় ও টপিক", icon: FolderTree },
-  { href: "/admin/exams", label: "পরীক্ষা", icon: CalendarClock },
-  { href: "/admin/users", label: "ব্যবহারকারী", icon: Users },
+  { href: "/admin", label: "ড্যাশবোর্ড", icon: LayoutDashboard, adminOnly: false },
+  { href: "/admin/questions", label: "প্রশ্ন", icon: FileQuestion, adminOnly: false },
+  { href: "/admin/taxonomy", label: "বিষয় ও টপিক", icon: FolderTree, adminOnly: false },
+  { href: "/admin/exams", label: "পরীক্ষা", icon: CalendarClock, adminOnly: false },
+  { href: "/admin/users", label: "ব্যবহারকারী", icon: Users, adminOnly: true },
 ];
 
 export default async function AdminLayout({
@@ -25,7 +25,10 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  await requireAdmin();
+  const profile = await requireStaff();
+  const nav = adminNav.filter(
+    (item) => !item.adminOnly || profile.role === "admin"
+  );
 
   return (
     <div className="flex min-h-screen flex-1">
@@ -34,7 +37,7 @@ export default async function AdminLayout({
           মেধা <span className="text-muted-foreground">Admin</span>
         </Link>
         <nav className="flex flex-1 flex-col gap-1">
-          {adminNav.map((item) => (
+          {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}

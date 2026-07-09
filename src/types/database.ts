@@ -531,6 +531,7 @@ export type Database = {
       }
       auto_finalize_live: { Args: never; Returns: undefined }
       auto_submit_expired: { Args: never; Returns: undefined }
+      can_author: { Args: never; Returns: boolean }
       check_practice_answer: {
         Args: { p_question_id: string; p_selected_key: string }
         Returns: {

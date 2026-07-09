@@ -3,7 +3,7 @@ import { createClient, createServiceClient } from "@/lib/supabase/server";
 import { importRowSchema, contentHash } from "@/lib/import";
 
 export async function POST(request: Request) {
-  // Verify the caller is an admin using their session.
+  // Verify the caller is staff (admin or teacher) using their session.
   const supabase = await createClient();
   const {
     data: { user },
@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     .select("role")
     .eq("id", user.id)
     .single();
-  if (profile?.role !== "admin") {
+  if (profile?.role !== "admin" && profile?.role !== "teacher") {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
 

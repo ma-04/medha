@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { requireAdmin } from "@/lib/auth";
+import { requireStaff } from "@/lib/auth";
 import { examInputSchema, type ExamInput } from "@/lib/exams";
 
 export type SaveResult = { error?: string; id?: string };
@@ -18,7 +18,7 @@ function patternFrom(q: ExamInput) {
 }
 
 export async function saveExam(input: ExamInput): Promise<SaveResult> {
-  await requireAdmin();
+  await requireStaff();
   const parsed = examInputSchema.safeParse(input);
   if (!parsed.success) {
     return { error: parsed.error.issues[0]?.message ?? "অবৈধ তথ্য" };
@@ -72,7 +72,7 @@ export async function saveExamAndRedirect(input: ExamInput) {
 }
 
 export async function setExamQuestions(examId: string, questionIds: string[]) {
-  await requireAdmin();
+  await requireStaff();
   const supabase = await createClient();
   const { error } = await supabase.rpc("admin_set_exam_questions", {
     p_exam_id: examId,
@@ -84,7 +84,7 @@ export async function setExamQuestions(examId: string, questionIds: string[]) {
 }
 
 export async function deleteExam(id: string) {
-  await requireAdmin();
+  await requireStaff();
   const supabase = await createClient();
   await supabase.from("exams").delete().eq("id", id);
   revalidatePath("/admin/exams");
