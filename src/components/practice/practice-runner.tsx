@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Check, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { MathText } from "@/components/math/math-text";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
+import { shuffleOptions } from "@/lib/shuffle";
 import type { QuestionOption } from "@/lib/questions";
 
 type Question = {
@@ -32,6 +33,8 @@ export function PracticeRunner({ questions }: { questions: Question[] }) {
 
   const q = questions[index];
   const isLast = index === questions.length - 1;
+  // Randomize option order per question (stable across re-renders).
+  const options = useMemo(() => shuffleOptions(q.options, q.id), [q.id, q.options]);
 
   async function choose(key: string) {
     if (reveal) return;
@@ -94,7 +97,7 @@ export function PracticeRunner({ questions }: { questions: Question[] }) {
         </div>
 
         <ul className="mt-4 space-y-2">
-          {q.options.map((opt) => {
+          {options.map((opt) => {
             const isSelected = selected === opt.key;
             const isCorrectOpt = reveal?.correctKey === opt.key;
             const showWrong = reveal && isSelected && !reveal.isCorrect;
@@ -112,7 +115,7 @@ export function PracticeRunner({ questions }: { questions: Question[] }) {
                   )}
                 >
                   <span className="uppercase text-muted-foreground">
-                    {opt.key}
+                    {opt.label}
                   </span>
                   <span className="flex-1 font-bengali-serif">
                     <MathText>{opt.text}</MathText>

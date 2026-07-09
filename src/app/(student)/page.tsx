@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { getProfile } from "@/lib/auth";
+import { localName } from "@/lib/i18n-name";
 import { getUserTopicStats } from "@/lib/queries/stats";
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,6 +12,7 @@ import { formatDateTimeBn } from "@/lib/format";
 
 export default async function HomePage() {
   const t = await getTranslations();
+  const locale = await getLocale();
   const profile = await getProfile();
 
   const stats = profile ? await getUserTopicStats(profile.id) : [];
@@ -113,7 +115,9 @@ export default async function HomePage() {
                 key={topic.topicId}
                 className="flex items-center justify-between"
               >
-                <span className="font-bengali-serif">{topic.name_bn}</span>
+                <span className="font-bengali-serif">
+                  {localName(topic, locale)}
+                </span>
                 <div className="flex items-center gap-3">
                   <span className="text-sm text-muted-foreground">
                     {Math.round(topic.accuracy * 100)}%

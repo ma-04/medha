@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { getLocale } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { formatNumberBn } from "@/lib/format";
+import { localName } from "@/lib/i18n-name";
 
 type Breakdown = Record<
   string,
@@ -19,6 +21,7 @@ export default async function ResultPage({
   const { id } = await params;
   const user = await requireUser();
   const supabase = await createClient();
+  const locale = await getLocale();
 
   const { data: exam } = await supabase
     .from("exams")
@@ -40,10 +43,13 @@ export default async function ResultPage({
   const breakdown = (attempt.subject_breakdown ?? {}) as Breakdown;
   const subjectIds = Object.keys(breakdown);
   const { data: subjects } = subjectIds.length
-    ? await supabase.from("subjects").select("id, name_bn").in("id", subjectIds)
+    ? await supabase
+        .from("subjects")
+        .select("id, name_bn, name_en")
+        .in("id", subjectIds)
     : { data: [] };
   const subjectName = new Map(
-    (subjects ?? []).map((s) => [s.id, s.name_bn])
+    (subjects ?? []).map((s) => [s.id, localName(s, locale)])
   );
 
   const total = (exam.pattern as { total_questions?: number })?.total_questions ?? 0;

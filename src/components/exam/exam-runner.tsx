@@ -9,6 +9,7 @@ import { MathText } from "@/components/math/math-text";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { formatDurationBn, formatNumberBn } from "@/lib/format";
+import { shuffleOptions } from "@/lib/shuffle";
 import type { QuestionOption } from "@/lib/questions";
 
 export type ExamQuestion = {
@@ -87,6 +88,8 @@ export function ExamRunner({
 
   const q = questions[index];
   const answeredCount = Object.keys(answers).length;
+  // Randomize option order per question (stable across re-renders).
+  const options = useMemo(() => shuffleOptions(q.options, q.id), [q.id, q.options]);
 
   async function choose(key: string) {
     if (submittedRef.current) return;
@@ -153,7 +156,7 @@ export function ExamRunner({
         </div>
 
         <ul className="mt-4 space-y-2">
-          {q.options.map((opt) => {
+          {options.map((opt) => {
             const isSelected = answers[q.id] === opt.key;
             return (
               <li key={opt.key}>
@@ -166,7 +169,7 @@ export function ExamRunner({
                   )}
                 >
                   <span className="uppercase text-muted-foreground">
-                    {opt.key}
+                    {opt.label}
                   </span>
                   <span className="flex-1 font-bengali-serif">
                     <MathText>{opt.text}</MathText>

@@ -21,7 +21,7 @@ export type ArchiveQuestion = {
 };
 
 export type ArchiveFacets = {
-  subjects: { slug: string; name_bn: string }[];
+  subjects: { slug: string; name_bn: string; name_en: string }[];
   exams: string[];
   years: number[];
 };
@@ -30,7 +30,7 @@ export type ArchiveFacets = {
 export async function getArchiveFacets(): Promise<ArchiveFacets> {
   const supabase = await createClient();
   const [{ data: subjects }, { data: rows }] = await Promise.all([
-    supabase.from("subjects").select("slug, name_bn").order("order_index"),
+    supabase.from("subjects").select("slug, name_bn, name_en").order("order_index"),
     supabase
       .from("questions")
       .select("source_exam, source_year")

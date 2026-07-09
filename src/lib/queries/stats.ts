@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 export type TopicStat = {
   topicId: string;
   name_bn: string;
+  name_en: string | null;
   subjectSlug: string;
   topicSlug: string;
   attempts: number;
@@ -23,7 +24,7 @@ export async function getUserTopicStats(userId: string): Promise<TopicStat[]> {
 
   const { data: topics } = await supabase
     .from("topics")
-    .select("id, name_bn, slug, subjects(slug)")
+    .select("id, name_bn, name_en, slug, subjects(slug)")
     .in(
       "id",
       rows.map((r) => r.topic_id!)
@@ -34,6 +35,7 @@ export async function getUserTopicStats(userId: string): Promise<TopicStat[]> {
       t.id,
       {
         name_bn: t.name_bn,
+        name_en: t.name_en,
         topicSlug: t.slug,
         subjectSlug: (t.subjects as { slug: string } | null)?.slug ?? "",
       },
@@ -48,6 +50,7 @@ export async function getUserTopicStats(userId: string): Promise<TopicStat[]> {
       return {
         topicId: r.topic_id!,
         name_bn: t?.name_bn ?? "",
+        name_en: t?.name_en ?? null,
         subjectSlug: t?.subjectSlug ?? "",
         topicSlug: t?.topicSlug ?? "",
         attempts,

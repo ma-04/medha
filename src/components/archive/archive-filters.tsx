@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { localName } from "@/lib/i18n-name";
 import {
   Select,
   SelectContent,
@@ -19,6 +21,7 @@ const ALL = "__all__";
 export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
   const router = useRouter();
   const params = useSearchParams();
+  const locale = useLocale();
   const [q, setQ] = useState(params.get("q") ?? "");
   // Base UI Select can fire onValueChange while hydrating (committing its native
   // default), which would apply a filter the user never chose. Ignore changes
@@ -81,7 +84,7 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
             <SelectItem value={ALL}>সব বিষয়</SelectItem>
             {facets.subjects.map((s) => (
               <SelectItem key={s.slug} value={s.slug}>
-                {s.name_bn}
+                {localName(s, locale)}
               </SelectItem>
             ))}
           </SelectContent>

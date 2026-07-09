@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getLocale } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { PracticeRunner } from "@/components/practice/practice-runner";
+import { localName } from "@/lib/i18n-name";
 import type { QuestionOption } from "@/lib/questions";
 
 export default async function PracticeRunnerPage({
@@ -13,6 +15,7 @@ export default async function PracticeRunnerPage({
   await requireUser();
   const { subjectSlug, topicSlug } = await params;
   const supabase = await createClient();
+  const locale = await getLocale();
 
   const { data: subject } = await supabase
     .from("subjects")
@@ -23,7 +26,7 @@ export default async function PracticeRunnerPage({
 
   const { data: topic } = await supabase
     .from("topics")
-    .select("id, name_bn")
+    .select("id, name_bn, name_en")
     .eq("subject_id", subject.id)
     .eq("slug", topicSlug)
     .single();
@@ -51,7 +54,7 @@ export default async function PracticeRunnerPage({
         href={`/practice/${subjectSlug}`}
         className="text-sm text-muted-foreground hover:underline"
       >
-        ← {topic.name_bn}
+        ← {localName(topic, locale)}
       </Link>
       {items.length === 0 ? (
         <p className="text-sm text-muted-foreground">

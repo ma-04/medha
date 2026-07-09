@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { getProfile } from "@/lib/auth";
 import { DesktopNav, MobileNav } from "@/components/nav/nav-link";
 import { UserMenu } from "@/components/nav/user-menu";
@@ -10,12 +11,13 @@ export default async function StudentLayout({
   children: React.ReactNode;
 }) {
   const profile = await getProfile();
+  const t = await getTranslations();
 
   return (
     <div className="flex flex-1 flex-col">
       <header className="sticky top-0 z-40 flex h-14 items-center justify-between border-b bg-background/95 px-4 backdrop-blur">
         <Link href="/" className="text-xl font-bold">
-          মেধা
+          {t("app.name")}
         </Link>
         {profile ? (
           <UserMenu
@@ -31,10 +33,10 @@ export default async function StudentLayout({
               nativeButton={false}
               render={<Link href="/login" />}
             >
-              লগইন
+              {t("nav.login")}
             </Button>
             <Button size="sm" nativeButton={false} render={<Link href="/signup" />}>
-              নিবন্ধন
+              {t("nav.signup")}
             </Button>
           </div>
         )}
