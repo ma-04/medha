@@ -72,12 +72,191 @@ export type Database = {
         }
         Relationships: []
       }
+      question_answers: {
+        Row: {
+          correct_key: string
+          question_id: string
+        }
+        Insert: {
+          correct_key: string
+          question_id: string
+        }
+        Update: {
+          correct_key?: string
+          question_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "question_answers_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: true
+            referencedRelation: "questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      questions: {
+        Row: {
+          body: string
+          content_hash: string | null
+          created_at: string
+          created_by: string | null
+          difficulty: number | null
+          explanation: string | null
+          id: string
+          image_url: string | null
+          options: Json
+          search_vector: unknown
+          source_exam: string | null
+          source_label: string | null
+          source_year: number | null
+          status: string
+          topic_id: string
+          updated_at: string
+        }
+        Insert: {
+          body: string
+          content_hash?: string | null
+          created_at?: string
+          created_by?: string | null
+          difficulty?: number | null
+          explanation?: string | null
+          id?: string
+          image_url?: string | null
+          options: Json
+          search_vector?: unknown
+          source_exam?: string | null
+          source_label?: string | null
+          source_year?: number | null
+          status?: string
+          topic_id: string
+          updated_at?: string
+        }
+        Update: {
+          body?: string
+          content_hash?: string | null
+          created_at?: string
+          created_by?: string | null
+          difficulty?: number | null
+          explanation?: string | null
+          id?: string
+          image_url?: string | null
+          options?: Json
+          search_vector?: unknown
+          source_exam?: string | null
+          source_label?: string | null
+          source_year?: number | null
+          status?: string
+          topic_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "questions_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "questions_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      subjects: {
+        Row: {
+          created_at: string
+          id: string
+          name_bn: string
+          name_en: string
+          order_index: number
+          slug: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name_bn: string
+          name_en: string
+          order_index?: number
+          slug: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name_bn?: string
+          name_en?: string
+          order_index?: number
+          slug?: string
+        }
+        Relationships: []
+      }
+      topics: {
+        Row: {
+          created_at: string
+          id: string
+          name_bn: string
+          name_en: string
+          order_index: number
+          slug: string
+          subject_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name_bn: string
+          name_en: string
+          order_index?: number
+          slug: string
+          subject_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name_bn?: string
+          name_en?: string
+          order_index?: number
+          slug?: string
+          subject_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "topics_subject_id_fkey"
+            columns: ["subject_id"]
+            isOneToOne: false
+            referencedRelation: "subjects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
+      admin_upsert_question: {
+        Args: {
+          p_body: string
+          p_correct_key: string
+          p_difficulty?: number
+          p_explanation?: string
+          p_id?: string
+          p_image_url?: string
+          p_options: Json
+          p_source_exam?: string
+          p_source_label?: string
+          p_source_year?: number
+          p_status?: string
+          p_topic_id: string
+        }
+        Returns: string
+      }
       is_admin: { Args: never; Returns: boolean }
+      show_limit: { Args: never; Returns: number }
+      show_trgm: { Args: { "": string }; Returns: string[] }
     }
     Enums: {
       [_ in never]: never

@@ -1,0 +1,242 @@
+[
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "literature",
+    "body": "'পদ্মা নদীর মাঝি' উপন্যাসের রচয়িতা কে?",
+    "options": [
+      { "key": "a", "text": "মানিক বন্দ্যোপাধ্যায়" },
+      { "key": "b", "text": "বিভূতিভূষণ বন্দ্যোপাধ্যায়" },
+      { "key": "c", "text": "তারাশঙ্কর বন্দ্যোপাধ্যায়" },
+      { "key": "d", "text": "শরৎচন্দ্র চট্টোপাধ্যায়" }
+    ],
+    "correct_key": "a",
+    "explanation": "'পদ্মা নদীর মাঝি' (১৯৩৬) মানিক বন্দ্যোপাধ্যায়ের বিখ্যাত উপন্যাস।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪১তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "bangla",
+    "topic_slug": "grammar",
+    "body": "'অগ্নি' শব্দের সমার্থক শব্দ কোনটি?",
+    "options": [
+      { "key": "a", "text": "পাবক" },
+      { "key": "b", "text": "সলিল" },
+      { "key": "c", "text": "মরুৎ" },
+      { "key": "d", "text": "নীর" }
+    ],
+    "correct_key": "a",
+    "explanation": "'পাবক' অর্থ আগুন। সলিল ও নীর অর্থ জল, মরুৎ অর্থ বাতাস।",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "grammar",
+    "body": "Choose the correct sentence.",
+    "options": [
+      { "key": "a", "text": "He has been ill since three days." },
+      { "key": "b", "text": "He has been ill for three days." },
+      { "key": "c", "text": "He is ill since three days." },
+      { "key": "d", "text": "He was ill for three days ago." }
+    ],
+    "correct_key": "b",
+    "explanation": "'For' is used with a period of time (three days); 'since' with a point in time.",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "40th BCS Preliminary"
+  },
+  {
+    "subject_slug": "english",
+    "topic_slug": "vocabulary",
+    "body": "The antonym of 'HONORARY' is —",
+    "options": [
+      { "key": "a", "text": "official" },
+      { "key": "b", "text": "salaried" },
+      { "key": "c", "text": "unofficial" },
+      { "key": "d", "text": "unpaid" }
+    ],
+    "correct_key": "b",
+    "explanation": "An honorary post is unpaid; its antonym is 'salaried' (paid).",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "38th BCS Preliminary"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "arithmetic",
+    "body": "একটি সংখ্যার $\\frac{3}{5}$ অংশ ৩০ হলে সংখ্যাটি কত?",
+    "options": [
+      { "key": "a", "text": "৪০" },
+      { "key": "b", "text": "৪৫" },
+      { "key": "c", "text": "৫০" },
+      { "key": "d", "text": "৬০" }
+    ],
+    "correct_key": "c",
+    "explanation": "সংখ্যাটি $= 30 \\times \\frac{5}{3} = 50$।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "math",
+    "topic_slug": "algebra",
+    "body": "যদি $x + \\frac{1}{x} = 3$ হয়, তবে $x^2 + \\frac{1}{x^2}$ এর মান কত?",
+    "options": [
+      { "key": "a", "text": "৭" },
+      { "key": "b", "text": "৯" },
+      { "key": "c", "text": "১১" },
+      { "key": "d", "text": "৬" }
+    ],
+    "correct_key": "a",
+    "explanation": "$x^2 + \\frac{1}{x^2} = (x+\\frac{1}{x})^2 - 2 = 9 - 2 = 7$।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-bd",
+    "topic_slug": "liberation-war",
+    "body": "মুক্তিযুদ্ধকালে বাংলাদেশকে কয়টি সেক্টরে ভাগ করা হয়েছিল?",
+    "options": [
+      { "key": "a", "text": "৭টি" },
+      { "key": "b", "text": "৯টি" },
+      { "key": "c", "text": "১১টি" },
+      { "key": "d", "text": "১৩টি" }
+    ],
+    "correct_key": "c",
+    "explanation": "১৯৭১ সালের মুক্তিযুদ্ধে বাংলাদেশকে ১১টি সেক্টরে ভাগ করা হয়েছিল।",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-bd",
+    "topic_slug": "constitution",
+    "body": "বাংলাদেশের সংবিধান কার্যকর হয় কবে?",
+    "options": [
+      { "key": "a", "text": "১৬ ডিসেম্বর ১৯৭২" },
+      { "key": "b", "text": "৪ নভেম্বর ১৯৭২" },
+      { "key": "c", "text": "২৬ মার্চ ১৯৭৩" },
+      { "key": "d", "text": "১০ জানুয়ারি ১৯৭২" }
+    ],
+    "correct_key": "a",
+    "explanation": "সংবিধান গৃহীত হয় ৪ নভেম্বর ১৯৭২ এবং কার্যকর হয় ১৬ ডিসেম্বর ১৯৭২।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "gk-intl",
+    "topic_slug": "intl-orgs",
+    "body": "জাতিসংঘের সদর দপ্তর কোথায় অবস্থিত?",
+    "options": [
+      { "key": "a", "text": "জেনেভা" },
+      { "key": "b", "text": "নিউইয়র্ক" },
+      { "key": "c", "text": "প্যারিস" },
+      { "key": "d", "text": "ভিয়েনা" }
+    ],
+    "correct_key": "b",
+    "explanation": "জাতিসংঘের সদর দপ্তর যুক্তরাষ্ট্রের নিউইয়র্ক শহরে অবস্থিত।",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "৩৭তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "physics",
+    "body": "আলোর বেগ শূন্য মাধ্যমে কত?",
+    "options": [
+      { "key": "a", "text": "$3 \\times 10^8$ মি/সে" },
+      { "key": "b", "text": "$3 \\times 10^6$ মি/সে" },
+      { "key": "c", "text": "$3 \\times 10^{10}$ মি/সে" },
+      { "key": "d", "text": "$3 \\times 10^5$ মি/সে" }
+    ],
+    "correct_key": "a",
+    "explanation": "শূন্য মাধ্যমে আলোর বেগ প্রায় $3 \\times 10^8$ মিটার/সেকেন্ড।",
+    "source_exam": "BCS",
+    "source_year": 2020,
+    "source_label": "৪০তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "science",
+    "topic_slug": "biology",
+    "body": "মানবদেহে রক্তের pH এর মান কত?",
+    "options": [
+      { "key": "a", "text": "৫.৪" },
+      { "key": "b", "text": "৬.০" },
+      { "key": "c", "text": "৭.৪" },
+      { "key": "d", "text": "৮.৫" }
+    ],
+    "correct_key": "c",
+    "explanation": "মানবদেহে রক্তের স্বাভাবিক pH প্রায় ৭.৩৫–৭.৪৫, অর্থাৎ সামান্য ক্ষারীয়।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ict",
+    "topic_slug": "computer-basics",
+    "body": "1 কিলোবাইট (KB) সমান কত বাইট?",
+    "options": [
+      { "key": "a", "text": "১০০০ বাইট" },
+      { "key": "b", "text": "১০২৪ বাইট" },
+      { "key": "c", "text": "৫১২ বাইট" },
+      { "key": "d", "text": "২০৪৮ বাইট" }
+    ],
+    "correct_key": "b",
+    "explanation": "১ কিলোবাইট $= 2^{10} = 1024$ বাইট।",
+    "source_exam": "BCS",
+    "source_year": 2019,
+    "source_label": "৩৮তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "mental-ability",
+    "topic_slug": "reasoning",
+    "body": "একটি ধারা: ২, ৬, ১২, ২০, ৩০, ? — পরবর্তী সংখ্যা কত?",
+    "options": [
+      { "key": "a", "text": "৩৮" },
+      { "key": "b", "text": "৪০" },
+      { "key": "c", "text": "৪২" },
+      { "key": "d", "text": "৪৪" }
+    ],
+    "correct_key": "c",
+    "explanation": "পার্থক্য ৪, ৬, ৮, ১০, ১২ — তাই ৩০ + ১২ = ৪২।",
+    "source_exam": "BCS",
+    "source_year": 2021,
+    "source_label": "৪৩তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "geography",
+    "topic_slug": "bd-geography",
+    "body": "বাংলাদেশের বৃহত্তম নদী কোনটি?",
+    "options": [
+      { "key": "a", "text": "পদ্মা" },
+      { "key": "b", "text": "যমুনা" },
+      { "key": "c", "text": "মেঘনা" },
+      { "key": "d", "text": "কর্ণফুলী" }
+    ],
+    "correct_key": "c",
+    "explanation": "প্রশস্ততা ও পানিপ্রবাহের দিক থেকে মেঘনা বাংলাদেশের বৃহত্তম নদী।",
+    "source_exam": "BCS",
+    "source_year": 2018,
+    "source_label": "৩৭তম বিসিএস প্রিলিমিনারি"
+  },
+  {
+    "subject_slug": "ethics",
+    "topic_slug": "governance",
+    "body": "সুশাসনের অন্যতম প্রধান উপাদান কোনটি?",
+    "options": [
+      { "key": "a", "text": "জবাবদিহিতা" },
+      { "key": "b", "text": "কেন্দ্রীকরণ" },
+      { "key": "c", "text": "গোপনীয়তা" },
+      { "key": "d", "text": "একনায়কতন্ত্র" }
+    ],
+    "correct_key": "a",
+    "explanation": "জবাবদিহিতা (accountability) সুশাসনের একটি মূল উপাদান।",
+    "source_exam": "BCS",
+    "source_year": 2022,
+    "source_label": "৪৪তম বিসিএস প্রিলিমিনারি"
+  }
+]
