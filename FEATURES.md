@@ -198,17 +198,24 @@ source of truth (14 files, `20260709000001`–`…000014`).
 | `attempt_answers` | Saved answers per attempt | admin-only direct; students via RPC |
 | `practice_answers` | Append-only practice log; feeds `v_user_topic_stats` | students read/insert own |
 
+Plus a public **`question-images`** Storage bucket (public read, admin-only
+write) for question figures, and route **middleware** that gate-redirects
+anonymous visitors away from `/admin`, `/profile`, `/exams`, `/live`, and
+`/practice` (appending `?next=`).
+
 ### SECURITY DEFINER RPCs (the only tamper-proof write path)
 
 | RPC | Does |
 |---|---|
 | `is_admin()` | Role check used by every admin policy (avoids recursive RLS) |
+| `admin_upsert_question(…)` | Admin-gated: atomically upsert a question **and** its answer key together (a question never exists without a key) |
 | `check_practice_answer(qid, key)` | Logs practice answer; returns correct key + explanation |
 | `reveal_answer(qid)` | Archive reveal for a published question (no logging) |
 | `start_exam_attempt(exam_id)` | Validates window/uniqueness, computes server deadline, returns answer-free questions (resumes if exists) |
 | `save_answer(attempt_id, qid, key)` | Ownership + `now() < deadline` + not-submitted checks; upsert/clear |
 | `submit_attempt(attempt_id)` | Idempotent grading via `_grade_attempt` |
 | `_grade_attempt(attempt_id)` | Internal grader: negative marking + subject breakdown |
+| `auto_submit_expired()` | `pg_cron` per-minute grading of model-exam attempts past their deadline |
 | `get_attempt_review(attempt_id)` | Answers/explanations — gated post-submit (model) / post-publish (live) |
 | `finalize_live_exam(exam_id)` | Grade stragglers, rank, publish — admin anytime, else only after `ends_at` |
 | `get_leaderboard(exam_id)` | Top 100 + own row; only after results published |
