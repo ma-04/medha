@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,13 +20,27 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
   const router = useRouter();
   const params = useSearchParams();
   const [q, setQ] = useState(params.get("q") ?? "");
+  // Base UI Select can fire onValueChange while hydrating (committing its native
+  // default), which would apply a filter the user never chose. Ignore changes
+  // until after mount, and treat same-value fires as no-ops.
+  const ready = useRef(false);
+  useEffect(() => {
+    ready.current = true;
+  }, []);
 
   function apply(next: Record<string, string | null>) {
+    if (!ready.current) return;
     const sp = new URLSearchParams(params.toString());
+    let changed = false;
     for (const [k, v] of Object.entries(next)) {
-      if (v === null || v === "" || v === ALL) sp.delete(k);
-      else sp.set(k, v);
+      const normalized = v === null || v === "" || v === ALL ? null : v;
+      const current = sp.get(k);
+      if (normalized === current) continue;
+      changed = true;
+      if (normalized === null) sp.delete(k);
+      else sp.set(k, normalized);
     }
+    if (!changed) return;
     router.push(`/archive?${sp.toString()}`);
   }
 
