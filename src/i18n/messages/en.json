@@ -1,0 +1,26 @@
+{
+  "app": {
+    "name": "Medha",
+    "tagline": "Your companion for BCS & job exam preparation"
+  },
+  "nav": {
+    "home": "Home",
+    "practice": "Practice",
+    "exams": "Model Tests",
+    "live": "Live Exams",
+    "archive": "Question Bank",
+    "profile": "Profile",
+    "admin": "Admin",
+    "login": "Log in",
+    "logout": "Log out",
+    "signup": "Sign up"
+  },
+  "common": {
+    "loading": "Loading…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "search": "Search",
+    "language": "Language"
+  }
+}
