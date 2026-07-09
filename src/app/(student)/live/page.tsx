@@ -17,6 +17,8 @@ export default async function LivePage() {
     .in("status", ["scheduled", "published"])
     .order("starts_at", { ascending: true });
 
+  // Server render: request-time bucketing, evaluated once per request.
+  // eslint-disable-next-line react-hooks/purity
   const now = Date.now();
   const groups: Record<"live" | "upcoming" | "past", ExamRow[]> = {
     live: [],

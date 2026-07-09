@@ -40,6 +40,8 @@ export default async function ExamDetailPage({
     negative_mark?: number;
   } | null;
 
+  // Server render: request-time availability check, evaluated once per request.
+  // eslint-disable-next-line react-hooks/purity
   const now = Date.now();
   const startsAt = exam.starts_at ? new Date(exam.starts_at).getTime() : null;
   const endsAt = exam.ends_at ? new Date(exam.ends_at).getTime() : null;

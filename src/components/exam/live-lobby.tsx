@@ -29,11 +29,12 @@ export function LiveLobby({
 }) {
   const router = useRouter();
   const supabase = useMemo(() => createClient(), []);
-  const skewRef = useRef(new Date(serverNow).getTime() - Date.now());
+  // Clock-skew correction is computed inside the tick effect to stay pure.
+  const skewRef = useRef(0);
   const startMs = useMemo(() => new Date(startsAt).getTime(), [startsAt]);
   const endMs = useMemo(() => new Date(endsAt).getTime(), [endsAt]);
 
-  const [now, setNow] = useState(() => Date.now() + skewRef.current);
+  const [now, setNow] = useState(() => new Date(serverNow).getTime());
   const [present, setPresent] = useState(1);
   const [published, setPublished] = useState(resultsPublished);
 
@@ -41,6 +42,7 @@ export function LiveLobby({
   // re-evaluates availability.
   const prevPhase = useRef<Phase | null>(null);
   useEffect(() => {
+    skewRef.current = new Date(serverNow).getTime() - Date.now();
     function tick() {
       const t = Date.now() + skewRef.current;
       setNow(t);
@@ -51,7 +53,7 @@ export function LiveLobby({
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, [startMs, endMs, router]);
+  }, [startMs, endMs, serverNow, router]);
 
   // Realtime Presence: count unique waiting participants.
   useEffect(() => {

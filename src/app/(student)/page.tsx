@@ -2,15 +2,32 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { getProfile } from "@/lib/auth";
 import { getUserTopicStats } from "@/lib/queries/stats";
+import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, FileText, Library } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { BookOpen, FileText, Library, Radio } from "lucide-react";
+import { formatDateTimeBn } from "@/lib/format";
 
 export default async function HomePage() {
   const t = await getTranslations();
   const profile = await getProfile();
 
   const stats = profile ? await getUserTopicStats(profile.id) : [];
+
+  // Upcoming/live exams for the next-up widget.
+  const supabase = await createClient();
+  const nowIso = new Date().toISOString();
+  const { data: upcomingLive } = profile
+    ? await supabase
+        .from("exams")
+        .select("id, title_bn, starts_at, ends_at")
+        .eq("type", "live")
+        .in("status", ["scheduled", "published"])
+        .gt("ends_at", nowIso)
+        .order("starts_at", { ascending: true })
+        .limit(3)
+    : { data: [] };
   const weakTopics = stats
     .filter((s) => s.attempts >= 2 && s.accuracy < 0.6)
     .sort((a, b) => a.accuracy - b.accuracy)
@@ -45,6 +62,45 @@ export default async function HomePage() {
         <QuickLink href="/exams" icon={FileText} label={t("nav.exams")} />
         <QuickLink href="/archive" icon={Library} label={t("nav.archive")} />
       </div>
+
+      {upcomingLive && upcomingLive.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-base">
+              <Radio className="size-4 text-primary" /> লাইভ পরীক্ষা
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            {upcomingLive.map((exam) => {
+              // Server render: request-time check, evaluated once per request.
+              // eslint-disable-next-line react-hooks/purity
+              const nowMs = Date.now();
+              const live =
+                exam.starts_at !== null &&
+                exam.ends_at !== null &&
+                nowMs >= new Date(exam.starts_at).getTime() &&
+                nowMs < new Date(exam.ends_at).getTime();
+              return (
+                <Link
+                  key={exam.id}
+                  href={`/live/${exam.id}`}
+                  className="flex items-center justify-between rounded-md p-2 hover:bg-accent"
+                >
+                  <div className="flex items-center gap-2">
+                    {live && <Badge variant="destructive">লাইভ</Badge>}
+                    <span className="font-bengali-serif">{exam.title_bn}</span>
+                  </div>
+                  {!live && exam.starts_at && (
+                    <span className="text-xs text-muted-foreground">
+                      {formatDateTimeBn(exam.starts_at)}
+                    </span>
+                  )}
+                </Link>
+              );
+            })}
+          </CardContent>
+        </Card>
+      )}
 
       {weakTopics.length > 0 && (
         <Card>

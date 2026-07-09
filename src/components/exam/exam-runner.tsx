@@ -41,13 +41,16 @@ export function ExamRunner({
 
   const [answers, setAnswers] = useState<Record<string, string>>(initialAnswers);
   const [index, setIndex] = useState(0);
-  const [remaining, setRemaining] = useState<number>(0);
+  const [remaining, setRemaining] = useState<number>(() =>
+    Math.round((new Date(deadline).getTime() - new Date(serverNow).getTime()) / 1000)
+  );
   const [submitting, setSubmitting] = useState(false);
   const submittedRef = useRef(false);
 
   const deadlineMs = useMemo(() => new Date(deadline).getTime(), [deadline]);
-  // Correct for client/server clock skew so the countdown is authoritative.
-  const skewRef = useRef(new Date(serverNow).getTime() - Date.now());
+  // Corrects for client/server clock skew so the countdown is authoritative.
+  // Computed inside the countdown effect (not during render) to stay pure.
+  const skewRef = useRef(0);
 
   const doSubmit = useCallback(
     async (auto: boolean) => {
@@ -71,6 +74,7 @@ export function ExamRunner({
 
   // Countdown; auto-submit at zero.
   useEffect(() => {
+    skewRef.current = new Date(serverNow).getTime() - Date.now();
     function tick() {
       const left = Math.round((deadlineMs - (Date.now() + skewRef.current)) / 1000);
       setRemaining(left);
@@ -79,7 +83,7 @@ export function ExamRunner({
     tick();
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
-  }, [deadlineMs, doSubmit]);
+  }, [deadlineMs, serverNow, doSubmit]);
 
   const q = questions[index];
   const answeredCount = Object.keys(answers).length;
