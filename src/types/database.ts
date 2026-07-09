@@ -39,6 +39,58 @@ export type Database = {
   }
   public: {
     Tables: {
+      practice_answers: {
+        Row: {
+          answered_at: string
+          id: number
+          is_correct: boolean
+          question_id: string
+          selected_key: string
+          topic_id: string
+          user_id: string
+        }
+        Insert: {
+          answered_at?: string
+          id?: never
+          is_correct: boolean
+          question_id: string
+          selected_key: string
+          topic_id: string
+          user_id: string
+        }
+        Update: {
+          answered_at?: string
+          id?: never
+          is_correct?: boolean
+          question_id?: string
+          selected_key?: string
+          topic_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "practice_answers_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "questions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "practice_answers_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "practice_answers_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -234,7 +286,30 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      v_user_topic_stats: {
+        Row: {
+          attempts: number | null
+          correct: number | null
+          topic_id: string | null
+          user_id: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "practice_answers_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "practice_answers_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Functions: {
       admin_upsert_question: {
@@ -253,6 +328,14 @@ export type Database = {
           p_topic_id: string
         }
         Returns: string
+      }
+      check_practice_answer: {
+        Args: { p_question_id: string; p_selected_key: string }
+        Returns: {
+          correct_key: string
+          explanation: string
+          is_correct: boolean
+        }[]
       }
       is_admin: { Args: never; Returns: boolean }
       show_limit: { Args: never; Returns: number }
