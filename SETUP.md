@@ -61,9 +61,10 @@ node scripts/verify-live.mjs    # live-exam window, one-attempt, ranking, leader
 Demo data for manual/UI testing:
 
 ```bash
-node scripts/seed-questions.mjs   # ~15 BCS questions across all subjects
-node scripts/seed-demo-exam.mjs   # one published model exam
-node scripts/seed-live-demo.mjs   # upcoming + finished live exams (needs live-* test users)
+node scripts/seed-questions.mjs      # all data/questions/*.json (BCS + Bank/Primary/NTRCA), idempotent
+node scripts/seed-standing-exam.mjs  # a published "attend anytime" full model test over all questions
+node scripts/seed-demo-exam.mjs      # a small 5-question published model exam
+node scripts/seed-live-demo.mjs      # upcoming + finished live exams (needs live-* test users)
 ```
 
 ## Scheduled jobs (pg_cron)
