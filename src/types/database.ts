@@ -529,6 +529,7 @@ export type Database = {
         }
         Returns: string
       }
+      auto_finalize_live: { Args: never; Returns: undefined }
       auto_submit_expired: { Args: never; Returns: undefined }
       check_practice_answer: {
         Args: { p_question_id: string; p_selected_key: string }
@@ -538,6 +539,7 @@ export type Database = {
           is_correct: boolean
         }[]
       }
+      finalize_live_exam: { Args: { p_exam_id: string }; Returns: number }
       get_attempt_review: {
         Args: { p_attempt_id: string }
         Returns: {
@@ -551,6 +553,16 @@ export type Database = {
           question_id: string
           selected_key: string
           subject_id: string
+        }[]
+      }
+      get_leaderboard: {
+        Args: { p_exam_id: string }
+        Returns: {
+          full_name: string
+          is_self: boolean
+          rank: number
+          score: number
+          user_id: string
         }[]
       }
       is_admin: { Args: never; Returns: boolean }
