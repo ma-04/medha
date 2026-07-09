@@ -8,6 +8,14 @@ import { Clock } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { MathText } from "@/components/math/math-text";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { formatDuration, formatNumber } from "@/lib/format";
 import { shuffleOptions } from "@/lib/shuffle";
@@ -50,6 +58,7 @@ export function ExamRunner({
     Math.round((new Date(deadline).getTime() - new Date(serverNow).getTime()) / 1000)
   );
   const [submitting, setSubmitting] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
   const submittedRef = useRef(false);
 
   const deadlineMs = useMemo(() => new Date(deadline).getTime(), [deadline]);
@@ -142,10 +151,52 @@ export function ExamRunner({
           <Clock className="size-4" />
           {formatDuration(remaining, locale)}
         </div>
-        <Button size="sm" onClick={() => doSubmit(false)} disabled={submitting}>
+        <Button
+          size="sm"
+          onClick={() => setConfirmOpen(true)}
+          disabled={submitting}
+        >
           {tCommon("submit")}
         </Button>
       </div>
+
+      {/* Finish-early confirmation */}
+      <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("runner.confirmTitle")}</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-1 text-sm text-muted-foreground">
+            <p>
+              {t("runner.confirmAnswered", {
+                answered: formatNumber(answeredCount, locale),
+                total: formatNumber(questions.length, locale),
+              })}
+            </p>
+            {answeredCount < questions.length && (
+              <p>
+                {t("runner.confirmUnanswered", {
+                  count: formatNumber(questions.length - answeredCount, locale),
+                })}
+              </p>
+            )}
+          </div>
+          <DialogFooter>
+            <DialogClose render={<Button variant="outline" />}>
+              {tCommon("cancel")}
+            </DialogClose>
+            <Button
+              onClick={() => {
+                setConfirmOpen(false);
+                doSubmit(false);
+              }}
+              disabled={submitting}
+            >
+              {t("runner.confirmFinish")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       {/* Question */}
       <div className="rounded-lg border p-4">
