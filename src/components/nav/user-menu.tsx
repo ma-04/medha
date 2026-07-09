@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { signOut } from "@/app/(auth)/actions";
 import { LocaleToggle } from "@/components/locale-toggle";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function UserMenu({
   fullName,
@@ -29,6 +30,7 @@ export function UserMenu({
 
   return (
     <div className="flex items-center gap-1">
+      <ThemeToggle />
       <LocaleToggle />
       <DropdownMenu>
         <DropdownMenuTrigger

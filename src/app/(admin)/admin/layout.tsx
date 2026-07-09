@@ -10,6 +10,7 @@ import {
   LogOut,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const adminNav = [
   { href: "/admin", label: "ড্যাশবোর্ড", icon: LayoutDashboard },
@@ -45,6 +46,9 @@ export default async function AdminLayout({
           ))}
         </nav>
         <div className="flex flex-col gap-1">
+          <div className="px-1">
+            <ThemeToggle />
+          </div>
           <Button
             variant="ghost"
             size="sm"
