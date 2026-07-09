@@ -22,5 +22,97 @@
     "submit": "জমা দিন",
     "search": "খুঁজুন",
     "language": "ভাষা"
+  },
+  "exam": {
+    "questions": "প্রশ্ন",
+    "minutes": "মিনিট",
+    "marks": "নম্বর",
+    "type": {
+      "model": "মডেল টেস্ট",
+      "live": "লাইভ পরীক্ষা"
+    },
+    "status": {
+      "completed": "সম্পন্ন",
+      "inProgress": "চলমান",
+      "ended": "সমাপ্ত"
+    },
+    "list": {
+      "title": "পরীক্ষা",
+      "empty": "এখন কোনো পরীক্ষা নেই। শীঘ্রই আসছে।",
+      "startsAt": "শুরু"
+    },
+    "detail": {
+      "back": "← পরীক্ষা",
+      "totalQuestions": "প্রশ্ন সংখ্যা",
+      "duration": "সময়",
+      "perQuestion": "প্রতি প্রশ্ন",
+      "negativeMark": "নেগেটিভ মার্ক",
+      "startsAt": "শুরু",
+      "endsAt": "শেষ",
+      "instructionsTitle": "নির্দেশনা",
+      "instruction1": "একবার শুরু করলে সময় গণনা শুরু হবে।",
+      "instruction2": "ভুল উত্তরে নেগেটিভ মার্ক কাটা যাবে।",
+      "instruction3": "সময় শেষ হলে স্বয়ংক্রিয়ভাবে জমা হবে।",
+      "instruction4": "প্রতিটি পরীক্ষায় একবারই অংশ নেওয়া যাবে।",
+      "ctaResult": "ফলাফল দেখুন",
+      "ctaContinue": "চালিয়ে যান",
+      "ctaTimeUp": "সময় শেষ",
+      "ctaStart": "শুরু করুন",
+      "ctaNotStarted": "এখনো শুরু হয়নি",
+      "ctaEnded": "পরীক্ষা শেষ"
+    },
+    "runner": {
+      "question": "প্রশ্ন",
+      "previous": "পূর্ববর্তী",
+      "next": "পরবর্তী",
+      "answered": "উত্তর দেওয়া হয়েছে",
+      "palette": "প্রশ্ন প্যালেট",
+      "autoSubmitted": "সময় শেষ — উত্তরপত্র জমা হয়েছে",
+      "confirmTitle": "পরীক্ষা শেষ করবেন?",
+      "confirmAnswered": "উত্তর দেওয়া হয়েছে {answered}/{total}",
+      "confirmUnanswered": "{count} প্রশ্ন এখনো বাকি",
+      "confirmFinish": "শেষ করে জমা দিন"
+    },
+    "result": {
+      "back": "← পরীক্ষা",
+      "yourScore": "আপনার স্কোর",
+      "rank": "মেধাক্রম",
+      "correct": "সঠিক",
+      "wrong": "ভুল",
+      "skipped": "বাদ",
+      "subjectBreakdown": "বিষয়ভিত্তিক ফলাফল",
+      "reviewButton": "উত্তরপত্র পর্যালোচনা",
+      "reviewLater": "ফলাফল প্রকাশের পর উত্তরপত্র দেখা যাবে।"
+    },
+    "review": {
+      "back": "← ফলাফল",
+      "title": "উত্তরপত্র পর্যালোচনা",
+      "explanation": "ব্যাখ্যা"
+    },
+    "live": {
+      "title": "লাইভ পরীক্ষা",
+      "empty": "এখন কোনো লাইভ পরীক্ষা নেই।",
+      "ongoing": "চলমান",
+      "upcoming": "আসন্ন",
+      "past": "সম্পন্ন",
+      "liveBadge": "লাইভ",
+      "resultsPublished": "ফলাফল প্রকাশিত",
+      "back": "← লাইভ পরীক্ষা",
+      "negativeShort": "নেগেটিভ",
+      "participants": "জন অংশগ্রহণকারী",
+      "startsIn": "শুরু হতে বাকি",
+      "endsIn": "শেষ হতে বাকি",
+      "yourResult": "আপনার ফলাফল",
+      "startExam": "পরীক্ষা শুরু করুন",
+      "viewLeaderboard": "লিডারবোর্ড দেখুন",
+      "resultAndReview": "আপনার ফলাফল ও পর্যালোচনা →",
+      "preparing": "পরীক্ষা শেষ। ফলাফল প্রস্তুত হচ্ছে…"
+    },
+    "leaderboard": {
+      "back": "← লবি",
+      "title": "লিডারবোর্ড",
+      "empty": "এখনো কোনো ফলাফল নেই।",
+      "you": "(আপনি)"
+    }
   }
 }

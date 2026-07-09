@@ -1,14 +1,16 @@
 import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Radio } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { formatDateTimeBn, formatNumberBn } from "@/lib/format";
+import { formatDateTime, formatNumber } from "@/lib/format";
 
 export default async function LivePage() {
   await requireUser();
   const supabase = await createClient();
+  const t = await getTranslations("exam.live");
 
   const { data: exams } = await supabase
     .from("exams")
@@ -35,17 +37,15 @@ export default async function LivePage() {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-2xl font-bold">লাইভ পরীক্ষা</h1>
+      <h1 className="text-2xl font-bold">{t("title")}</h1>
 
       {(exams ?? []).length === 0 && (
-        <p className="text-sm text-muted-foreground">
-          এখন কোনো লাইভ পরীক্ষা নেই।
-        </p>
+        <p className="text-sm text-muted-foreground">{t("empty")}</p>
       )}
 
-      <Section title="চলমান" tone="live" exams={groups.live} />
-      <Section title="আসন্ন" exams={groups.upcoming} />
-      <Section title="সম্পন্ন" exams={groups.past} />
+      <Section title={t("ongoing")} tone="live" exams={groups.live} />
+      <Section title={t("upcoming")} exams={groups.upcoming} />
+      <Section title={t("past")} exams={groups.past} />
     </div>
   );
 }
@@ -59,7 +59,7 @@ type ExamRow = {
   results_published_at: string | null;
 };
 
-function Section({
+async function Section({
   title,
   exams,
   tone,
@@ -69,6 +69,8 @@ function Section({
   tone?: "live";
 }) {
   if (!exams || exams.length === 0) return null;
+  const t = await getTranslations("exam");
+  const locale = await getLocale();
   return (
     <section className="space-y-3">
       <h2 className="text-lg font-semibold">{title}</h2>
@@ -90,19 +92,25 @@ function Section({
                           : "size-4 text-primary"
                       }
                     />
-                    {tone === "live" && <Badge variant="destructive">লাইভ</Badge>}
-                    {e.results_published_at && <Badge>ফলাফল প্রকাশিত</Badge>}
+                    {tone === "live" && (
+                      <Badge variant="destructive">{t("live.liveBadge")}</Badge>
+                    )}
+                    {e.results_published_at && (
+                      <Badge>{t("live.resultsPublished")}</Badge>
+                    )}
                   </div>
                   <p className="font-bengali-serif text-lg font-medium">
                     {e.title_bn}
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    {formatNumberBn(pattern?.total_questions ?? 0)} প্রশ্ন ·{" "}
-                    {formatNumberBn(pattern?.duration_minutes ?? 0)} মিনিট
+                    {formatNumber(pattern?.total_questions ?? 0, locale)}{" "}
+                    {t("questions")} ·{" "}
+                    {formatNumber(pattern?.duration_minutes ?? 0, locale)}{" "}
+                    {t("minutes")}
                   </p>
                   {e.starts_at && (
                     <p className="text-xs text-muted-foreground">
-                      শুরু: {formatDateTimeBn(e.starts_at)}
+                      {t("list.startsAt")}: {formatDateTime(e.starts_at, locale)}
                     </p>
                   )}
                 </CardContent>

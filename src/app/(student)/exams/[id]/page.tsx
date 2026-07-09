@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { examTypeLabels } from "@/lib/exams";
-import { formatDateTimeBn, formatNumberBn } from "@/lib/format";
+import { formatDateTime, formatNumber } from "@/lib/format";
 
 export default async function ExamDetailPage({
   params,
@@ -16,6 +16,8 @@ export default async function ExamDetailPage({
   const { id } = await params;
   const user = await requireUser();
   const supabase = await createClient();
+  const t = await getTranslations("exam");
+  const locale = await getLocale();
 
   const { data: exam } = await supabase
     .from("exams")
@@ -59,27 +61,27 @@ export default async function ExamDetailPage({
   if (attempt?.submitted_at) {
     cta = (
       <Button nativeButton={false} render={<Link href={`/exams/${id}/result`} />}>
-        ফলাফল দেখুন
+        {t("detail.ctaResult")}
       </Button>
     );
   } else if (attempt) {
     cta = available ? (
       <Button nativeButton={false} render={<Link href={`/exams/${id}/attempt`} />}>
-        চালিয়ে যান
+        {t("detail.ctaContinue")}
       </Button>
     ) : (
-      <Button disabled>সময় শেষ</Button>
+      <Button disabled>{t("detail.ctaTimeUp")}</Button>
     );
   } else if (available) {
     cta = (
       <Button nativeButton={false} render={<Link href={`/exams/${id}/attempt`} />}>
-        শুরু করুন
+        {t("detail.ctaStart")}
       </Button>
     );
   } else if (notStarted) {
-    cta = <Button disabled>এখনো শুরু হয়নি</Button>;
+    cta = <Button disabled>{t("detail.ctaNotStarted")}</Button>;
   } else {
-    cta = <Button disabled>পরীক্ষা শেষ</Button>;
+    cta = <Button disabled>{t("detail.ctaEnded")}</Button>;
   }
 
   return (
@@ -89,11 +91,11 @@ export default async function ExamDetailPage({
           href="/exams"
           className="text-sm text-muted-foreground hover:underline"
         >
-          ← পরীক্ষা
+          {t("detail.back")}
         </Link>
         <div className="mt-2 flex items-center gap-2">
-          <Badge variant="outline">{examTypeLabels[exam.type]}</Badge>
-          {ended && <Badge variant="secondary">সমাপ্ত</Badge>}
+          <Badge variant="outline">{t(`type.${exam.type}`)}</Badge>
+          {ended && <Badge variant="secondary">{t("status.ended")}</Badge>}
         </div>
         <h1 className="mt-1 font-bengali-serif text-2xl font-bold">
           {exam.title_bn}
@@ -108,26 +110,40 @@ export default async function ExamDetailPage({
 
       <Card>
         <CardContent className="grid grid-cols-2 gap-4 p-4 text-sm">
-          <Info label="প্রশ্ন সংখ্যা" value={formatNumberBn(pattern?.total_questions ?? 0)} />
-          <Info label="সময়" value={`${formatNumberBn(pattern?.duration_minutes ?? 0)} মিনিট`} />
-          <Info label="প্রতি প্রশ্ন" value={`${formatNumberBn(pattern?.mark_per_question ?? 1)} নম্বর`} />
-          <Info label="নেগেটিভ মার্ক" value={formatNumberBn(pattern?.negative_mark ?? 0)} />
+          <Info
+            label={t("detail.totalQuestions")}
+            value={formatNumber(pattern?.total_questions ?? 0, locale)}
+          />
+          <Info
+            label={t("detail.duration")}
+            value={`${formatNumber(pattern?.duration_minutes ?? 0, locale)} ${t("minutes")}`}
+          />
+          <Info
+            label={t("detail.perQuestion")}
+            value={`${formatNumber(pattern?.mark_per_question ?? 1, locale)} ${t("marks")}`}
+          />
+          <Info
+            label={t("detail.negativeMark")}
+            value={formatNumber(pattern?.negative_mark ?? 0, locale)}
+          />
           {isLive && exam.starts_at && (
-            <Info label="শুরু" value={formatDateTimeBn(exam.starts_at)} />
+            <Info label={t("detail.startsAt")} value={formatDateTime(exam.starts_at, locale)} />
           )}
           {isLive && exam.ends_at && (
-            <Info label="শেষ" value={formatDateTimeBn(exam.ends_at)} />
+            <Info label={t("detail.endsAt")} value={formatDateTime(exam.ends_at, locale)} />
           )}
         </CardContent>
       </Card>
 
       <div className="rounded-lg border bg-muted/30 p-4 text-sm text-muted-foreground">
-        <p className="font-medium text-foreground">নির্দেশনা</p>
+        <p className="font-medium text-foreground">
+          {t("detail.instructionsTitle")}
+        </p>
         <ul className="mt-2 list-inside list-disc space-y-1">
-          <li>একবার শুরু করলে সময় গণনা শুরু হবে।</li>
-          <li>ভুল উত্তরে নেগেটিভ মার্ক কাটা যাবে।</li>
-          <li>সময় শেষ হলে স্বয়ংক্রিয়ভাবে জমা হবে।</li>
-          <li>প্রতিটি পরীক্ষায় একবারই অংশ নেওয়া যাবে।</li>
+          <li>{t("detail.instruction1")}</li>
+          <li>{t("detail.instruction2")}</li>
+          <li>{t("detail.instruction3")}</li>
+          <li>{t("detail.instruction4")}</li>
         </ul>
       </div>
 

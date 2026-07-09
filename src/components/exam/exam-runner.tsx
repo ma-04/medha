@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { Clock } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { MathText } from "@/components/math/math-text";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { formatDurationBn, formatNumberBn } from "@/lib/format";
+import { formatDuration, formatNumber } from "@/lib/format";
 import { shuffleOptions } from "@/lib/shuffle";
 import type { QuestionOption } from "@/lib/questions";
 
@@ -38,6 +39,9 @@ export function ExamRunner({
   initialAnswers: Record<string, string>;
 }) {
   const router = useRouter();
+  const t = useTranslations("exam");
+  const tCommon = useTranslations("common");
+  const locale = useLocale();
   const supabase = useMemo(() => createClient(), []);
 
   const [answers, setAnswers] = useState<Record<string, string>>(initialAnswers);
@@ -67,10 +71,10 @@ export function ExamRunner({
         setSubmitting(false);
         return;
       }
-      if (auto) toast.info("সময় শেষ — উত্তরপত্র জমা হয়েছে");
+      if (auto) toast.info(t("runner.autoSubmitted"));
       router.replace(`/exams/${examId}/result`);
     },
-    [supabase, attemptId, examId, router]
+    [supabase, attemptId, examId, router, t]
   );
 
   // Countdown; auto-submit at zero.
@@ -126,7 +130,8 @@ export function ExamRunner({
       {/* Sticky header: timer + progress */}
       <div className="sticky top-0 z-10 flex items-center justify-between rounded-lg border bg-background/95 p-3 backdrop-blur">
         <span className="text-sm text-muted-foreground">
-          প্রশ্ন {formatNumberBn(index + 1)}/{formatNumberBn(questions.length)}
+          {t("runner.question")} {formatNumber(index + 1, locale)}/
+          {formatNumber(questions.length, locale)}
         </span>
         <div
           className={cn(
@@ -135,10 +140,10 @@ export function ExamRunner({
           )}
         >
           <Clock className="size-4" />
-          {formatDurationBn(remaining)}
+          {formatDuration(remaining, locale)}
         </div>
         <Button size="sm" onClick={() => doSubmit(false)} disabled={submitting}>
-          জমা দিন
+          {tCommon("submit")}
         </Button>
       </div>
 
@@ -188,11 +193,11 @@ export function ExamRunner({
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           disabled={index === 0}
         >
-          পূর্ববর্তী
+          {t("runner.previous")}
         </Button>
         <span className="text-sm text-muted-foreground">
-          উত্তর দেওয়া হয়েছে: {formatNumberBn(answeredCount)}/
-          {formatNumberBn(questions.length)}
+          {t("runner.answered")}: {formatNumber(answeredCount, locale)}/
+          {formatNumber(questions.length, locale)}
         </span>
         <Button
           variant="outline"
@@ -201,13 +206,15 @@ export function ExamRunner({
           }
           disabled={index === questions.length - 1}
         >
-          পরবর্তী
+          {t("runner.next")}
         </Button>
       </div>
 
       {/* Palette */}
       <div className="rounded-lg border p-3">
-        <p className="mb-2 text-xs text-muted-foreground">প্রশ্ন প্যালেট</p>
+        <p className="mb-2 text-xs text-muted-foreground">
+          {t("runner.palette")}
+        </p>
         <div className="grid grid-cols-8 gap-2 sm:grid-cols-10">
           {questions.map((item, i) => {
             const answered = !!answers[item.id];
@@ -224,7 +231,7 @@ export function ExamRunner({
                     : "bg-background text-muted-foreground"
                 )}
               >
-                {formatNumberBn(i + 1)}
+                {formatNumber(i + 1, locale)}
               </button>
             );
           })}

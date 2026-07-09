@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { formatNumberBn } from "@/lib/format";
+import { formatNumber } from "@/lib/format";
 import { localName } from "@/lib/i18n-name";
 
 type Breakdown = Record<
@@ -22,6 +22,7 @@ export default async function ResultPage({
   const user = await requireUser();
   const supabase = await createClient();
   const locale = await getLocale();
+  const t = await getTranslations("exam");
 
   const { data: exam } = await supabase
     .from("exams")
@@ -68,7 +69,7 @@ export default async function ResultPage({
           href="/exams"
           className="text-sm text-muted-foreground hover:underline"
         >
-          ← পরীক্ষা
+          {t("result.back")}
         </Link>
         <h1 className="mt-1 font-bengali-serif text-2xl font-bold">
           {exam.title_bn}
@@ -77,32 +78,32 @@ export default async function ResultPage({
 
       <Card>
         <CardContent className="p-6 text-center">
-          <p className="text-sm text-muted-foreground">আপনার স্কোর</p>
+          <p className="text-sm text-muted-foreground">{t("result.yourScore")}</p>
           <p className="text-4xl font-bold">
-            {formatNumberBn(Number(attempt.score ?? 0))}
+            {formatNumber(Number(attempt.score ?? 0), locale)}
             <span className="text-lg text-muted-foreground">
               {" "}
-              / {formatNumberBn(maxScore)}
+              / {formatNumber(maxScore, locale)}
             </span>
           </p>
           {exam.type === "live" && attempt.rank != null && (
             <p className="mt-2 text-sm text-muted-foreground">
-              মেধাক্রম: {formatNumberBn(attempt.rank)}
+              {t("result.rank")}: {formatNumber(attempt.rank, locale)}
             </p>
           )}
         </CardContent>
       </Card>
 
       <div className="grid grid-cols-3 gap-3">
-        <Stat label="সঠিক" value={attempt.correct_count ?? 0} tone="good" />
-        <Stat label="ভুল" value={attempt.wrong_count ?? 0} tone="bad" />
-        <Stat label="বাদ" value={attempt.skipped_count ?? 0} />
+        <Stat label={t("result.correct")} value={attempt.correct_count ?? 0} tone="good" locale={locale} />
+        <Stat label={t("result.wrong")} value={attempt.wrong_count ?? 0} tone="bad" locale={locale} />
+        <Stat label={t("result.skipped")} value={attempt.skipped_count ?? 0} locale={locale} />
       </div>
 
       {subjectIds.length > 0 && (
         <Card>
           <CardContent className="space-y-2 p-4">
-            <p className="text-sm font-semibold">বিষয়ভিত্তিক ফলাফল</p>
+            <p className="text-sm font-semibold">{t("result.subjectBreakdown")}</p>
             {subjectIds.map((sid) => {
               const b = breakdown[sid];
               return (
@@ -114,7 +115,8 @@ export default async function ResultPage({
                     {subjectName.get(sid) ?? "—"}
                   </span>
                   <span className="text-muted-foreground">
-                    {formatNumberBn(b.correct)}/{formatNumberBn(b.total)} সঠিক
+                    {formatNumber(b.correct, locale)}/{formatNumber(b.total, locale)}{" "}
+                    {t("result.correct")}
                   </span>
                 </div>
               );
@@ -128,12 +130,10 @@ export default async function ResultPage({
           nativeButton={false}
           render={<Link href={`/exams/${id}/review`} />}
         >
-          উত্তরপত্র পর্যালোচনা
+          {t("result.reviewButton")}
         </Button>
       ) : (
-        <p className="text-sm text-muted-foreground">
-          ফলাফল প্রকাশের পর উত্তরপত্র দেখা যাবে।
-        </p>
+        <p className="text-sm text-muted-foreground">{t("result.reviewLater")}</p>
       )}
     </div>
   );
@@ -143,10 +143,12 @@ function Stat({
   label,
   value,
   tone,
+  locale,
 }: {
   label: string;
   value: number;
   tone?: "good" | "bad";
+  locale: string;
 }) {
   return (
     <Card>
@@ -160,7 +162,7 @@ function Stat({
                 : "text-2xl font-bold"
           }
         >
-          {formatNumberBn(value)}
+          {formatNumber(value, locale)}
         </p>
         <p className="text-xs text-muted-foreground">{label}</p>
       </CardContent>

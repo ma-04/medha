@@ -22,5 +22,97 @@
     "submit": "Submit",
     "search": "Search",
     "language": "Language"
+  },
+  "exam": {
+    "questions": "questions",
+    "minutes": "min",
+    "marks": "marks",
+    "type": {
+      "model": "Model Test",
+      "live": "Live Exam"
+    },
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In progress",
+      "ended": "Ended"
+    },
+    "list": {
+      "title": "Exams",
+      "empty": "No exams available right now. Coming soon.",
+      "startsAt": "Starts"
+    },
+    "detail": {
+      "back": "← Exams",
+      "totalQuestions": "Questions",
+      "duration": "Duration",
+      "perQuestion": "Per question",
+      "negativeMark": "Negative mark",
+      "startsAt": "Starts",
+      "endsAt": "Ends",
+      "instructionsTitle": "Instructions",
+      "instruction1": "The timer starts as soon as you begin.",
+      "instruction2": "Wrong answers incur negative marking.",
+      "instruction3": "Your paper is submitted automatically when time runs out.",
+      "instruction4": "Each exam can be attempted only once.",
+      "ctaResult": "View result",
+      "ctaContinue": "Continue",
+      "ctaTimeUp": "Time's up",
+      "ctaStart": "Start",
+      "ctaNotStarted": "Not started yet",
+      "ctaEnded": "Exam ended"
+    },
+    "runner": {
+      "question": "Question",
+      "previous": "Previous",
+      "next": "Next",
+      "answered": "Answered",
+      "palette": "Question palette",
+      "autoSubmitted": "Time's up — your paper has been submitted",
+      "confirmTitle": "Finish exam?",
+      "confirmAnswered": "Answered {answered}/{total}",
+      "confirmUnanswered": "{count} still unanswered",
+      "confirmFinish": "Finish & submit"
+    },
+    "result": {
+      "back": "← Exams",
+      "yourScore": "Your score",
+      "rank": "Rank",
+      "correct": "Correct",
+      "wrong": "Wrong",
+      "skipped": "Skipped",
+      "subjectBreakdown": "Subject-wise result",
+      "reviewButton": "Review answers",
+      "reviewLater": "Answer review will be available after results are published."
+    },
+    "review": {
+      "back": "← Result",
+      "title": "Review answers",
+      "explanation": "Explanation"
+    },
+    "live": {
+      "title": "Live Exams",
+      "empty": "No live exams right now.",
+      "ongoing": "Ongoing",
+      "upcoming": "Upcoming",
+      "past": "Past",
+      "liveBadge": "Live",
+      "resultsPublished": "Results published",
+      "back": "← Live Exams",
+      "negativeShort": "Negative",
+      "participants": "participants",
+      "startsIn": "Starts in",
+      "endsIn": "Ends in",
+      "yourResult": "Your result",
+      "startExam": "Start exam",
+      "viewLeaderboard": "View leaderboard",
+      "resultAndReview": "Your result & review →",
+      "preparing": "Exam finished. Results are being prepared…"
+    },
+    "leaderboard": {
+      "back": "← Lobby",
+      "title": "Leaderboard",
+      "empty": "No results yet.",
+      "you": "(You)"
+    }
   }
 }

@@ -3,10 +3,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { Radio, Users } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
-import { formatDurationBn, formatNumberBn } from "@/lib/format";
+import { formatDuration, formatNumber } from "@/lib/format";
 
 type Phase = "before" | "open" | "ended";
 
@@ -28,6 +29,8 @@ export function LiveLobby({
   resultsPublished: boolean;
 }) {
   const router = useRouter();
+  const t = useTranslations("exam.live");
+  const locale = useLocale();
   const supabase = useMemo(() => createClient(), []);
   // Clock-skew correction is computed inside the tick effect to stay pure.
   const skewRef = useRef(0);
@@ -97,17 +100,17 @@ export function LiveLobby({
     <div className="space-y-6">
       <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
         <Users className="size-4" />
-        {formatNumberBn(present)} জন অংশগ্রহণকারী
+        {formatNumber(present, locale)} {t("participants")}
       </div>
 
       {phase === "before" && (
         <div className="rounded-lg border bg-muted/30 p-6 text-center">
           <div className="flex items-center justify-center gap-2 text-muted-foreground">
             <Radio className="size-4 animate-pulse" />
-            শুরু হতে বাকি
+            {t("startsIn")}
           </div>
           <p className="mt-2 font-mono text-4xl font-bold tabular-nums">
-            {formatDurationBn((startMs - now) / 1000)}
+            {formatDuration((startMs - now) / 1000, locale)}
           </p>
         </div>
       )}
@@ -119,7 +122,7 @@ export function LiveLobby({
               nativeButton={false}
               render={<Link href={`/exams/${examId}/result`} />}
             >
-              আপনার ফলাফল
+              {t("yourResult")}
             </Button>
           ) : (
             <Button
@@ -127,11 +130,11 @@ export function LiveLobby({
               nativeButton={false}
               render={<Link href={`/exams/${examId}/attempt`} />}
             >
-              পরীক্ষা শুরু করুন
+              {t("startExam")}
             </Button>
           )}
           <p className="mt-2 text-sm text-muted-foreground">
-            শেষ হতে বাকি: {formatDurationBn((endMs - now) / 1000)}
+            {t("endsIn")}: {formatDuration((endMs - now) / 1000, locale)}
           </p>
         </div>
       )}
@@ -144,7 +147,7 @@ export function LiveLobby({
                 nativeButton={false}
                 render={<Link href={`/live/${examId}/leaderboard`} />}
               >
-                লিডারবোর্ড দেখুন
+                {t("viewLeaderboard")}
               </Button>
               {hasSubmitted && (
                 <div>
@@ -152,15 +155,13 @@ export function LiveLobby({
                     href={`/exams/${examId}/result`}
                     className="text-sm text-muted-foreground hover:underline"
                   >
-                    আপনার ফলাফল ও পর্যালোচনা →
+                    {t("resultAndReview")}
                   </Link>
                 </div>
               )}
             </>
           ) : (
-            <p className="text-sm text-muted-foreground">
-              পরীক্ষা শেষ। ফলাফল প্রস্তুত হচ্ছে…
-            </p>
+            <p className="text-sm text-muted-foreground">{t("preparing")}</p>
           )}
         </div>
       )}

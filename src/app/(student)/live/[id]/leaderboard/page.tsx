@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Trophy } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { cn } from "@/lib/utils";
-import { formatNumberBn } from "@/lib/format";
+import { formatNumber } from "@/lib/format";
 
 type LeaderRow = {
   rank: number;
@@ -22,6 +23,8 @@ export default async function LeaderboardPage({
   const { id } = await params;
   await requireUser();
   const supabase = await createClient();
+  const t = await getTranslations("exam.leaderboard");
+  const locale = await getLocale();
 
   const { data: exam } = await supabase
     .from("exams")
@@ -48,11 +51,11 @@ export default async function LeaderboardPage({
           href={`/live/${id}`}
           className="text-sm text-muted-foreground hover:underline"
         >
-          ← লবি
+          {t("back")}
         </Link>
         <h1 className="mt-1 flex items-center gap-2 font-bengali-serif text-2xl font-bold">
           <Trophy className="size-6 text-amber-500" />
-          লিডারবোর্ড
+          {t("title")}
         </h1>
         <p className="font-bengali-serif text-muted-foreground">
           {exam.title_bn}
@@ -61,19 +64,17 @@ export default async function LeaderboardPage({
 
       <div className="divide-y rounded-lg border">
         {top.length === 0 && (
-          <p className="p-4 text-sm text-muted-foreground">
-            এখনো কোনো ফলাফল নেই।
-          </p>
+          <p className="p-4 text-sm text-muted-foreground">{t("empty")}</p>
         )}
         {top.map((r) => (
-          <Row key={r.user_id} row={r} />
+          <Row key={r.user_id} row={r} locale={locale} selfLabel={t("you")} />
         ))}
         {selfOutside && (
           <>
             <div className="p-2 text-center text-xs text-muted-foreground">
               ⋯
             </div>
-            <Row row={selfOutside} />
+            <Row row={selfOutside} locale={locale} selfLabel={t("you")} />
           </>
         )}
       </div>
@@ -81,7 +82,15 @@ export default async function LeaderboardPage({
   );
 }
 
-function Row({ row }: { row: LeaderRow }) {
+function Row({
+  row,
+  locale,
+  selfLabel,
+}: {
+  row: LeaderRow;
+  locale: string;
+  selfLabel: string;
+}) {
   const medal =
     row.rank === 1 ? "🥇" : row.rank === 2 ? "🥈" : row.rank === 3 ? "🥉" : null;
   return (
@@ -92,16 +101,16 @@ function Row({ row }: { row: LeaderRow }) {
       )}
     >
       <span className="w-8 text-center font-bold tabular-nums">
-        {medal ?? formatNumberBn(row.rank)}
+        {medal ?? formatNumber(row.rank, locale)}
       </span>
       <span className="flex-1 font-bengali-serif">
         {row.full_name}
         {row.is_self && (
-          <span className="ml-2 text-xs text-primary">(আপনি)</span>
+          <span className="ml-2 text-xs text-primary">{selfLabel}</span>
         )}
       </span>
       <span className="font-semibold tabular-nums">
-        {formatNumberBn(Number(row.score ?? 0))}
+        {formatNumber(Number(row.score ?? 0), locale)}
       </span>
     </div>
   );

@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { LiveLobby } from "@/components/exam/live-lobby";
 import { Card, CardContent } from "@/components/ui/card";
-import { formatNumberBn } from "@/lib/format";
+import { formatNumber } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +17,8 @@ export default async function LiveLobbyPage({
   const { id } = await params;
   const user = await requireUser();
   const supabase = await createClient();
+  const t = await getTranslations("exam");
+  const locale = await getLocale();
 
   const { data: exam } = await supabase
     .from("exams")
@@ -52,7 +55,7 @@ export default async function LiveLobbyPage({
           href="/live"
           className="text-sm text-muted-foreground hover:underline"
         >
-          ← লাইভ পরীক্ষা
+          {t("live.back")}
         </Link>
         <h1 className="mt-1 font-bengali-serif text-2xl font-bold">
           {exam.title_bn}
@@ -69,21 +72,23 @@ export default async function LiveLobbyPage({
         <CardContent className="grid grid-cols-3 gap-4 p-4 text-center text-sm">
           <div>
             <p className="text-lg font-bold">
-              {formatNumberBn(pattern?.total_questions ?? 0)}
+              {formatNumber(pattern?.total_questions ?? 0, locale)}
             </p>
-            <p className="text-xs text-muted-foreground">প্রশ্ন</p>
+            <p className="text-xs text-muted-foreground">{t("questions")}</p>
           </div>
           <div>
             <p className="text-lg font-bold">
-              {formatNumberBn(pattern?.duration_minutes ?? 0)}
+              {formatNumber(pattern?.duration_minutes ?? 0, locale)}
             </p>
-            <p className="text-xs text-muted-foreground">মিনিট</p>
+            <p className="text-xs text-muted-foreground">{t("minutes")}</p>
           </div>
           <div>
             <p className="text-lg font-bold">
-              {formatNumberBn(pattern?.negative_mark ?? 0)}
+              {formatNumber(pattern?.negative_mark ?? 0, locale)}
             </p>
-            <p className="text-xs text-muted-foreground">নেগেটিভ</p>
+            <p className="text-xs text-muted-foreground">
+              {t("live.negativeShort")}
+            </p>
           </div>
         </CardContent>
       </Card>

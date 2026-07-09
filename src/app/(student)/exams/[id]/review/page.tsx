@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Check, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { MathText } from "@/components/math/math-text";
 import { cn } from "@/lib/utils";
-import { formatNumberBn } from "@/lib/format";
+import { formatNumber } from "@/lib/format";
 import type { QuestionOption } from "@/lib/questions";
 
 type ReviewRow = {
@@ -29,6 +30,8 @@ export default async function ReviewPage({
   const { id } = await params;
   await requireUser();
   const supabase = await createClient();
+  const t = await getTranslations("exam.review");
+  const locale = await getLocale();
 
   const { data: attempt } = await supabase
     .from("exam_attempts")
@@ -49,15 +52,15 @@ export default async function ReviewPage({
         href={`/exams/${id}/result`}
         className="text-sm text-muted-foreground hover:underline"
       >
-        ← ফলাফল
+        {t("back")}
       </Link>
-      <h1 className="text-xl font-bold">উত্তরপত্র পর্যালোচনা</h1>
+      <h1 className="text-xl font-bold">{t("title")}</h1>
 
       {rows.map((r) => (
         <div key={r.question_id} className="rounded-lg border p-4">
           <div className="mb-2 flex items-center gap-2">
             <span className="text-xs text-muted-foreground">
-              {formatNumberBn(r.order_index + 1)}.
+              {formatNumber(r.order_index + 1, locale)}.
             </span>
             {r.is_correct ? (
               <Check className="size-4 text-green-600" />
@@ -100,7 +103,7 @@ export default async function ReviewPage({
           </ul>
           {r.explanation && (
             <div className="mt-3 rounded-md bg-muted p-3 text-sm">
-              <span className="font-semibold">ব্যাখ্যা: </span>
+              <span className="font-semibold">{t("explanation")}: </span>
               <span className="font-bengali-serif">
                 <MathText>{r.explanation}</MathText>
               </span>

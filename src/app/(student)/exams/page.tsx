@@ -1,15 +1,17 @@
 import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
 import { FileText } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { examTypeLabels } from "@/lib/exams";
-import { formatDateTimeBn } from "@/lib/format";
+import { formatDateTime, formatNumber } from "@/lib/format";
 
 export default async function ExamsPage() {
   const user = await requireUser();
   const supabase = await createClient();
+  const t = await getTranslations("exam");
+  const locale = await getLocale();
 
   const { data: exams } = await supabase
     .from("exams")
@@ -30,12 +32,10 @@ export default async function ExamsPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">পরীক্ষা</h1>
+      <h1 className="text-2xl font-bold">{t("list.title")}</h1>
 
       {list.length === 0 && (
-        <p className="text-sm text-muted-foreground">
-          এখন কোনো পরীক্ষা নেই। শীঘ্রই আসছে।
-        </p>
+        <p className="text-sm text-muted-foreground">{t("list.empty")}</p>
       )}
 
       <div className="grid gap-3 sm:grid-cols-2">
@@ -52,23 +52,25 @@ export default async function ExamsPage() {
                 <CardContent className="space-y-2 p-4">
                   <div className="flex items-center gap-2">
                     <FileText className="size-4 text-primary" />
-                    <Badge variant="outline">{examTypeLabels[e.type]}</Badge>
+                    <Badge variant="outline">{t(`type.${e.type}`)}</Badge>
                     {submitted ? (
-                      <Badge>সম্পন্ন</Badge>
+                      <Badge>{t("status.completed")}</Badge>
                     ) : hasAttempt ? (
-                      <Badge variant="secondary">চলমান</Badge>
+                      <Badge variant="secondary">{t("status.inProgress")}</Badge>
                     ) : null}
                   </div>
                   <p className="font-bengali-serif text-lg font-medium">
                     {e.title_bn}
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    {pattern?.total_questions ?? 0} প্রশ্ন ·{" "}
-                    {pattern?.duration_minutes ?? 0} মিনিট
+                    {formatNumber(pattern?.total_questions ?? 0, locale)}{" "}
+                    {t("questions")} ·{" "}
+                    {formatNumber(pattern?.duration_minutes ?? 0, locale)}{" "}
+                    {t("minutes")}
                   </p>
                   {e.type === "live" && e.starts_at && (
                     <p className="text-xs text-muted-foreground">
-                      শুরু: {formatDateTimeBn(e.starts_at)}
+                      {t("list.startsAt")}: {formatDateTime(e.starts_at, locale)}
                     </p>
                   )}
                 </CardContent>
