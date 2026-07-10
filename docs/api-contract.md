@@ -44,7 +44,8 @@ returns the exam in full:
 ```json
 {
   "attempt_id": "uuid",
-  "deadline": "timestamptz",
+  "deadline": "timestamptz | null",
+  "started_at": "timestamptz",
   "submitted_at": "timestamptz | null",
   "server_now": "timestamptz",
   "answers": { "<question_id>": "<selected_key>" },
@@ -59,6 +60,22 @@ returns the exam in full:
 `deadline − server_now` and tick locally from there. A phone with a skewed clock
 must not get more time, and it won't, because `save_answer` re-checks the
 deadline server-side anyway.
+
+**`deadline` is null for an untimed attempt** (a `model` exam with
+`pattern.timed = false`). Then there is no countdown and no auto-submit: count
+*up* from `started_at` if you want to show elapsed time, and never submit on the
+client's own initiative. `save_answer` keeps accepting answers indefinitely.
+
+**Do not re-sort `questions` or `options`.** Both arrive already shuffled for
+this attempt — the order is derived server-side from
+`md5(attempt_id ‖ question_id[ ‖ option_key])`, so it differs per attempt and per
+student, and resuming re-derives the same order. Render the arrays in the order
+received and label the options positionally by index (a, b, c…). Labelling by
+`option.key` would print the authored letter next to a moved option. `order_index`
+is the exam's *authored* position and is not the display position; number the
+questions by array index. Two per-exam flags, both defaulting to true, gate this:
+`pattern.shuffle_questions` and `pattern.shuffle_options`. Grading is unaffected —
+`save_answer` and the grader key off the option's `key`, never its position.
 
 Raises `not authenticated`, `exam not found`, `exam not available`,
 `exam has not started`, `exam has ended`. For `live` exams the deadline is
@@ -75,7 +92,8 @@ a previous attempt exists and was submitted, and the attempt count is below
 **`save_answer`** upserts one answer; passing `p_selected_key = null` clears it.
 Refuses to write when the attempt is not yours, is already submitted, is past
 its `deadline` (`time is up`), or when the question does not belong to that exam
-(`question not in exam`). Safe to call on every tap.
+(`question not in exam`). A null `deadline` never expires. Safe to call on every
+tap.
 
 **`submit_attempt`** grades server-side and returns
 `{ attempt_id, score, correct_count, wrong_count, skipped_count,
@@ -90,10 +108,31 @@ for `model` exams the attempt must be submitted (`attempt not submitted yet`),
 for `live` exams `exams.results_published_at` must be set
 (`results not published yet`). Admins bypass both checks.
 
+Rows come back in the same shuffled order the student sat, derived from the same
+seed — so again, do not re-sort, and label positionally. Highlight the correct
+and chosen options by comparing `option.key` against `correct_key` /
+`selected_key`; those are stable regardless of position. Because the order is
+derived rather than stored, flipping a `pattern.shuffle_*` flag re-orders how
+already-submitted attempts render here. Scores never move.
+
 **`get_leaderboard`** returns `rank, user_id, full_name, score, is_self` for the
 top 100 plus the caller's own row, ordered by rank. Raises
 `results not published yet` until `results_published_at` is set (admins bypass).
 `full_name` falls back to `পরীক্ষার্থী`.
+
+**Time metrics need no RPC.** They are derived on the client from the attempt row,
+which its owner can `SELECT` directly (see the RLS matrix):
+
+- total time = `submitted_at − started_at`, clamped to `deadline` when the attempt
+  is timed. `auto_submit_expired` runs on a one-minute cron, so `submitted_at` can
+  overshoot the deadline by up to a minute; without the clamp a timed exam reports
+  more time than it allowed.
+- average per question = total ÷ `pattern.total_questions`, when that is > 0.
+  Meaningless for an untimed attempt, where the elapsed figure is wall-clock and
+  not time on task — show it only for timed ones.
+
+Per-question dwell time is **not** recorded. `attempt_answers.answered_at` is the
+timestamp of the last edit to that answer, not the time spent on it.
 
 ### Practice and archive
 
@@ -107,6 +146,18 @@ not `published` (`question not available`). `check_practice_answer` also records
 the attempt in `practice_answers`, which is what drives the per-topic stats on
 the home screen — so the client must call it rather than grading locally, or the
 stats silently stop accruing.
+
+Those stats are the view `v_user_topic_stats` (`security_invoker`, so RLS on
+`practice_answers` applies and you only ever see your own rows): `user_id`,
+`topic_id`, `attempts`, `correct`, `questions_seen`. `practice_answers` is
+append-only, so `attempts` counts *every* answer submitted, including repeats of
+the same question — use `questions_seen` (distinct questions) for coverage and
+`correct / attempts` for accuracy. Roll rows up by subject via `topics.subject_id`.
+
+Practice and archive options are **not** shuffled by the server; the client may
+order them however it likes, since nothing has to agree with anything. Vary the
+seed per session or page view, or the arrangement is frozen forever and becomes
+memorizable by position.
 
 ### Auth predicates
 
@@ -233,8 +284,8 @@ port from `src/lib/supabase/` — instantiate the client per the Kotlin SDK's
 guidance and let it manage the token.
 
 **OAuth redirect.** `src/app/(auth)/actions.ts` sends the provider to
-`${origin}/auth/callback`, a route handler that exchanges the code for a
-session. On Android this becomes a deep link (an app-scheme or App Links
+`${getSiteUrl()}/auth/callback` (`src/lib/site-url.ts`, env-driven), a route
+handler that exchanges the code for a session. On Android this becomes a deep link (an app-scheme or App Links
 redirect URL) registered in the Supabase dashboard's redirect allowlist; the
 Kotlin SDK handles the exchange. The `/auth/callback` route is web-only.
 
