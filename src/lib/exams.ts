@@ -41,6 +41,8 @@ export const examInputSchema = z
     starts_at: z.string().optional().nullable(),
     ends_at: z.string().optional().nullable(),
     status: z.enum(examStatuses).default("draft"),
+    // Model tests only: how many times a student may take it (1 = once-only).
+    max_attempts: z.coerce.number().int().min(1).max(20).default(1),
   })
   .refine(
     (v) => v.type !== "live" || (v.starts_at && v.ends_at),

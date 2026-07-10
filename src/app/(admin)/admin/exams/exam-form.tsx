@@ -42,6 +42,9 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
   const [markPer, setMarkPer] = useState(
     String(initial?.mark_per_question ?? 1)
   );
+  const [maxAttempts, setMaxAttempts] = useState(
+    String(initial?.max_attempts ?? 1)
+  );
   const [startsAt, setStartsAt] = useState(toLocalInput(initial?.starts_at));
   const [endsAt, setEndsAt] = useState(toLocalInput(initial?.ends_at));
   const [status, setStatus] = useState<ExamInput["status"]>(
@@ -61,6 +64,7 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
       starts_at: type === "live" ? fromLocalInput(startsAt) : null,
       ends_at: type === "live" ? fromLocalInput(endsAt) : null,
       status,
+      max_attempts: type === "model" ? Number(maxAttempts) : 1,
     };
   }
 
@@ -150,6 +154,24 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
           />
         </div>
       </div>
+
+      {type === "model" && (
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="space-y-2">
+            <Label>সর্বোচ্চ অ্যাটেম্পট সংখ্যা</Label>
+            <Input
+              type="number"
+              min={1}
+              max={20}
+              value={maxAttempts}
+              onChange={(e) => setMaxAttempts(e.target.value)}
+            />
+            <p className="text-xs text-muted-foreground">
+              ১ = একবারই দেওয়া যাবে। বেশি দিলে শিক্ষার্থী পুনরায় দিতে পারবে।
+            </p>
+          </div>
+        </div>
+      )}
 
       {type === "live" && (
         <div className="grid gap-4 sm:grid-cols-2">

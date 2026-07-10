@@ -34,6 +34,7 @@ export async function saveExam(input: ExamInput): Promise<SaveResult> {
     starts_at: q.type === "live" ? q.starts_at : null,
     ends_at: q.type === "live" ? q.ends_at : null,
     status: q.status,
+    max_attempts: q.type === "live" ? 1 : q.max_attempts,
   };
 
   if (q.id) {

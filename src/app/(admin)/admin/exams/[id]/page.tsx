@@ -38,6 +38,7 @@ export default async function EditExamPage({
     starts_at: exam.starts_at,
     ends_at: exam.ends_at,
     status: exam.status as ExamInput["status"],
+    max_attempts: exam.max_attempts ?? 1,
   };
 
   // Pool of published questions to pick from.
