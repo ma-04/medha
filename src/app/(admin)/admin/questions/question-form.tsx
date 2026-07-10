@@ -25,6 +25,19 @@ type SubjectOption = {
   topics: { id: string; name_bn: string }[];
 };
 
+// Base UI's <Select.Value> renders the raw value unless the root is given an
+// `items` map — without it the triggers read "1" / "published" / a topic UUID.
+const DIFFICULTY_ITEMS: Record<string, string> = {
+  "1": "সহজ",
+  "2": "মাঝারি",
+  "3": "কঠিন",
+};
+const STATUS_ITEMS: Record<string, string> = {
+  draft: "খসড়া",
+  published: "প্রকাশিত",
+  archived: "সংরক্ষিত",
+};
+
 export function QuestionForm({
   subjects,
   initial,
@@ -60,6 +73,10 @@ export function QuestionForm({
     initial?.status ?? "draft"
   );
   const [uploading, setUploading] = useState(false);
+
+  const topicItems: Record<string, string> = Object.fromEntries(
+    subjects.flatMap((s) => s.topics.map((t) => [t.id, t.name_bn]))
+  );
 
   function setOptionText(i: number, text: string) {
     setOptions((prev) => prev.map((o, j) => (j === i ? { ...o, text } : o)));
@@ -136,7 +153,11 @@ export function QuestionForm({
       <div className="space-y-4">
         <div className="space-y-2">
           <Label>টপিক</Label>
-          <Select value={topicId} onValueChange={(v) => setTopicId(v ?? "")}>
+          <Select
+            items={topicItems}
+            value={topicId}
+            onValueChange={(v) => setTopicId(v ?? "")}
+          >
             <SelectTrigger>
               <SelectValue placeholder="টপিক বাছুন" />
             </SelectTrigger>
@@ -266,6 +287,7 @@ export function QuestionForm({
           <div className="space-y-2">
             <Label>কঠিনতা</Label>
             <Select
+              items={DIFFICULTY_ITEMS}
               value={difficulty}
               onValueChange={(v) => setDifficulty(v ?? "")}
             >
@@ -273,9 +295,11 @@ export function QuestionForm({
                 <SelectValue placeholder="—" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="1">সহজ</SelectItem>
-                <SelectItem value="2">মাঝারি</SelectItem>
-                <SelectItem value="3">কঠিন</SelectItem>
+                {Object.entries(DIFFICULTY_ITEMS).map(([value, label]) => (
+                  <SelectItem key={value} value={value}>
+                    {label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
@@ -292,6 +316,7 @@ export function QuestionForm({
 
         <div className="flex items-center gap-3">
           <Select
+            items={STATUS_ITEMS}
             value={status}
             onValueChange={(v) => setStatus(v as QuestionInput["status"])}
           >
@@ -299,9 +324,11 @@ export function QuestionForm({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="draft">খসড়া</SelectItem>
-              <SelectItem value="published">প্রকাশিত</SelectItem>
-              <SelectItem value="archived">সংরক্ষিত</SelectItem>
+              {Object.entries(STATUS_ITEMS).map(([value, label]) => (
+                <SelectItem key={value} value={value}>
+                  {label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
           <Button onClick={submit} disabled={pending || !topicId || !body}>

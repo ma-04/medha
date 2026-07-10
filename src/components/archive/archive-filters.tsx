@@ -32,6 +32,23 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
     ready.current = true;
   }, []);
 
+  // Base UI's <Select.Value> renders the raw value unless the root is given an
+  // `items` map — without it the trigger reads "__all__" rather than "সব বিষয়".
+  const subjectItems: Record<string, string> = {
+    [ALL]: t("archive.allSubjects"),
+    ...Object.fromEntries(
+      facets.subjects.map((s) => [s.slug, localName(s, locale)])
+    ),
+  };
+  const examItems: Record<string, string> = {
+    [ALL]: t("archive.allExams"),
+    ...Object.fromEntries(facets.exams.map((e) => [e, e])),
+  };
+  const yearItems: Record<string, string> = {
+    [ALL]: t("archive.allYears"),
+    ...Object.fromEntries(facets.years.map((y) => [String(y), String(y)])),
+  };
+
   function apply(next: Record<string, string | null>) {
     if (!ready.current) return;
     const sp = new URLSearchParams(params.toString());
@@ -75,6 +92,7 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
 
       <div className="flex flex-wrap gap-2">
         <Select
+          items={subjectItems}
           value={params.get("subject") ?? ALL}
           onValueChange={(v) => apply({ subject: v })}
         >
@@ -93,6 +111,7 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
 
         {facets.exams.length > 0 && (
           <Select
+            items={examItems}
             value={params.get("exam") ?? ALL}
             onValueChange={(v) => apply({ exam: v })}
           >
@@ -112,6 +131,7 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
 
         {facets.years.length > 0 && (
           <Select
+            items={yearItems}
             value={params.get("year") ?? ALL}
             onValueChange={(v) => apply({ year: v })}
           >

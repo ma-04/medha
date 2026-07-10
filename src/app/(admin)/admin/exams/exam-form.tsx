@@ -16,6 +16,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+// Base UI's <Select.Value> renders the raw value unless the root is given an
+// `items` map — without it the triggers read "model" / "published".
+const TYPE_ITEMS: Record<string, string> = {
+  model: "মডেল টেস্ট",
+  live: "লাইভ পরীক্ষা",
+};
+const STATUS_ITEMS: Record<string, string> = {
+  draft: "খসড়া",
+  scheduled: "নির্ধারিত",
+  published: "প্রকাশিত",
+  archived: "সংরক্ষিত",
+};
+
 // datetime-local <-> ISO helpers (input has no timezone; treat as local time).
 function toLocalInput(iso: string | null | undefined) {
   if (!iso) return "";
@@ -112,6 +125,7 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
         <div className="space-y-2">
           <Label>ধরন</Label>
           <Select
+            items={TYPE_ITEMS}
             value={type}
             onValueChange={(v) => setType((v as ExamInput["type"]) ?? "model")}
           >
@@ -119,8 +133,11 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="model">মডেল টেস্ট</SelectItem>
-              <SelectItem value="live">লাইভ পরীক্ষা</SelectItem>
+              {Object.entries(TYPE_ITEMS).map(([value, label]) => (
+                <SelectItem key={value} value={value}>
+                  {label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
@@ -196,6 +213,7 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
 
       <div className="flex items-center gap-3">
         <Select
+          items={STATUS_ITEMS}
           value={status}
           onValueChange={(v) => setStatus((v as ExamInput["status"]) ?? "draft")}
         >
@@ -203,10 +221,11 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="draft">খসড়া</SelectItem>
-            <SelectItem value="scheduled">নির্ধারিত</SelectItem>
-            <SelectItem value="published">প্রকাশিত</SelectItem>
-            <SelectItem value="archived">সংরক্ষিত</SelectItem>
+            {Object.entries(STATUS_ITEMS).map(([value, label]) => (
+              <SelectItem key={value} value={value}>
+                {label}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
         <Button onClick={submit} disabled={pending || !titleBn || !titleEn}>

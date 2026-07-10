@@ -50,6 +50,12 @@ export function TopicForm({
     if (state.ok) ref.current?.reset();
   }, [state.ok]);
 
+  // Base UI's <Select.Value> renders the raw value unless the root is given an
+  // `items` map — without it the trigger reads the subject's UUID.
+  const subjectItems: Record<string, string> = Object.fromEntries(
+    subjects.map((s) => [s.id, s.name_bn])
+  );
+
   return (
     <form
       ref={ref}
@@ -58,7 +64,7 @@ export function TopicForm({
     >
       <div className="flex flex-col gap-1">
         <label className="text-xs text-muted-foreground">বিষয়</label>
-        <Select name="subject_id" required>
+        <Select items={subjectItems} name="subject_id" required>
           <SelectTrigger className="w-40">
             <SelectValue placeholder="বিষয় বাছুন" />
           </SelectTrigger>
