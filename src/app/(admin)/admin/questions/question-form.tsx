@@ -80,7 +80,6 @@ export function QuestionForm({
         .filter((_, j) => j !== i)
         .map((o, j) => ({ ...o, key: optionKeys[j] }))
     );
-    // keep correctKey valid
     setCorrectKey((k) => (k === options[i].key ? "a" : k));
   }
 
@@ -311,10 +310,11 @@ export function QuestionForm({
         </div>
       </div>
 
-      {/* Live preview */}
       <div className="space-y-4 rounded-lg border bg-muted/30 p-4">
         <p className="text-xs font-semibold text-muted-foreground">প্রিভিউ</p>
         {imageUrl && (
+          // Question images are user-supplied and have unknown intrinsic dimensions;
+          // next/image would need an explicit width/height or a sized parent.
           // eslint-disable-next-line @next/next/no-img-element
           <img src={imageUrl} alt="" className="max-h-48 rounded" />
         )}

@@ -65,7 +65,6 @@ export default async function ExamDetailPage({
       ? exam.status === "published"
       : !notStarted && !ended;
 
-  // Decide the primary CTA.
   let cta: React.ReactNode = null;
   if (latest?.submitted_at) {
     cta = (

@@ -95,6 +95,8 @@ export function PracticeRunner({ questions }: { questions: Question[] }) {
           <p className="mb-2 text-xs text-muted-foreground">{q.source_label}</p>
         )}
         {q.image_url && (
+          // Question images are user-supplied and have unknown intrinsic dimensions;
+          // next/image would need an explicit width/height or a sized parent.
           // eslint-disable-next-line @next/next/no-img-element
           <img src={q.image_url} alt="" className="mb-3 max-h-56 rounded" />
         )}

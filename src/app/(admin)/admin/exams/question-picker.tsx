@@ -77,7 +77,6 @@ export function QuestionPicker({
 
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      {/* Selected, ordered */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <p className="text-sm font-semibold">
@@ -136,7 +135,6 @@ export function QuestionPicker({
         </div>
       </div>
 
-      {/* Available pool */}
       <div className="space-y-2">
         <Input
           value={filter}

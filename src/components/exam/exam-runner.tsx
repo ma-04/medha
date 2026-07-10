@@ -86,7 +86,6 @@ export function ExamRunner({
     [supabase, attemptId, examId, router, t]
   );
 
-  // Countdown; auto-submit at zero.
   useEffect(() => {
     skewRef.current = new Date(serverNow).getTime() - Date.now();
     function tick() {
@@ -136,7 +135,6 @@ export function ExamRunner({
 
   return (
     <div className="mx-auto max-w-3xl space-y-4">
-      {/* Sticky header: timer + progress */}
       <div className="sticky top-0 z-10 flex items-center justify-between rounded-lg border bg-background/95 p-3 backdrop-blur">
         <span className="text-sm text-muted-foreground">
           {t("runner.question")} {formatNumber(index + 1, locale)}/
@@ -160,7 +158,6 @@ export function ExamRunner({
         </Button>
       </div>
 
-      {/* Finish-early confirmation */}
       <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
         <DialogContent>
           <DialogHeader>
@@ -198,12 +195,13 @@ export function ExamRunner({
         </DialogContent>
       </Dialog>
 
-      {/* Question */}
       <div className="rounded-lg border p-4">
         {q.source_label && (
           <p className="mb-2 text-xs text-muted-foreground">{q.source_label}</p>
         )}
         {q.image_url && (
+          // Question images are user-supplied and have unknown intrinsic dimensions;
+          // next/image would need an explicit width/height or a sized parent.
           // eslint-disable-next-line @next/next/no-img-element
           <img src={q.image_url} alt="" className="mb-3 max-h-56 rounded" />
         )}
@@ -237,7 +235,6 @@ export function ExamRunner({
         </ul>
       </div>
 
-      {/* Nav */}
       <div className="flex items-center justify-between">
         <Button
           variant="outline"
@@ -261,7 +258,6 @@ export function ExamRunner({
         </Button>
       </div>
 
-      {/* Palette */}
       <div className="rounded-lg border p-3">
         <p className="mb-2 text-xs text-muted-foreground">
           {t("runner.palette")}

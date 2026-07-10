@@ -47,7 +47,6 @@ export function AttemptPanel({
   const [open, setOpen] = useState(false);
   const [pending, startTransition] = useTransition();
 
-  // Most-recent attempt first.
   const ordered = [...attempts].sort(
     (a, b) => b.attempt_number - a.attempt_number
   );

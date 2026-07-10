@@ -39,7 +39,6 @@ export function formatDurationBn(totalSeconds: number): string {
   return toBnDigits(durationString(totalSeconds));
 }
 
-// --- Locale-aware variants ---
 
 export function formatNumber(n: number, locale: string): string {
   return locale === "en" ? n.toLocaleString("en-US") : formatNumberBn(n);
