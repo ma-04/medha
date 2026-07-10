@@ -8,6 +8,9 @@ export type ExamPattern = {
   /** Model tests only. When false the attempt gets a null deadline: no
    *  countdown, no auto-submit. Live exams are always timed. */
   timed: boolean;
+  /** Derived server-side per attempt from md5(attempt_id ‖ question_id). */
+  shuffle_questions: boolean;
+  shuffle_options: boolean;
 };
 
 export const examStatuses = [
@@ -48,6 +51,8 @@ export const examInputSchema = z
     max_attempts: z.coerce.number().int().min(1).max(20).default(1),
     // Model tests only: false = no countdown and no auto-submit.
     timed: z.boolean().default(true),
+    shuffle_questions: z.boolean().default(true),
+    shuffle_options: z.boolean().default(true),
   })
   .refine(
     (v) => v.type !== "live" || (v.starts_at && v.ends_at),
@@ -71,5 +76,7 @@ export function defaultPattern(): ExamPattern {
     mark_per_question: 1,
     total_questions: 0,
     timed: true,
+    shuffle_questions: true,
+    shuffle_options: true,
   };
 }

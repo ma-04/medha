@@ -35,6 +35,11 @@ export default async function ArchivePage({
     searchArchive(filters, page),
   ]);
 
+  // One seed per request, shared by every card, so options land in a different
+  // arrangement on each visit. Generated server-side to keep SSR and hydration
+  // in agreement; the page is force-dynamic, so it is never cached.
+  const viewSeed = crypto.randomUUID();
+
   function pageHref(next: number) {
     const params = new URLSearchParams();
     for (const [k, v] of Object.entries(filters)) if (v) params.set(k, v);
@@ -55,7 +60,7 @@ export default async function ArchivePage({
       ) : (
         <div className="space-y-3">
           {items.map((q) => (
-            <ArchiveCard key={q.id} question={q} />
+            <ArchiveCard key={q.id} question={q} viewSeed={viewSeed} />
           ))}
         </div>
       )}

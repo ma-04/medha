@@ -59,6 +59,12 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
     String(initial?.max_attempts ?? 1)
   );
   const [timed, setTimed] = useState(initial?.timed ?? true);
+  const [shuffleQuestions, setShuffleQuestions] = useState(
+    initial?.shuffle_questions ?? true
+  );
+  const [shuffleOptions, setShuffleOptions] = useState(
+    initial?.shuffle_options ?? true
+  );
   const [startsAt, setStartsAt] = useState(toLocalInput(initial?.starts_at));
   const [endsAt, setEndsAt] = useState(toLocalInput(initial?.ends_at));
   const [status, setStatus] = useState<ExamInput["status"]>(
@@ -80,6 +86,8 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
       status,
       max_attempts: type === "model" ? Number(maxAttempts) : 1,
       timed: type === "live" ? true : timed,
+      shuffle_questions: shuffleQuestions,
+      shuffle_options: shuffleOptions,
     };
   }
 
@@ -202,6 +210,31 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
           </div>
         </div>
       )}
+
+      <div className="space-y-2 rounded-lg border p-3">
+        <Label>এলোমেলো ক্রম</Label>
+        <label className="flex items-center gap-2 text-sm text-muted-foreground">
+          <input
+            type="checkbox"
+            checked={shuffleQuestions}
+            onChange={(e) => setShuffleQuestions(e.target.checked)}
+          />
+          প্রশ্নের ক্রম এলোমেলো
+        </label>
+        <label className="flex items-center gap-2 text-sm text-muted-foreground">
+          <input
+            type="checkbox"
+            checked={shuffleOptions}
+            onChange={(e) => setShuffleOptions(e.target.checked)}
+          />
+          অপশনের ক্রম এলোমেলো
+        </label>
+        <p className="text-xs text-muted-foreground">
+          প্রতিটি অ্যাটেম্পটে আলাদা ক্রম। ক্রম সংরক্ষিত হয় না, তাই এখন এটি
+          বদলালে আগের অ্যাটেম্পটের রিভিউও নতুন ক্রমে দেখাবে — নম্বর বা সঠিক উত্তর
+          বদলাবে না।
+        </p>
+      </div>
 
       {type === "live" && (
         <div className="grid gap-4 sm:grid-cols-2">

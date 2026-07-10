@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Check, Eye } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
@@ -8,15 +8,30 @@ import { MathText } from "@/components/math/math-text";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { shuffleOptions } from "@/lib/shuffle";
 import type { ArchiveQuestion } from "@/lib/queries/archive";
 
-export function ArchiveCard({ question }: { question: ArchiveQuestion }) {
+export function ArchiveCard({
+  question,
+  viewSeed,
+}: {
+  question: ArchiveQuestion;
+  /** Fresh per page view. Generated on the server so SSR and hydration agree —
+   *  a crypto.randomUUID() here would scramble differently on each side. */
+  viewSeed: string;
+}) {
   const t = useTranslations();
   const [reveal, setReveal] = useState<{
     correctKey: string;
     explanation: string | null;
   } | null>(null);
   const [loading, setLoading] = useState(false);
+
+  // The stored order is where the b/c answer-key skew is visible; scramble it.
+  const options = useMemo(
+    () => shuffleOptions(question.options, viewSeed + question.id),
+    [question.options, question.id, viewSeed]
+  );
 
   async function showAnswer() {
     if (reveal || loading) return;
@@ -61,7 +76,7 @@ export function ArchiveCard({ question }: { question: ArchiveQuestion }) {
       </div>
 
       <ul className="mt-3 space-y-1.5">
-        {question.options.map((opt) => {
+        {options.map((opt) => {
           const isCorrect = reveal?.correctKey === opt.key;
           return (
             <li
@@ -71,7 +86,7 @@ export function ArchiveCard({ question }: { question: ArchiveQuestion }) {
                 isCorrect && "border-green-500 bg-green-500/10"
               )}
             >
-              <span className="uppercase text-muted-foreground">{opt.key}</span>
+              <span className="uppercase text-muted-foreground">{opt.label}</span>
               <span className="flex-1 font-bengali-serif">
                 <MathText>{opt.text}</MathText>
               </span>

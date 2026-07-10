@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { formatDuration, formatNumber } from "@/lib/format";
-import { shuffleOptions } from "@/lib/shuffle";
+import { optionLabel } from "@/lib/shuffle";
 import type { QuestionOption } from "@/lib/questions";
 
 export type ExamQuestion = {
@@ -111,8 +111,6 @@ export function ExamRunner({
 
   const q = questions[index];
   const answeredCount = Object.keys(answers).length;
-  // Randomize option order per question (stable across re-renders).
-  const options = useMemo(() => shuffleOptions(q.options, q.id), [q.id, q.options]);
 
   async function choose(key: string) {
     if (submittedRef.current) return;
@@ -220,8 +218,10 @@ export function ExamRunner({
           <MathText>{q.body}</MathText>
         </div>
 
+        {/* The server already shuffled these for this attempt; label by position,
+            never by opt.key, or the letter shown won't match the option. */}
         <ul className="mt-4 space-y-2">
-          {options.map((opt) => {
+          {q.options.map((opt, i) => {
             const isSelected = answers[q.id] === opt.key;
             return (
               <li key={opt.key}>
@@ -234,7 +234,7 @@ export function ExamRunner({
                   )}
                 >
                   <span className="uppercase text-muted-foreground">
-                    {opt.label}
+                    {optionLabel(i)}
                   </span>
                   <span className="flex-1 font-bengali-serif">
                     <MathText>{opt.text}</MathText>

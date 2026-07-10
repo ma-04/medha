@@ -16,6 +16,8 @@ function patternFrom(q: ExamInput) {
     total_questions: 0,
     // A live exam is bounded by ends_at, so it is always timed.
     timed: q.type === "live" ? true : q.timed,
+    shuffle_questions: q.shuffle_questions,
+    shuffle_options: q.shuffle_options,
   };
 }
 

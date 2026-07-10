@@ -7,6 +7,7 @@ import { requireUser } from "@/lib/auth";
 import { MathText } from "@/components/math/math-text";
 import { cn } from "@/lib/utils";
 import { formatNumber } from "@/lib/format";
+import { optionLabel } from "@/lib/shuffle";
 import type { QuestionOption } from "@/lib/questions";
 
 type ReviewRow = {
@@ -63,11 +64,13 @@ export default async function ReviewPage({
       </Link>
       <h1 className="text-xl font-bold">{t("title")}</h1>
 
-      {rows.map((r) => (
+      {/* Rows arrive in the order this attempt was sat, not authored order, so
+          number them by position — order_index is the exam's authored index. */}
+      {rows.map((r, qi) => (
         <div key={r.question_id} className="rounded-lg border p-4">
           <div className="mb-2 flex items-center gap-2">
             <span className="text-xs text-muted-foreground">
-              {formatNumber(r.order_index + 1, locale)}.
+              {formatNumber(qi + 1, locale)}.
             </span>
             {r.is_correct ? (
               <Check className="size-4 text-green-600" />
@@ -85,7 +88,7 @@ export default async function ReviewPage({
             <MathText>{r.body}</MathText>
           </div>
           <ul className="mt-3 space-y-1.5">
-            {r.options.map((opt) => {
+            {r.options.map((opt, i) => {
               const isCorrect = opt.key === r.correct_key;
               const isChosen = opt.key === r.selected_key;
               const chosenWrong = isChosen && !isCorrect;
@@ -98,8 +101,10 @@ export default async function ReviewPage({
                     chosenWrong && "border-destructive bg-destructive/10"
                   )}
                 >
+                  {/* Same positional label the runner showed. Labelling by
+                      opt.key here is what used to highlight "C" next to "B". */}
                   <span className="uppercase text-muted-foreground">
-                    {opt.key}
+                    {optionLabel(i)}
                   </span>
                   <span className="flex-1 font-bengali-serif">
                     <MathText>{opt.text}</MathText>

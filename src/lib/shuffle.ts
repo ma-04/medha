@@ -9,7 +9,14 @@ export type ShuffledOption = {
   label: string;
 };
 
-const LABELS = ["a", "b", "c", "d", "e", "f", "g", "h"];
+export const LABELS = ["a", "b", "c", "d", "e", "f", "g", "h"];
+
+/** Positional label for the i-th displayed option. Use this wherever the order
+ *  already arrived shuffled (exam runner, review) — labelling by `option.key`
+ *  there would print the authored letter next to a moved option. */
+export function optionLabel(i: number): string {
+  return LABELS[i] ?? String(i + 1);
+}
 
 // FNV-1a hash → deterministic 32-bit seed from a string (e.g. a question id).
 function hashSeed(str: string): number {
@@ -34,9 +41,15 @@ function mulberry32(seed: number): () => number {
 }
 
 // Randomizes the display order of a question's options. Deterministic per
-// `seed` (pass the question id) so the order is stable across re-renders and
-// React Compiler purity-safe — no Math.random() during render. Each question
-// gets its own scrambled order, and positional labels are reassigned a/b/c/d.
+// `seed` so the order is stable across re-renders and React Compiler
+// purity-safe — no Math.random() during render. Positional labels are
+// reassigned a/b/c/d.
+//
+// Exams no longer use this: start_exam_attempt and get_attempt_review shuffle
+// server-side per attempt, so the runner and the review agree and the Android
+// client needs no port of this PRNG. It remains for practice and the archive,
+// where nothing has to agree with anything. Vary the seed per session/page view
+// (not just the question id), or the scramble is frozen forever.
 export function shuffleOptions(
   options: QuestionOption[],
   seed: string

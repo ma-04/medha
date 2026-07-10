@@ -34,6 +34,8 @@ export default async function EditExamPage({
     negative_mark?: number;
     mark_per_question?: number;
     timed?: boolean;
+    shuffle_questions?: boolean;
+    shuffle_options?: boolean;
   } | null;
 
   const initial: ExamInput = {
@@ -49,8 +51,11 @@ export default async function EditExamPage({
     ends_at: exam.ends_at,
     status: exam.status as ExamInput["status"],
     max_attempts: exam.max_attempts ?? 1,
-    // Exams created before pattern.timed existed are timed.
+    // Exams created before these flags existed are timed and shuffled, matching
+    // the coalesce defaults in start_exam_attempt.
     timed: pattern?.timed ?? true,
+    shuffle_questions: pattern?.shuffle_questions ?? true,
+    shuffle_options: pattern?.shuffle_options ?? true,
   };
 
   const pickable: PickableQuestion[] = (pool ?? []).map((q) => {
