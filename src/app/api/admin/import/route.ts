@@ -1,22 +1,16 @@
 import { NextResponse } from "next/server";
-import { createClient, createServiceClient } from "@/lib/supabase/server";
+import { createServiceClient } from "@/lib/supabase/server";
+import { getProfile } from "@/lib/auth";
 import { importRowSchema, contentHash } from "@/lib/import";
 
 export async function POST(request: Request) {
-  // Verify the caller is staff (admin or teacher) using their session.
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) {
+  // Verify the caller is staff (admin or teacher) using their session. The
+  // requireStaff() helper redirects, which is wrong for an API route.
+  const profile = await getProfile();
+  if (!profile) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("role")
-    .eq("id", user.id)
-    .single();
-  if (profile?.role !== "admin" && profile?.role !== "teacher") {
+  if (profile.role !== "admin" && profile.role !== "teacher") {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
 

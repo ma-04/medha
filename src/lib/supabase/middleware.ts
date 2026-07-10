@@ -25,10 +25,11 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  // Refreshes the auth token if expired — do not remove.
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  // Refreshes the auth token if expired — do not remove. getClaims() calls
+  // getSession() internally before verifying, so the rotated cookies still get
+  // written through setAll above; the signature check itself is local (ES256
+  // against the cached JWKS), so this costs no round-trip to the Auth server.
+  const { data } = await supabase.auth.getClaims();
 
   const { pathname } = request.nextUrl;
   const isProtected =
@@ -38,7 +39,7 @@ export async function updateSession(request: NextRequest) {
     pathname.startsWith("/live") ||
     pathname.startsWith("/practice");
 
-  if (!user && isProtected) {
+  if (!data?.claims && isProtected) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     url.searchParams.set("next", pathname);

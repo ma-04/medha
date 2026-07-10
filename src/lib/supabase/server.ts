@@ -1,8 +1,11 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { cache } from "react";
 import type { Database } from "@/types/database";
 
-export async function createClient() {
+// cache() memoizes per request, so the layout, the page, and any server action
+// in the same render share one client instead of rebuilding it per call site.
+export const createClient = cache(async () => {
   const cookieStore = await cookies();
 
   return createServerClient<Database>(
@@ -26,7 +29,7 @@ export async function createClient() {
       },
     }
   );
-}
+});
 
 // Service-role client for trusted server-side operations (bulk import, admin
 // jobs). Never import this from client components.

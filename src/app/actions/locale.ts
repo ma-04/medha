@@ -14,14 +14,13 @@ export async function setLocale(locale: "bn" | "en") {
 
   // Persist to profile if signed in (best-effort).
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (user) {
+  const { data } = await supabase.auth.getClaims();
+  const userId = data?.claims.sub;
+  if (userId) {
     await supabase
       .from("profiles")
       .update({ preferred_locale: locale })
-      .eq("id", user.id);
+      .eq("id", userId);
   }
 
   revalidatePath("/", "layout");
