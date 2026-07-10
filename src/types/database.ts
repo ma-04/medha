@@ -54,7 +54,7 @@ export type Database = {
         Row: {
           attempt_number: number
           correct_count: number | null
-          deadline: string
+          deadline: string | null
           exam_id: string
           id: string
           rank: number | null
@@ -69,7 +69,7 @@ export type Database = {
         Insert: {
           attempt_number?: number
           correct_count?: number | null
-          deadline: string
+          deadline?: string | null
           exam_id: string
           id?: string
           rank?: number | null
@@ -84,7 +84,7 @@ export type Database = {
         Update: {
           attempt_number?: number
           correct_count?: number | null
-          deadline?: string
+          deadline?: string | null
           exam_id?: string
           id?: string
           rank?: number | null

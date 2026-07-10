@@ -58,6 +58,7 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
   const [maxAttempts, setMaxAttempts] = useState(
     String(initial?.max_attempts ?? 1)
   );
+  const [timed, setTimed] = useState(initial?.timed ?? true);
   const [startsAt, setStartsAt] = useState(toLocalInput(initial?.starts_at));
   const [endsAt, setEndsAt] = useState(toLocalInput(initial?.ends_at));
   const [status, setStatus] = useState<ExamInput["status"]>(
@@ -78,6 +79,7 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
       ends_at: type === "live" ? fromLocalInput(endsAt) : null,
       status,
       max_attempts: type === "model" ? Number(maxAttempts) : 1,
+      timed: type === "live" ? true : timed,
     };
   }
 
@@ -147,7 +149,18 @@ export function ExamForm({ initial }: { initial?: ExamInput }) {
             type="number"
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
+            disabled={type === "model" && !timed}
           />
+          {type === "model" && (
+            <label className="flex items-center gap-2 text-sm text-muted-foreground">
+              <input
+                type="checkbox"
+                checked={timed}
+                onChange={(e) => setTimed(e.target.checked)}
+              />
+              সময়সীমা থাকবে
+            </label>
+          )}
         </div>
       </div>
 

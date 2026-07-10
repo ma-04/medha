@@ -42,7 +42,10 @@ export default async function ExamDetailPage({
     total_questions?: number;
     mark_per_question?: number;
     negative_mark?: number;
+    timed?: boolean;
   } | null;
+  // Exams predating pattern.timed are timed.
+  const timed = pattern?.timed ?? true;
 
   const maxScore =
     (pattern?.total_questions ?? 0) * (pattern?.mark_per_question ?? 1);
@@ -132,7 +135,11 @@ export default async function ExamDetailPage({
           />
           <Info
             label={t("detail.duration")}
-            value={`${formatNumber(pattern?.duration_minutes ?? 0, locale)} ${t("minutes")}`}
+            value={
+              timed
+                ? `${formatNumber(pattern?.duration_minutes ?? 0, locale)} ${t("minutes")}`
+                : t("untimed")
+            }
           />
           <Info
             label={t("detail.perQuestion")}
@@ -156,9 +163,9 @@ export default async function ExamDetailPage({
           {t("detail.instructionsTitle")}
         </p>
         <ul className="mt-2 list-inside list-disc space-y-1">
-          <li>{t("detail.instruction1")}</li>
+          {timed && <li>{t("detail.instruction1")}</li>}
           <li>{t("detail.instruction2")}</li>
-          <li>{t("detail.instruction3")}</li>
+          {timed && <li>{t("detail.instruction3")}</li>}
           <li>
             {exam.type === "model" && exam.max_attempts > 1
               ? t("detail.instruction4Retry", {

@@ -14,6 +14,8 @@ function patternFrom(q: ExamInput) {
     negative_mark: q.negative_mark,
     mark_per_question: q.mark_per_question,
     total_questions: 0,
+    // A live exam is bounded by ends_at, so it is always timed.
+    timed: q.type === "live" ? true : q.timed,
   };
 }
 

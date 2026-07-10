@@ -5,7 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { formatNumber } from "@/lib/format";
+import { formatDuration, formatNumber } from "@/lib/format";
 import { localName } from "@/lib/i18n-name";
 import { AttemptPanel } from "@/components/exam/attempt-panel";
 
@@ -75,6 +75,22 @@ export default async function ResultPage({
   const reviewAvailable =
     exam.type === "model" || !!exam.results_published_at;
 
+  // Auto-submit runs on a one-minute cron, so submitted_at can overshoot the
+  // deadline; clamp, or a timed exam reports more time than it allowed.
+  const submittedMs = new Date(attempt.submitted_at!).getTime();
+  const endMs = attempt.deadline
+    ? Math.min(submittedMs, new Date(attempt.deadline).getTime())
+    : submittedMs;
+  const totalSeconds = Math.max(
+    0,
+    Math.round((endMs - new Date(attempt.started_at).getTime()) / 1000)
+  );
+  // For an untimed attempt this is wall-clock, not time on task — a student who
+  // left the tab open overnight will see it. Averaging it per question would be
+  // noise, so only timed attempts get an average.
+  const avgSeconds =
+    attempt.deadline && total > 0 ? Math.round(totalSeconds / total) : null;
+
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <div>
@@ -134,6 +150,29 @@ export default async function ResultPage({
         <Stat label={t("result.wrong")} value={attempt.wrong_count ?? 0} tone="bad" locale={locale} />
         <Stat label={t("result.skipped")} value={attempt.skipped_count ?? 0} locale={locale} />
       </div>
+
+      <Card>
+        <CardContent className="flex items-center justify-around p-4 text-center">
+          <div>
+            <p className="text-lg font-bold tabular-nums">
+              {formatDuration(totalSeconds, locale)}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {attempt.deadline ? t("result.totalTime") : t("result.elapsedTime")}
+            </p>
+          </div>
+          {avgSeconds !== null && (
+            <div>
+              <p className="text-lg font-bold tabular-nums">
+                {formatDuration(avgSeconds, locale)}
+              </p>
+              <p className="text-xs text-muted-foreground">
+                {t("result.avgPerQuestion")}
+              </p>
+            </div>
+          )}
+        </CardContent>
+      </Card>
 
       {subjectIds.length > 0 && (
         <Card>

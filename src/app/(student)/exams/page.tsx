@@ -47,6 +47,7 @@ export default async function ExamsPage() {
           const pattern = e.pattern as {
             duration_minutes?: number;
             total_questions?: number;
+            timed?: boolean;
           } | null;
           const hasAttempt = attemptMap.has(e.id);
           const submitted = attemptMap.get(e.id);
@@ -69,8 +70,9 @@ export default async function ExamsPage() {
                   <p className="text-xs text-muted-foreground">
                     {formatNumber(pattern?.total_questions ?? 0, locale)}{" "}
                     {t("questions")} ·{" "}
-                    {formatNumber(pattern?.duration_minutes ?? 0, locale)}{" "}
-                    {t("minutes")}
+                    {pattern?.timed === false
+                      ? t("untimed")
+                      : `${formatNumber(pattern?.duration_minutes ?? 0, locale)} ${t("minutes")}`}
                   </p>
                   {e.type === "live" && e.starts_at && (
                     <p className="text-xs text-muted-foreground">

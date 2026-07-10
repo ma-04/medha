@@ -35,13 +35,16 @@ export function ExamRunner({
   examId,
   attemptId,
   deadline,
+  startedAt,
   serverNow,
   questions,
   initialAnswers,
 }: {
   examId: string;
   attemptId: string;
-  deadline: string;
+  /** Null for an untimed model test: the clock counts up and never submits. */
+  deadline: string | null;
+  startedAt: string;
   serverNow: string;
   questions: ExamQuestion[];
   initialAnswers: Record<string, string>;
@@ -52,17 +55,24 @@ export function ExamRunner({
   const locale = useLocale();
   const supabase = useMemo(() => createClient(), []);
 
+  const timed = deadline !== null;
+  // Timed: count down to the deadline. Untimed: count up from started_at.
+  const anchorMs = useMemo(
+    () => new Date(timed ? deadline : startedAt).getTime(),
+    [timed, deadline, startedAt]
+  );
+
   const [answers, setAnswers] = useState<Record<string, string>>(initialAnswers);
   const [index, setIndex] = useState(0);
-  const [remaining, setRemaining] = useState<number>(() =>
-    Math.round((new Date(deadline).getTime() - new Date(serverNow).getTime()) / 1000)
-  );
+  const [seconds, setSeconds] = useState<number>(() => {
+    const now = new Date(serverNow).getTime();
+    return Math.round((timed ? anchorMs - now : now - anchorMs) / 1000);
+  });
   const [submitting, setSubmitting] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const submittedRef = useRef(false);
 
-  const deadlineMs = useMemo(() => new Date(deadline).getTime(), [deadline]);
-  // Corrects for client/server clock skew so the countdown is authoritative.
+  // Corrects for client/server clock skew so the clock is authoritative.
   // Computed inside the countdown effect (not during render) to stay pure.
   const skewRef = useRef(0);
 
@@ -89,14 +99,15 @@ export function ExamRunner({
   useEffect(() => {
     skewRef.current = new Date(serverNow).getTime() - Date.now();
     function tick() {
-      const left = Math.round((deadlineMs - (Date.now() + skewRef.current)) / 1000);
-      setRemaining(left);
-      if (left <= 0 && !submittedRef.current) doSubmit(true);
+      const now = Date.now() + skewRef.current;
+      const value = Math.round((timed ? anchorMs - now : now - anchorMs) / 1000);
+      setSeconds(value);
+      if (timed && value <= 0 && !submittedRef.current) doSubmit(true);
     }
     tick();
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
-  }, [deadlineMs, serverNow, doSubmit]);
+  }, [timed, anchorMs, serverNow, doSubmit]);
 
   const q = questions[index];
   const answeredCount = Object.keys(answers).length;
@@ -131,7 +142,7 @@ export function ExamRunner({
     }
   }
 
-  const low = remaining <= 60;
+  const low = timed && seconds <= 60;
 
   return (
     <div className="mx-auto max-w-3xl space-y-4">
@@ -147,7 +158,7 @@ export function ExamRunner({
           )}
         >
           <Clock className="size-4" />
-          {formatDuration(remaining, locale)}
+          {formatDuration(seconds, locale)}
         </div>
         <Button
           size="sm"

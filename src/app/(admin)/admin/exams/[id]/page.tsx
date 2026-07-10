@@ -33,6 +33,7 @@ export default async function EditExamPage({
     duration_minutes?: number;
     negative_mark?: number;
     mark_per_question?: number;
+    timed?: boolean;
   } | null;
 
   const initial: ExamInput = {
@@ -48,6 +49,8 @@ export default async function EditExamPage({
     ends_at: exam.ends_at,
     status: exam.status as ExamInput["status"],
     max_attempts: exam.max_attempts ?? 1,
+    // Exams created before pattern.timed existed are timed.
+    timed: pattern?.timed ?? true,
   };
 
   const pickable: PickableQuestion[] = (pool ?? []).map((q) => {

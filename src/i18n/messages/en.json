@@ -95,7 +95,10 @@
       "skipped": "Skipped",
       "subjectBreakdown": "Subject-wise result",
       "reviewButton": "Review answers",
-      "reviewLater": "Answer review will be available after results are published."
+      "reviewLater": "Answer review will be available after results are published.",
+      "totalTime": "Total time",
+      "elapsedTime": "Elapsed",
+      "avgPerQuestion": "Avg per question"
     },
     "review": {
       "back": "← Result",
@@ -126,7 +129,8 @@
       "title": "Leaderboard",
       "empty": "No results yet.",
       "you": "(You)"
-    }
+    },
+    "untimed": "Untimed"
   },
   "home": {
     "welcome": "Welcome, {name}",

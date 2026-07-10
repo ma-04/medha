@@ -7,7 +7,9 @@ export const dynamic = "force-dynamic";
 
 type StartResult = {
   attempt_id: string;
-  deadline: string;
+  /** Null for an untimed model test. */
+  deadline: string | null;
+  started_at: string;
   submitted_at: string | null;
   server_now: string;
   answers: Record<string, string>;
@@ -37,7 +39,11 @@ export default async function AttemptPage({
   if (result.submitted_at) redirect(`/exams/${id}/result`);
 
   // Deadline already passed (e.g. resumed too late) → submit + results.
-  if (new Date(result.deadline).getTime() <= new Date(result.server_now).getTime()) {
+  // An untimed attempt has no deadline and can always be resumed.
+  if (
+    result.deadline &&
+    new Date(result.deadline).getTime() <= new Date(result.server_now).getTime()
+  ) {
     await supabase.rpc("submit_attempt", { p_attempt_id: result.attempt_id });
     redirect(`/exams/${id}/result`);
   }
@@ -47,6 +53,7 @@ export default async function AttemptPage({
       examId={id}
       attemptId={result.attempt_id}
       deadline={result.deadline}
+      startedAt={result.started_at}
       serverNow={result.server_now}
       questions={result.questions}
       initialAnswers={result.answers ?? {}}

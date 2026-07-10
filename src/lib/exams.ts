@@ -5,6 +5,9 @@ export type ExamPattern = {
   negative_mark: number;
   mark_per_question: number;
   total_questions: number;
+  /** Model tests only. When false the attempt gets a null deadline: no
+   *  countdown, no auto-submit. Live exams are always timed. */
+  timed: boolean;
 };
 
 export const examStatuses = [
@@ -43,6 +46,8 @@ export const examInputSchema = z
     status: z.enum(examStatuses).default("draft"),
     // Model tests only: how many times a student may take it (1 = once-only).
     max_attempts: z.coerce.number().int().min(1).max(20).default(1),
+    // Model tests only: false = no countdown and no auto-submit.
+    timed: z.boolean().default(true),
   })
   .refine(
     (v) => v.type !== "live" || (v.starts_at && v.ends_at),
@@ -65,5 +70,6 @@ export function defaultPattern(): ExamPattern {
     negative_mark: 0.25,
     mark_per_question: 1,
     total_questions: 0,
+    timed: true,
   };
 }
