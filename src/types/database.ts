@@ -12,31 +12,6 @@ export type Database = {
   __InternalSupabase: {
     PostgrestVersion: "14.5"
   }
-  graphql_public: {
-    Tables: {
-      [_ in never]: never
-    }
-    Views: {
-      [_ in never]: never
-    }
-    Functions: {
-      graphql: {
-        Args: {
-          extensions?: Json
-          operationName?: string
-          query?: string
-          variables?: Json
-        }
-        Returns: Json
-      }
-    }
-    Enums: {
-      [_ in never]: never
-    }
-    CompositeTypes: {
-      [_ in never]: never
-    }
-  }
   public: {
     Tables: {
       attempt_answers: {
@@ -514,6 +489,7 @@ export type Database = {
     }
     Functions: {
       _grade_attempt: { Args: { p_attempt_id: string }; Returns: undefined }
+      admin_import_questions: { Args: { p_rows: Json }; Returns: Json }
       admin_set_exam_questions: {
         Args: { p_exam_id: string; p_question_ids: string[] }
         Returns: number
@@ -721,9 +697,6 @@ export type CompositeTypes<
     : never
 
 export const Constants = {
-  graphql_public: {
-    Enums: {},
-  },
   public: {
     Enums: {},
   },

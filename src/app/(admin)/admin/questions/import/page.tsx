@@ -21,6 +21,7 @@ export default function ImportPage() {
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<{
     inserted: number;
+    updated: number;
     errors: { row: number; error: string }[];
   } | null>(null);
 
@@ -142,6 +143,7 @@ export default function ImportPage() {
         <div className="space-y-2 rounded-lg border p-4">
           <p className="font-medium text-primary">
             ✓ {result.inserted} টি প্রশ্ন সফলভাবে যোগ হয়েছে
+            {result.updated > 0 && `, ${result.updated} টি আগের প্রশ্ন হালনাগাদ হয়েছে`}
           </p>
           {result.errors.length > 0 && (
             <div className="text-sm text-destructive">
