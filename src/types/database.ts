@@ -573,6 +573,7 @@ export type Database = {
         }[]
       }
       is_admin: { Args: never; Returns: boolean }
+      retry_exam_attempt: { Args: { p_exam_id: string }; Returns: Json }
       reveal_answer: {
         Args: { p_question_id: string }
         Returns: {
@@ -590,7 +591,6 @@ export type Database = {
       }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
-      retry_exam_attempt: { Args: { p_exam_id: string }; Returns: Json }
       start_exam_attempt: { Args: { p_exam_id: string }; Returns: Json }
       submit_attempt: { Args: { p_attempt_id: string }; Returns: Json }
     }
