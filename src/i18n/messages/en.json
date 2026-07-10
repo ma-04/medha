@@ -21,7 +21,12 @@
     "cancel": "Cancel",
     "submit": "Submit",
     "search": "Search",
-    "language": "Language"
+    "language": "Language",
+    "next": "Next",
+    "previous": "Previous",
+    "retry": "Try again",
+    "clear": "Clear",
+    "explanation": "Explanation:"
   },
   "exam": {
     "questions": "questions",
@@ -114,5 +119,62 @@
       "empty": "No results yet.",
       "you": "(You)"
     }
+  },
+  "home": {
+    "welcome": "Welcome, {name}",
+    "statsAnswered": "Questions practiced",
+    "statsCorrect": "Correct answers",
+    "statsAccuracy": "Accuracy",
+    "liveExams": "Live Exams",
+    "liveBadge": "LIVE",
+    "weakTopics": "Weak topics",
+    "practiceCta": "Practice"
+  },
+  "practice": {
+    "title": "Practice",
+    "subtitle": "Pick a subject and practice topic by topic",
+    "topicCount": "{count} topics",
+    "noTopics": "No topics in this subject yet.",
+    "noQuestions": "No questions in this topic yet.",
+    "score": "Correct: {correct}/{answered}",
+    "finished": "Practice complete! 🎉"
+  },
+  "archive": {
+    "title": "Question Bank",
+    "empty": "No questions found.",
+    "page": "Page {n}",
+    "searchPlaceholder": "Search questions…",
+    "subject": "Subject",
+    "allSubjects": "All subjects",
+    "exam": "Exam",
+    "allExams": "All exams",
+    "year": "Year",
+    "allYears": "All years",
+    "showAnswer": "Show answer"
+  },
+  "auth": {
+    "loginTitle": "Log in",
+    "loginSubtitle": "Sign in to your account",
+    "signupTitle": "Sign up",
+    "signupSubtitle": "Create a new account",
+    "or": "or",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full name",
+    "loginButton": "Log in",
+    "signupButton": "Sign up",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "signupLink": "Sign up",
+    "loginLink": "Log in",
+    "google": "Continue with Google",
+    "confirmEmail": "Click the link sent to your email to confirm your account."
+  },
+  "errors": {
+    "errorTitle": "Something went wrong",
+    "errorBody": "Sorry, an error occurred. Please try again.",
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "The page you're looking for was moved or doesn't exist.",
+    "backHome": "Back to home"
   }
 }

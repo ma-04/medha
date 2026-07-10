@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,7 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
   const router = useRouter();
   const params = useSearchParams();
   const locale = useLocale();
+  const t = useTranslations();
   const [q, setQ] = useState(params.get("q") ?? "");
   // Base UI Select can fire onValueChange while hydrating (committing its native
   // default), which would apply a filter the user never chose. Ignore changes
@@ -65,7 +66,7 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
         <Input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="প্রশ্ন খুঁজুন…"
+          placeholder={t("archive.searchPlaceholder")}
         />
         <Button type="submit" variant="secondary">
           <Search className="size-4" />
@@ -78,10 +79,10 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
           onValueChange={(v) => apply({ subject: v })}
         >
           <SelectTrigger className="w-40">
-            <SelectValue placeholder="বিষয়" />
+            <SelectValue placeholder={t("archive.subject")} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value={ALL}>সব বিষয়</SelectItem>
+            <SelectItem value={ALL}>{t("archive.allSubjects")}</SelectItem>
             {facets.subjects.map((s) => (
               <SelectItem key={s.slug} value={s.slug}>
                 {localName(s, locale)}
@@ -96,10 +97,10 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
             onValueChange={(v) => apply({ exam: v })}
           >
             <SelectTrigger className="w-36">
-              <SelectValue placeholder="পরীক্ষা" />
+              <SelectValue placeholder={t("archive.exam")} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value={ALL}>সব পরীক্ষা</SelectItem>
+              <SelectItem value={ALL}>{t("archive.allExams")}</SelectItem>
               {facets.exams.map((e) => (
                 <SelectItem key={e} value={e}>
                   {e}
@@ -115,10 +116,10 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
             onValueChange={(v) => apply({ year: v })}
           >
             <SelectTrigger className="w-28">
-              <SelectValue placeholder="সাল" />
+              <SelectValue placeholder={t("archive.year")} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value={ALL}>সব সাল</SelectItem>
+              <SelectItem value={ALL}>{t("archive.allYears")}</SelectItem>
               {facets.years.map((y) => (
                 <SelectItem key={y} value={String(y)}>
                   {y}
@@ -137,7 +138,7 @@ export function ArchiveFilters({ facets }: { facets: ArchiveFacets }) {
               router.push("/archive");
             }}
           >
-            <X className="size-4" /> মুছুন
+            <X className="size-4" /> {t("common.clear")}
           </Button>
         )}
       </div>

@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { Check, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { formatNumber } from "@/lib/format";
 import { MathText } from "@/components/math/math-text";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -25,6 +27,9 @@ type Reveal = {
 };
 
 export function PracticeRunner({ questions }: { questions: Question[] }) {
+  const t = useTranslations("practice");
+  const tCommon = useTranslations("common");
+  const locale = useLocale();
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [reveal, setReveal] = useState<Reveal | null>(null);
@@ -80,7 +85,8 @@ export function PracticeRunner({ questions }: { questions: Question[] }) {
           className="flex-1"
         />
         <span className="text-sm text-muted-foreground">
-          {index + 1}/{questions.length}
+          {formatNumber(index + 1, locale)}/
+          {formatNumber(questions.length, locale)}
         </span>
       </div>
 
@@ -130,7 +136,7 @@ export function PracticeRunner({ questions }: { questions: Question[] }) {
 
         {reveal?.explanation && (
           <div className="mt-4 rounded-md bg-muted p-3 text-sm">
-            <span className="font-semibold">ব্যাখ্যা: </span>
+            <span className="font-semibold">{tCommon("explanation")} </span>
             <span className="font-bengali-serif">
               <MathText>{reveal.explanation}</MathText>
             </span>
@@ -140,12 +146,17 @@ export function PracticeRunner({ questions }: { questions: Question[] }) {
 
       <div className="flex items-center justify-between">
         <span className="text-sm text-muted-foreground">
-          সঠিক: {score.correct}/{score.answered}
+          {t("score", {
+            correct: formatNumber(score.correct, locale),
+            answered: formatNumber(score.answered, locale),
+          })}
         </span>
-        {reveal && !isLast && <Button onClick={next}>পরবর্তী</Button>}
+        {reveal && !isLast && (
+          <Button onClick={next}>{tCommon("next")}</Button>
+        )}
         {reveal && isLast && (
           <span className="text-sm font-medium text-primary">
-            অনুশীলন শেষ! 🎉
+            {t("finished")}
           </span>
         )}
       </div>

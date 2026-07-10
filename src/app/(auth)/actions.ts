@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
+import { getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
 
 export type AuthState = { error: string } | { message: string } | null;
@@ -42,7 +43,8 @@ export async function signUp(
   // When email confirmation is enabled, no session is returned — prompt the
   // user to confirm instead of redirecting to a page they can't access.
   if (!data.session) {
-    return { message: "আপনার ইমেইলে পাঠানো লিংকে ক্লিক করে অ্যাকাউন্ট নিশ্চিত করুন।" };
+    const t = await getTranslations("auth");
+    return { message: t("confirmEmail") };
   }
 
   revalidatePath("/", "layout");

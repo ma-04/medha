@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { signIn } from "../actions";
@@ -17,42 +18,43 @@ import {
 } from "@/components/ui/card";
 
 export default function LoginPage() {
+  const t = useTranslations("auth");
   const [state, formAction, pending] = useActionState(signIn, null);
   const next = useSearchParams().get("next") ?? "/";
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>লগইন করুন</CardTitle>
-        <CardDescription>আপনার অ্যাকাউন্টে প্রবেশ করুন</CardDescription>
+        <CardTitle>{t("loginTitle")}</CardTitle>
+        <CardDescription>{t("loginSubtitle")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <GoogleButton />
         <div className="relative text-center text-xs text-muted-foreground">
-          <span className="bg-card px-2">অথবা</span>
+          <span className="bg-card px-2">{t("or")}</span>
           <div className="absolute inset-x-0 top-1/2 -z-10 h-px bg-border" />
         </div>
         <form action={formAction} className="space-y-4">
           <input type="hidden" name="next" value={next} />
           <div className="space-y-2">
-            <Label htmlFor="email">ইমেইল</Label>
+            <Label htmlFor="email">{t("email")}</Label>
             <Input id="email" name="email" type="email" required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">পাসওয়ার্ড</Label>
+            <Label htmlFor="password">{t("password")}</Label>
             <Input id="password" name="password" type="password" required />
           </div>
           {state && "error" in state && (
             <p className="text-sm text-destructive">{state.error}</p>
           )}
           <Button type="submit" className="w-full" disabled={pending}>
-            লগইন
+            {t("loginButton")}
           </Button>
         </form>
         <p className="text-center text-sm text-muted-foreground">
-          অ্যাকাউন্ট নেই?{" "}
+          {t("noAccount")}{" "}
           <Link href="/signup" className="text-primary underline">
-            নিবন্ধন করুন
+            {t("signupLink")}
           </Link>
         </p>
       </CardContent>

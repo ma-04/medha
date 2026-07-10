@@ -21,7 +21,12 @@
     "cancel": "বাতিল",
     "submit": "জমা দিন",
     "search": "খুঁজুন",
-    "language": "ভাষা"
+    "language": "ভাষা",
+    "next": "পরবর্তী",
+    "previous": "পূর্ববর্তী",
+    "retry": "আবার চেষ্টা করুন",
+    "clear": "মুছুন",
+    "explanation": "ব্যাখ্যা:"
   },
   "exam": {
     "questions": "প্রশ্ন",
@@ -114,5 +119,62 @@
       "empty": "এখনো কোনো ফলাফল নেই।",
       "you": "(আপনি)"
     }
+  },
+  "home": {
+    "welcome": "স্বাগতম, {name}",
+    "statsAnswered": "অনুশীলিত প্রশ্ন",
+    "statsCorrect": "সঠিক উত্তর",
+    "statsAccuracy": "নির্ভুলতা",
+    "liveExams": "লাইভ পরীক্ষা",
+    "liveBadge": "লাইভ",
+    "weakTopics": "দুর্বল টপিক",
+    "practiceCta": "অনুশীলন"
+  },
+  "practice": {
+    "title": "অনুশীলন",
+    "subtitle": "বিষয় বেছে টপিকভিত্তিক অনুশীলন করুন",
+    "topicCount": "{count} টপিক",
+    "noTopics": "এই বিষয়ে এখনো কোনো টপিক নেই।",
+    "noQuestions": "এই টপিকে এখনো কোনো প্রশ্ন নেই।",
+    "score": "সঠিক: {correct}/{answered}",
+    "finished": "অনুশীলন শেষ! 🎉"
+  },
+  "archive": {
+    "title": "প্রশ্নব্যাংক",
+    "empty": "কোনো প্রশ্ন পাওয়া যায়নি।",
+    "page": "পৃষ্ঠা {n}",
+    "searchPlaceholder": "প্রশ্ন খুঁজুন…",
+    "subject": "বিষয়",
+    "allSubjects": "সব বিষয়",
+    "exam": "পরীক্ষা",
+    "allExams": "সব পরীক্ষা",
+    "year": "সাল",
+    "allYears": "সব সাল",
+    "showAnswer": "উত্তর দেখুন"
+  },
+  "auth": {
+    "loginTitle": "লগইন করুন",
+    "loginSubtitle": "আপনার অ্যাকাউন্টে প্রবেশ করুন",
+    "signupTitle": "নিবন্ধন করুন",
+    "signupSubtitle": "নতুন অ্যাকাউন্ট তৈরি করুন",
+    "or": "অথবা",
+    "email": "ইমেইল",
+    "password": "পাসওয়ার্ড",
+    "fullName": "পূর্ণ নাম",
+    "loginButton": "লগইন",
+    "signupButton": "নিবন্ধন",
+    "noAccount": "অ্যাকাউন্ট নেই?",
+    "haveAccount": "অ্যাকাউন্ট আছে?",
+    "signupLink": "নিবন্ধন করুন",
+    "loginLink": "লগইন করুন",
+    "google": "Google দিয়ে চালিয়ে যান",
+    "confirmEmail": "আপনার ইমেইলে পাঠানো লিংকে ক্লিক করে অ্যাকাউন্ট নিশ্চিত করুন।"
+  },
+  "errors": {
+    "errorTitle": "কিছু একটা সমস্যা হয়েছে",
+    "errorBody": "দুঃখিত, একটি ত্রুটি ঘটেছে। আবার চেষ্টা করুন।",
+    "notFoundTitle": "পৃষ্ঠাটি খুঁজে পাওয়া যায়নি",
+    "notFoundBody": "আপনি যে পৃষ্ঠাটি খুঁজছেন তা সরানো হয়েছে বা বিদ্যমান নেই।",
+    "backHome": "হোমে ফিরুন"
   }
 }

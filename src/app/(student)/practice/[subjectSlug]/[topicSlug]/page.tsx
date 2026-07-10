@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { PracticeRunner } from "@/components/practice/practice-runner";
@@ -16,6 +16,7 @@ export default async function PracticeRunnerPage({
   const { subjectSlug, topicSlug } = await params;
   const supabase = await createClient();
   const locale = await getLocale();
+  const t = await getTranslations("practice");
 
   const { data: subject } = await supabase
     .from("subjects")
@@ -57,9 +58,7 @@ export default async function PracticeRunnerPage({
         ← {localName(topic, locale)}
       </Link>
       {items.length === 0 ? (
-        <p className="text-sm text-muted-foreground">
-          এই টপিকে এখনো কোনো প্রশ্ন নেই।
-        </p>
+        <p className="text-sm text-muted-foreground">{t("noQuestions")}</p>
       ) : (
         <PracticeRunner questions={items} />
       )}

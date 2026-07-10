@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { signUp } from "../actions";
 import { GoogleButton } from "@/components/auth/google-button";
@@ -16,31 +17,32 @@ import {
 } from "@/components/ui/card";
 
 export default function SignupPage() {
+  const t = useTranslations("auth");
   const [state, formAction, pending] = useActionState(signUp, null);
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>নিবন্ধন করুন</CardTitle>
-        <CardDescription>নতুন অ্যাকাউন্ট তৈরি করুন</CardDescription>
+        <CardTitle>{t("signupTitle")}</CardTitle>
+        <CardDescription>{t("signupSubtitle")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <GoogleButton />
         <div className="relative text-center text-xs text-muted-foreground">
-          <span className="bg-card px-2">অথবা</span>
+          <span className="bg-card px-2">{t("or")}</span>
           <div className="absolute inset-x-0 top-1/2 -z-10 h-px bg-border" />
         </div>
         <form action={formAction} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="full_name">পূর্ণ নাম</Label>
+            <Label htmlFor="full_name">{t("fullName")}</Label>
             <Input id="full_name" name="full_name" type="text" required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">ইমেইল</Label>
+            <Label htmlFor="email">{t("email")}</Label>
             <Input id="email" name="email" type="email" required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">পাসওয়ার্ড</Label>
+            <Label htmlFor="password">{t("password")}</Label>
             <Input
               id="password"
               name="password"
@@ -56,13 +58,13 @@ export default function SignupPage() {
             <p className="text-sm text-primary">{state.message}</p>
           )}
           <Button type="submit" className="w-full" disabled={pending}>
-            নিবন্ধন
+            {t("signupButton")}
           </Button>
         </form>
         <p className="text-center text-sm text-muted-foreground">
-          অ্যাকাউন্ট আছে?{" "}
+          {t("haveAccount")}{" "}
           <Link href="/login" className="text-primary underline">
-            লগইন করুন
+            {t("loginLink")}
           </Link>
         </p>
       </CardContent>

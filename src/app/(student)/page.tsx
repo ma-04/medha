@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, FileText, Library, Radio } from "lucide-react";
-import { formatDateTimeBn } from "@/lib/format";
+import { formatDateTime, formatNumber } from "@/lib/format";
 
 export default async function HomePage() {
   const t = await getTranslations();
@@ -42,7 +42,7 @@ export default async function HomePage() {
       <div>
         <h1 className="text-2xl font-bold">
           {profile
-            ? `স্বাগতম, ${profile.full_name ?? ""}`.trim()
+            ? t("home.welcome", { name: profile.full_name ?? "" }).trim()
             : t("app.name")}
         </h1>
         <p className="text-muted-foreground">{t("app.tagline")}</p>
@@ -50,11 +50,17 @@ export default async function HomePage() {
 
       {profile && totalAnswered > 0 && (
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          <StatCard label="অনুশীলিত প্রশ্ন" value={totalAnswered} />
-          <StatCard label="সঠিক উত্তর" value={totalCorrect} />
           <StatCard
-            label="নির্ভুলতা"
-            value={`${Math.round((totalCorrect / totalAnswered) * 100)}%`}
+            label={t("home.statsAnswered")}
+            value={formatNumber(totalAnswered, locale)}
+          />
+          <StatCard
+            label={t("home.statsCorrect")}
+            value={formatNumber(totalCorrect, locale)}
+          />
+          <StatCard
+            label={t("home.statsAccuracy")}
+            value={`${formatNumber(Math.round((totalCorrect / totalAnswered) * 100), locale)}%`}
           />
         </div>
       )}
@@ -69,7 +75,7 @@ export default async function HomePage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base">
-              <Radio className="size-4 text-primary" /> লাইভ পরীক্ষা
+              <Radio className="size-4 text-primary" /> {t("home.liveExams")}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
@@ -89,12 +95,14 @@ export default async function HomePage() {
                   className="flex items-center justify-between rounded-md p-2 hover:bg-accent"
                 >
                   <div className="flex items-center gap-2">
-                    {live && <Badge variant="destructive">লাইভ</Badge>}
+                    {live && (
+                      <Badge variant="destructive">{t("home.liveBadge")}</Badge>
+                    )}
                     <span className="font-bengali-serif">{exam.title_bn}</span>
                   </div>
                   {!live && exam.starts_at && (
                     <span className="text-xs text-muted-foreground">
-                      {formatDateTimeBn(exam.starts_at)}
+                      {formatDateTime(exam.starts_at, locale)}
                     </span>
                   )}
                 </Link>
@@ -107,7 +115,7 @@ export default async function HomePage() {
       {weakTopics.length > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">দুর্বল টপিক</CardTitle>
+            <CardTitle className="text-base">{t("home.weakTopics")}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
             {weakTopics.map((topic) => (
@@ -120,7 +128,7 @@ export default async function HomePage() {
                 </span>
                 <div className="flex items-center gap-3">
                   <span className="text-sm text-muted-foreground">
-                    {Math.round(topic.accuracy * 100)}%
+                    {formatNumber(Math.round(topic.accuracy * 100), locale)}%
                   </span>
                   <Button
                     size="sm"
@@ -132,7 +140,7 @@ export default async function HomePage() {
                       />
                     }
                   >
-                    অনুশীলন
+                    {t("home.practiceCta")}
                   </Button>
                 </div>
               </div>

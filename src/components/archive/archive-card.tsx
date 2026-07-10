@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Check, Eye } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { MathText } from "@/components/math/math-text";
@@ -10,6 +11,7 @@ import { cn } from "@/lib/utils";
 import type { ArchiveQuestion } from "@/lib/queries/archive";
 
 export function ArchiveCard({ question }: { question: ArchiveQuestion }) {
+  const t = useTranslations();
   const [reveal, setReveal] = useState<{
     correctKey: string;
     explanation: string | null;
@@ -80,7 +82,7 @@ export function ArchiveCard({ question }: { question: ArchiveQuestion }) {
       {reveal ? (
         reveal.explanation && (
           <div className="mt-3 rounded-md bg-muted p-3 text-sm">
-            <span className="font-semibold">ব্যাখ্যা: </span>
+            <span className="font-semibold">{t("common.explanation")} </span>
             <span className="font-bengali-serif">
               <MathText>{reveal.explanation}</MathText>
             </span>
@@ -94,7 +96,7 @@ export function ArchiveCard({ question }: { question: ArchiveQuestion }) {
           onClick={showAnswer}
           disabled={loading}
         >
-          <Eye className="size-4" /> উত্তর দেখুন
+          <Eye className="size-4" /> {t("archive.showAnswer")}
         </Button>
       )}
     </div>

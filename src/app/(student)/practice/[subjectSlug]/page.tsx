@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { ChevronRight } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { localName } from "@/lib/i18n-name";
@@ -13,6 +13,7 @@ export default async function SubjectTopicsPage({
   const { subjectSlug } = await params;
   const supabase = await createClient();
   const locale = await getLocale();
+  const t = await getTranslations("practice");
 
   const { data: subject } = await supabase
     .from("subjects")
@@ -33,7 +34,7 @@ export default async function SubjectTopicsPage({
           href="/practice"
           className="text-sm text-muted-foreground hover:underline"
         >
-          ← অনুশীলন
+          ← {t("title")}
         </Link>
         <h1 className="mt-1 font-bengali-serif text-2xl font-bold">
           {localName(subject, locale)}
@@ -42,7 +43,7 @@ export default async function SubjectTopicsPage({
       <div className="divide-y rounded-lg border">
         {topics.length === 0 && (
           <p className="p-4 text-sm text-muted-foreground">
-            এই বিষয়ে এখনো কোনো টপিক নেই।
+            {t("noTopics")}
           </p>
         )}
         {topics.map((t) => (

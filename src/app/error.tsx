@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 
 export default function Error({
@@ -10,6 +11,7 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const t = useTranslations();
   useEffect(() => {
     console.error(error);
   }, [error]);
@@ -17,12 +19,10 @@ export default function Error({
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 p-6 text-center">
       <h1 className="font-bengali-serif text-xl font-semibold">
-        কিছু একটা সমস্যা হয়েছে
+        {t("errors.errorTitle")}
       </h1>
-      <p className="text-sm text-muted-foreground">
-        দুঃখিত, একটি ত্রুটি ঘটেছে। আবার চেষ্টা করুন।
-      </p>
-      <Button onClick={reset}>আবার চেষ্টা করুন</Button>
+      <p className="text-sm text-muted-foreground">{t("errors.errorBody")}</p>
+      <Button onClick={reset}>{t("common.retry")}</Button>
     </div>
   );
 }
