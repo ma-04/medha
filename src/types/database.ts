@@ -466,6 +466,7 @@ export type Database = {
         Row: {
           attempts: number | null
           correct: number | null
+          questions_seen: number | null
           topic_id: string | null
           user_id: string | null
         }

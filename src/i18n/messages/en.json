@@ -148,7 +148,9 @@
     "finished": "Practice complete! 🎉",
     "accuracy": "{percent}% accuracy",
     "moreTopics": "More topics",
-    "backHome": "Back home"
+    "backHome": "Back home",
+    "seen": "{count} practiced",
+    "notPracticed": "Not practiced yet"
   },
   "archive": {
     "title": "Question Bank",

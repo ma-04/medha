@@ -6,8 +6,20 @@ export type TopicStat = {
   name_en: string | null;
   subjectSlug: string;
   topicSlug: string;
+  /** Every answer ever submitted — practice_answers is append-only, so a
+   *  question answered three times counts three times. */
   attempts: number;
   correct: number;
+  /** Distinct questions answered at least once: coverage, not volume. */
+  questionsSeen: number;
+  accuracy: number;
+};
+
+export type SubjectStat = {
+  subjectSlug: string;
+  attempts: number;
+  correct: number;
+  questionsSeen: number;
   accuracy: number;
 };
 
@@ -16,7 +28,7 @@ export async function getUserTopicStats(userId: string): Promise<TopicStat[]> {
   const supabase = await createClient();
   const { data } = await supabase
     .from("v_user_topic_stats")
-    .select("topic_id, attempts, correct")
+    .select("topic_id, attempts, correct, questions_seen")
     .eq("user_id", userId);
 
   const rows = data ?? [];
@@ -55,8 +67,37 @@ export async function getUserTopicStats(userId: string): Promise<TopicStat[]> {
         topicSlug: t?.topicSlug ?? "",
         attempts,
         correct,
+        questionsSeen: r.questions_seen ?? 0,
         accuracy: attempts > 0 ? correct / attempts : 0,
       };
     })
     .filter((s) => s.subjectSlug);
+}
+
+/** The same practice stats rolled up per subject, keyed by subject slug. */
+export async function getUserSubjectStats(
+  userId: string
+): Promise<Map<string, SubjectStat>> {
+  const topics = await getUserTopicStats(userId);
+  const bySubject = new Map<string, SubjectStat>();
+
+  for (const t of topics) {
+    const s = bySubject.get(t.subjectSlug) ?? {
+      subjectSlug: t.subjectSlug,
+      attempts: 0,
+      correct: 0,
+      questionsSeen: 0,
+      accuracy: 0,
+    };
+    s.attempts += t.attempts;
+    s.correct += t.correct;
+    // Topics partition questions, so summing distinct counts double-counts nothing.
+    s.questionsSeen += t.questionsSeen;
+    bySubject.set(t.subjectSlug, s);
+  }
+
+  for (const s of bySubject.values()) {
+    s.accuracy = s.attempts > 0 ? s.correct / s.attempts : 0;
+  }
+  return bySubject;
 }

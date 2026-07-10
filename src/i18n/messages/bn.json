@@ -148,7 +148,9 @@
     "finished": "অনুশীলন শেষ! 🎉",
     "accuracy": "নির্ভুলতা {percent}%",
     "moreTopics": "আরও টপিক",
-    "backHome": "হোমে ফিরুন"
+    "backHome": "হোমে ফিরুন",
+    "seen": "{count} প্রশ্ন অনুশীলিত",
+    "notPracticed": "এখনো অনুশীলন হয়নি"
   },
   "archive": {
     "title": "প্রশ্নব্যাংক",
