@@ -60,7 +60,7 @@ export default async function PracticeRunnerPage({
       {items.length === 0 ? (
         <p className="text-sm text-muted-foreground">{t("noQuestions")}</p>
       ) : (
-        <PracticeRunner questions={items} />
+        <PracticeRunner questions={items} subjectSlug={subjectSlug} />
       )}
     </div>
   );

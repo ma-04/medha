@@ -145,7 +145,10 @@
     "noTopics": "এই বিষয়ে এখনো কোনো টপিক নেই।",
     "noQuestions": "এই টপিকে এখনো কোনো প্রশ্ন নেই।",
     "score": "সঠিক: {correct}/{answered}",
-    "finished": "অনুশীলন শেষ! 🎉"
+    "finished": "অনুশীলন শেষ! 🎉",
+    "accuracy": "নির্ভুলতা {percent}%",
+    "moreTopics": "আরও টপিক",
+    "backHome": "হোমে ফিরুন"
   },
   "archive": {
     "title": "প্রশ্নব্যাংক",

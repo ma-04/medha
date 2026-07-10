@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Check, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
@@ -26,7 +27,13 @@ type Reveal = {
   explanation: string | null;
 };
 
-export function PracticeRunner({ questions }: { questions: Question[] }) {
+export function PracticeRunner({
+  questions,
+  subjectSlug,
+}: {
+  questions: Question[];
+  subjectSlug: string;
+}) {
   const t = useTranslations("practice");
   const tCommon = useTranslations("common");
   const locale = useLocale();
@@ -35,11 +42,17 @@ export function PracticeRunner({ questions }: { questions: Question[] }) {
   const [reveal, setReveal] = useState<Reveal | null>(null);
   const [checking, setChecking] = useState(false);
   const [score, setScore] = useState({ correct: 0, answered: 0 });
+  // Seeding on the question id alone would freeze the order forever, so a
+  // revisited question stays memorizable by position. Reseed per session.
+  const [sessionId] = useState(() => crypto.randomUUID());
 
   const q = questions[index];
   const isLast = index === questions.length - 1;
   // Randomize option order per question (stable across re-renders).
-  const options = useMemo(() => shuffleOptions(q.options, q.id), [q.id, q.options]);
+  const options = useMemo(
+    () => shuffleOptions(q.options, sessionId + q.id),
+    [sessionId, q.id, q.options]
+  );
 
   async function choose(key: string) {
     if (reveal) return;
@@ -156,12 +169,41 @@ export function PracticeRunner({ questions }: { questions: Question[] }) {
         {reveal && !isLast && (
           <Button onClick={next}>{tCommon("next")}</Button>
         )}
-        {reveal && isLast && (
-          <span className="text-sm font-medium text-primary">
-            {t("finished")}
-          </span>
-        )}
       </div>
+
+      {reveal && isLast && (
+        <div className="space-y-3 rounded-lg border p-4 text-center">
+          <p className="text-lg font-medium text-primary">{t("finished")}</p>
+          <p className="text-sm text-muted-foreground">
+            {t("score", {
+              correct: formatNumber(score.correct, locale),
+              answered: formatNumber(score.answered, locale),
+            })}
+            {score.answered > 0 &&
+              ` · ${t("accuracy", {
+                percent: formatNumber(
+                  Math.round((score.correct / score.answered) * 100),
+                  locale
+                ),
+              })}`}
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            <Button
+              nativeButton={false}
+              render={<Link href={`/practice/${subjectSlug}`} />}
+            >
+              {t("moreTopics")}
+            </Button>
+            <Button
+              variant="outline"
+              nativeButton={false}
+              render={<Link href="/" />}
+            >
+              {t("backHome")}
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

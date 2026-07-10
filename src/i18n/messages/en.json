@@ -145,7 +145,10 @@
     "noTopics": "No topics in this subject yet.",
     "noQuestions": "No questions in this topic yet.",
     "score": "Correct: {correct}/{answered}",
-    "finished": "Practice complete! 🎉"
+    "finished": "Practice complete! 🎉",
+    "accuracy": "{percent}% accuracy",
+    "moreTopics": "More topics",
+    "backHome": "Back home"
   },
   "archive": {
     "title": "Question Bank",
