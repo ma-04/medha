@@ -2,9 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { headers } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
+import { getSiteUrl } from "@/lib/site-url";
 
 export type AuthState = { error: string } | { message: string } | null;
 
@@ -36,7 +36,12 @@ export async function signUp(
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { full_name: fullName } },
+    options: {
+      data: { full_name: fullName },
+      // Without this the confirmation link is built from the dashboard's Site
+      // URL, which is why sign-up mails pointed at 127.0.0.1:3000.
+      emailRedirectTo: `${getSiteUrl()}/auth/callback`,
+    },
   });
   if (error) return { error: error.message };
 
@@ -53,11 +58,10 @@ export async function signUp(
 
 export async function signInWithGoogle(): Promise<AuthState> {
   const supabase = await createClient();
-  const origin = (await headers()).get("origin");
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
-    options: { redirectTo: `${origin}/auth/callback` },
+    options: { redirectTo: `${getSiteUrl()}/auth/callback` },
   });
   if (error) return { error: error.message };
   if (data.url) redirect(data.url);

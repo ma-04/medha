@@ -27,12 +27,20 @@ NEXT_PUBLIC_SUPABASE_URL=https://<project-ref>.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=<publishable-anon-key>
 SUPABASE_SERVICE_ROLE_KEY=<secret-service-role-key>
 SUPABASE_DB_PASSWORD=<database-password>
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
 - `NEXT_PUBLIC_*` keys are safe in the browser (public by design, guarded by RLS).
 - `SUPABASE_SERVICE_ROLE_KEY` is **server-only** — used by the bulk-import route and
   the admin/seed scripts. Never expose it to the client.
 - `SUPABASE_DB_PASSWORD` is only for local `supabase db push`. **Do not** add it to Vercel.
+- `NEXT_PUBLIC_SITE_URL` is the origin used for the sign-up confirmation link and
+  the Google OAuth redirect. On Vercel it can be omitted (falls back to
+  `VERCEL_PROJECT_PRODUCTION_URL`). The same origin, plus its `/auth/callback`
+  path, must be listed under **Auth → URL Configuration → Redirect URLs**.
+- The confirmation **email's subject and body cannot be changed** on this
+  project: since 2026-06-03, new free-tier projects on the default email provider
+  cannot customise auth templates. That needs custom SMTP. See `SETUP.md`.
 
 Find these in the Supabase dashboard: **Settings → API** (URL + keys) and
 **Settings → Database** (password).
