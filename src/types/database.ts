@@ -77,6 +77,7 @@ export type Database = {
       }
       exam_attempts: {
         Row: {
+          attempt_number: number
           correct_count: number | null
           deadline: string
           exam_id: string
@@ -91,6 +92,7 @@ export type Database = {
           wrong_count: number | null
         }
         Insert: {
+          attempt_number?: number
           correct_count?: number | null
           deadline: string
           exam_id: string
@@ -105,6 +107,7 @@ export type Database = {
           wrong_count?: number | null
         }
         Update: {
+          attempt_number?: number
           correct_count?: number | null
           deadline?: string
           exam_id?: string
@@ -185,6 +188,7 @@ export type Database = {
           description: string | null
           ends_at: string | null
           id: string
+          max_attempts: number
           pattern: Json
           results_published_at: string | null
           starts_at: string | null
@@ -200,6 +204,7 @@ export type Database = {
           description?: string | null
           ends_at?: string | null
           id?: string
+          max_attempts?: number
           pattern?: Json
           results_published_at?: string | null
           starts_at?: string | null
@@ -215,6 +220,7 @@ export type Database = {
           description?: string | null
           ends_at?: string | null
           id?: string
+          max_attempts?: number
           pattern?: Json
           results_published_at?: string | null
           starts_at?: string | null
@@ -584,6 +590,7 @@ export type Database = {
       }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
+      retry_exam_attempt: { Args: { p_exam_id: string }; Returns: Json }
       start_exam_attempt: { Args: { p_exam_id: string }; Returns: Json }
       submit_attempt: { Args: { p_attempt_id: string }; Returns: Json }
     }
