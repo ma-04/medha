@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { formatDateTime, formatNumber } from "@/lib/format";
+import { AttemptPanel } from "@/components/exam/attempt-panel";
 
 export default async function ExamDetailPage({
   params,
@@ -28,12 +29,16 @@ export default async function ExamDetailPage({
     notFound();
   }
 
-  const { data: attempt } = await supabase
+  const { data: attempts } = await supabase
     .from("exam_attempts")
-    .select("id, submitted_at")
+    .select("id, attempt_number, submitted_at, score")
     .eq("exam_id", id)
     .eq("user_id", user.id)
-    .maybeSingle();
+    .order("attempt_number", { ascending: true });
+
+  const allAttempts = attempts ?? [];
+  const latest = allAttempts[allAttempts.length - 1];
+  const submittedAttempts = allAttempts.filter((a) => a.submitted_at);
 
   const pattern = exam.pattern as {
     duration_minutes?: number;
@@ -41,6 +46,13 @@ export default async function ExamDetailPage({
     mark_per_question?: number;
     negative_mark?: number;
   } | null;
+
+  const maxScore =
+    (pattern?.total_questions ?? 0) * (pattern?.mark_per_question ?? 1);
+  const canRetry =
+    exam.type === "model" &&
+    !!latest?.submitted_at &&
+    allAttempts.length < exam.max_attempts;
 
   // Server render: request-time availability check, evaluated once per request.
   // eslint-disable-next-line react-hooks/purity
@@ -58,13 +70,21 @@ export default async function ExamDetailPage({
 
   // Decide the primary CTA.
   let cta: React.ReactNode = null;
-  if (attempt?.submitted_at) {
+  if (latest?.submitted_at) {
     cta = (
-      <Button nativeButton={false} render={<Link href={`/exams/${id}/result`} />}>
-        {t("detail.ctaResult")}
-      </Button>
+      <AttemptPanel
+        examId={id}
+        attempts={submittedAttempts.map((a) => ({
+          id: a.id,
+          attempt_number: a.attempt_number,
+          score: Number(a.score ?? 0),
+        }))}
+        maxScore={maxScore}
+        canRetry={canRetry}
+        maxAttempts={exam.max_attempts}
+      />
     );
-  } else if (attempt) {
+  } else if (latest) {
     cta = available ? (
       <Button nativeButton={false} render={<Link href={`/exams/${id}/attempt`} />}>
         {t("detail.ctaContinue")}
@@ -143,7 +163,13 @@ export default async function ExamDetailPage({
           <li>{t("detail.instruction1")}</li>
           <li>{t("detail.instruction2")}</li>
           <li>{t("detail.instruction3")}</li>
-          <li>{t("detail.instruction4")}</li>
+          <li>
+            {exam.type === "model" && exam.max_attempts > 1
+              ? t("detail.instruction4Retry", {
+                  count: formatNumber(exam.max_attempts, locale),
+                })
+              : t("detail.instruction4")}
+          </li>
         </ul>
       </div>
 

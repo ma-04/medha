@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { formatNumber } from "@/lib/format";
 import { localName } from "@/lib/i18n-name";
+import { AttemptPanel } from "@/components/exam/attempt-panel";
 
 type Breakdown = Record<
   string,
@@ -15,10 +16,13 @@ type Breakdown = Record<
 
 export default async function ResultPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ a?: string }>;
 }) {
   const { id } = await params;
+  const { a } = await searchParams;
   const user = await requireUser();
   const supabase = await createClient();
   const locale = await getLocale();
@@ -26,20 +30,28 @@ export default async function ResultPage({
 
   const { data: exam } = await supabase
     .from("exams")
-    .select("title_bn, type, results_published_at, pattern")
+    .select("title_bn, type, results_published_at, pattern, max_attempts")
     .eq("id", id)
     .single();
   if (!exam) notFound();
 
-  const { data: attempt } = await supabase
+  const { data: attempts } = await supabase
     .from("exam_attempts")
     .select("*")
     .eq("exam_id", id)
     .eq("user_id", user.id)
-    .maybeSingle();
+    .order("attempt_number", { ascending: true });
 
-  if (!attempt) redirect(`/exams/${id}`);
-  if (!attempt.submitted_at) redirect(`/exams/${id}/attempt`);
+  const all = attempts ?? [];
+  if (all.length === 0) redirect(`/exams/${id}`);
+  const submitted = all.filter((x) => x.submitted_at);
+  if (submitted.length === 0) redirect(`/exams/${id}/attempt`);
+
+  // Show the requested attempt (?a=) when it's a submitted one the user owns,
+  // otherwise fall back to their latest submitted attempt.
+  const attempt =
+    (a ? submitted.find((x) => x.id === a) : undefined) ??
+    submitted[submitted.length - 1];
 
   const breakdown = (attempt.subject_breakdown ?? {}) as Breakdown;
   const subjectIds = Object.keys(breakdown);
@@ -74,7 +86,29 @@ export default async function ResultPage({
         <h1 className="mt-1 font-bengali-serif text-2xl font-bold">
           {exam.title_bn}
         </h1>
+        {exam.max_attempts > 1 && (
+          <p className="mt-1 text-sm text-muted-foreground">
+            {t("result.attemptOf", {
+              n: formatNumber(attempt.attempt_number, locale),
+              max: formatNumber(exam.max_attempts, locale),
+            })}
+          </p>
+        )}
       </div>
+
+      {submitted.length > 1 && (
+        <AttemptPanel
+          examId={id}
+          attempts={submitted.map((x) => ({
+            id: x.id,
+            attempt_number: x.attempt_number,
+            score: Number(x.score ?? 0),
+          }))}
+          maxScore={maxScore}
+          canRetry={false}
+          maxAttempts={exam.max_attempts}
+        />
+      )}
 
       <Card>
         <CardContent className="p-6 text-center">
@@ -128,7 +162,7 @@ export default async function ResultPage({
       {reviewAvailable ? (
         <Button
           nativeButton={false}
-          render={<Link href={`/exams/${id}/review`} />}
+          render={<Link href={`/exams/${id}/review?a=${attempt.id}`} />}
         >
           {t("result.reviewButton")}
         </Button>

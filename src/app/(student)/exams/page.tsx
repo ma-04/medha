@@ -20,13 +20,15 @@ export default async function ExamsPage() {
     .order("starts_at", { ascending: true, nullsFirst: false })
     .order("created_at", { ascending: false });
 
+  // A student can now have several attempts per exam; the badge reflects their
+  // latest one. Ordering ascending means the last write per exam_id wins.
   const { data: attempts } = await supabase
     .from("exam_attempts")
-    .select("exam_id, submitted_at")
-    .eq("user_id", user.id);
-  const attemptMap = new Map(
-    (attempts ?? []).map((a) => [a.exam_id, a.submitted_at])
-  );
+    .select("exam_id, attempt_number, submitted_at")
+    .eq("user_id", user.id)
+    .order("attempt_number", { ascending: true });
+  const attemptMap = new Map<string, string | null>();
+  for (const a of attempts ?? []) attemptMap.set(a.exam_id, a.submitted_at);
 
   const list = exams ?? [];
 

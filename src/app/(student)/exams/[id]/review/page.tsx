@@ -24,20 +24,27 @@ type ReviewRow = {
 
 export default async function ReviewPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ a?: string }>;
 }) {
   const { id } = await params;
+  const { a } = await searchParams;
   await requireUser();
   const supabase = await createClient();
   const t = await getTranslations("exam.review");
   const locale = await getLocale();
 
-  const { data: attempt } = await supabase
+  const { data: attempts } = await supabase
     .from("exam_attempts")
-    .select("id")
+    .select("id, attempt_number, submitted_at")
     .eq("exam_id", id)
-    .maybeSingle();
+    .order("attempt_number", { ascending: true });
+  const submitted = (attempts ?? []).filter((x) => x.submitted_at);
+  const attempt =
+    (a ? submitted.find((x) => x.id === a) : undefined) ??
+    submitted[submitted.length - 1];
   if (!attempt) redirect(`/exams/${id}`);
 
   const { data, error } = await supabase.rpc("get_attempt_review", {
@@ -49,7 +56,7 @@ export default async function ReviewPage({
   return (
     <div className="mx-auto max-w-2xl space-y-4">
       <Link
-        href={`/exams/${id}/result`}
+        href={`/exams/${id}/result?a=${attempt.id}`}
         className="text-sm text-muted-foreground hover:underline"
       >
         {t("back")}
