@@ -15,21 +15,22 @@ export default async function HomePage() {
   const locale = await getLocale();
   const profile = await getProfile();
 
-  const stats = profile ? await getUserTopicStats(profile.id) : [];
-
   // Upcoming/live exams for the next-up widget.
   const supabase = await createClient();
   const nowIso = new Date().toISOString();
-  const { data: upcomingLive } = profile
-    ? await supabase
-        .from("exams")
-        .select("id, title_bn, starts_at, ends_at")
-        .eq("type", "live")
-        .in("status", ["scheduled", "published"])
-        .gt("ends_at", nowIso)
-        .order("starts_at", { ascending: true })
-        .limit(3)
-    : { data: [] };
+  const [stats, { data: upcomingLive }] = await Promise.all([
+    profile ? getUserTopicStats(profile.id) : [],
+    profile
+      ? supabase
+          .from("exams")
+          .select("id, title_bn, starts_at, ends_at")
+          .eq("type", "live")
+          .in("status", ["scheduled", "published"])
+          .gt("ends_at", nowIso)
+          .order("starts_at", { ascending: true })
+          .limit(3)
+      : { data: [] },
+  ]);
   const weakTopics = stats
     .filter((s) => s.attempts >= 2 && s.accuracy < 0.6)
     .sort((a, b) => a.accuracy - b.accuracy)

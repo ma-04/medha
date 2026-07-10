@@ -26,16 +26,15 @@ export default async function LeaderboardPage({
   const t = await getTranslations("exam.leaderboard");
   const locale = await getLocale();
 
-  const { data: exam } = await supabase
-    .from("exams")
-    .select("title_bn, results_published_at")
-    .eq("id", id)
-    .single();
+  const [{ data: exam }, { data, error }] = await Promise.all([
+    supabase
+      .from("exams")
+      .select("title_bn, results_published_at")
+      .eq("id", id)
+      .single(),
+    supabase.rpc("get_leaderboard", { p_exam_id: id }),
+  ]);
   if (!exam) notFound();
-
-  const { data, error } = await supabase.rpc("get_leaderboard", {
-    p_exam_id: id,
-  });
   if (error) redirect(`/live/${id}`);
   const rows = (data ?? []) as LeaderRow[];
 

@@ -13,20 +13,22 @@ export default async function ExamsPage() {
   const t = await getTranslations("exam");
   const locale = await getLocale();
 
-  const { data: exams } = await supabase
-    .from("exams")
-    .select("id, title_bn, description, type, status, pattern, starts_at, ends_at")
-    .in("status", ["scheduled", "published"])
-    .order("starts_at", { ascending: true, nullsFirst: false })
-    .order("created_at", { ascending: false });
-
   // A student can now have several attempts per exam; the badge reflects their
   // latest one. Ordering ascending means the last write per exam_id wins.
-  const { data: attempts } = await supabase
-    .from("exam_attempts")
-    .select("exam_id, attempt_number, submitted_at")
-    .eq("user_id", user.id)
-    .order("attempt_number", { ascending: true });
+  const [{ data: exams }, { data: attempts }] = await Promise.all([
+    supabase
+      .from("exams")
+      .select("id, title_bn, description, type, status, pattern, starts_at, ends_at")
+      .in("status", ["scheduled", "published"])
+      .order("starts_at", { ascending: true, nullsFirst: false })
+      .order("created_at", { ascending: false }),
+    supabase
+      .from("exam_attempts")
+      .select("exam_id, attempt_number, submitted_at")
+      .eq("user_id", user.id)
+      .order("attempt_number", { ascending: true }),
+  ]);
+
   const attemptMap = new Map<string, string | null>();
   for (const a of attempts ?? []) attemptMap.set(a.exam_id, a.submitted_at);
 

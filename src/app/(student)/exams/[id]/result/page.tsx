@@ -28,19 +28,20 @@ export default async function ResultPage({
   const locale = await getLocale();
   const t = await getTranslations("exam");
 
-  const { data: exam } = await supabase
-    .from("exams")
-    .select("title_bn, type, results_published_at, pattern, max_attempts")
-    .eq("id", id)
-    .single();
+  const [{ data: exam }, { data: attempts }] = await Promise.all([
+    supabase
+      .from("exams")
+      .select("title_bn, type, results_published_at, pattern, max_attempts")
+      .eq("id", id)
+      .single(),
+    supabase
+      .from("exam_attempts")
+      .select("*")
+      .eq("exam_id", id)
+      .eq("user_id", user.id)
+      .order("attempt_number", { ascending: true }),
+  ]);
   if (!exam) notFound();
-
-  const { data: attempts } = await supabase
-    .from("exam_attempts")
-    .select("*")
-    .eq("exam_id", id)
-    .eq("user_id", user.id)
-    .order("attempt_number", { ascending: true });
 
   const all = attempts ?? [];
   if (all.length === 0) redirect(`/exams/${id}`);

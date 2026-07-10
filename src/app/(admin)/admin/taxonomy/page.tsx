@@ -5,14 +5,16 @@ import { deleteSubject, deleteTopic } from "./actions";
 
 export default async function TaxonomyPage() {
   const supabase = await createClient();
-  const { data: subjects } = await supabase
-    .from("subjects")
-    .select("id, name_bn, name_en, slug, order_index")
-    .order("order_index");
-  const { data: topics } = await supabase
-    .from("topics")
-    .select("id, name_bn, subject_id, slug, order_index")
-    .order("order_index");
+  const [{ data: subjects }, { data: topics }] = await Promise.all([
+    supabase
+      .from("subjects")
+      .select("id, name_bn, name_en, slug, order_index")
+      .order("order_index"),
+    supabase
+      .from("topics")
+      .select("id, name_bn, subject_id, slug, order_index")
+      .order("order_index"),
+  ]);
 
   const subjectList = subjects ?? [];
   const topicsBySubject = new Map<string, typeof topics>();

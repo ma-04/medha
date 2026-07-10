@@ -20,11 +20,15 @@ export default async function LiveLobbyPage({
   const t = await getTranslations("exam");
   const locale = await getLocale();
 
-  const { data: exam } = await supabase
-    .from("exams")
-    .select("*")
-    .eq("id", id)
-    .single();
+  const [{ data: exam }, { data: attempt }] = await Promise.all([
+    supabase.from("exams").select("*").eq("id", id).single(),
+    supabase
+      .from("exam_attempts")
+      .select("submitted_at")
+      .eq("exam_id", id)
+      .eq("user_id", user.id)
+      .maybeSingle(),
+  ]);
   if (
     !exam ||
     exam.type !== "live" ||
@@ -34,13 +38,6 @@ export default async function LiveLobbyPage({
   ) {
     notFound();
   }
-
-  const { data: attempt } = await supabase
-    .from("exam_attempts")
-    .select("submitted_at")
-    .eq("exam_id", id)
-    .eq("user_id", user.id)
-    .maybeSingle();
 
   const pattern = exam.pattern as {
     duration_minutes?: number;

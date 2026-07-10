@@ -20,21 +20,18 @@ export default async function ExamDetailPage({
   const t = await getTranslations("exam");
   const locale = await getLocale();
 
-  const { data: exam } = await supabase
-    .from("exams")
-    .select("*")
-    .eq("id", id)
-    .single();
+  const [{ data: exam }, { data: attempts }] = await Promise.all([
+    supabase.from("exams").select("*").eq("id", id).single(),
+    supabase
+      .from("exam_attempts")
+      .select("id, attempt_number, submitted_at, score")
+      .eq("exam_id", id)
+      .eq("user_id", user.id)
+      .order("attempt_number", { ascending: true }),
+  ]);
   if (!exam || !["scheduled", "published", "archived"].includes(exam.status)) {
     notFound();
   }
-
-  const { data: attempts } = await supabase
-    .from("exam_attempts")
-    .select("id, attempt_number, submitted_at, score")
-    .eq("exam_id", id)
-    .eq("user_id", user.id)
-    .order("attempt_number", { ascending: true });
 
   const allAttempts = attempts ?? [];
   const latest = allAttempts[allAttempts.length - 1];

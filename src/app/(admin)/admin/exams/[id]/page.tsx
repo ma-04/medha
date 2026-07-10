@@ -13,11 +13,20 @@ export default async function EditExamPage({
   const { id } = await params;
   const supabase = await createClient();
 
-  const { data: exam } = await supabase
-    .from("exams")
-    .select("*")
-    .eq("id", id)
-    .single();
+  const [{ data: exam }, { data: pool }, { data: current }] = await Promise.all([
+    supabase.from("exams").select("*").eq("id", id).single(),
+    supabase
+      .from("questions")
+      .select("id, body, topics(name_bn, subjects(name_bn))")
+      .eq("status", "published")
+      .order("created_at", { ascending: false })
+      .limit(500),
+    supabase
+      .from("exam_questions")
+      .select("question_id, order_index")
+      .eq("exam_id", id)
+      .order("order_index"),
+  ]);
   if (!exam) notFound();
 
   const pattern = exam.pattern as {
@@ -41,14 +50,6 @@ export default async function EditExamPage({
     max_attempts: exam.max_attempts ?? 1,
   };
 
-  // Pool of published questions to pick from.
-  const { data: pool } = await supabase
-    .from("questions")
-    .select("id, body, topics(name_bn, subjects(name_bn))")
-    .eq("status", "published")
-    .order("created_at", { ascending: false })
-    .limit(500);
-
   const pickable: PickableQuestion[] = (pool ?? []).map((q) => {
     const topic = q.topics as
       | { name_bn: string; subjects: { name_bn: string } | null }
@@ -61,11 +62,6 @@ export default async function EditExamPage({
     };
   });
 
-  const { data: current } = await supabase
-    .from("exam_questions")
-    .select("question_id, order_index")
-    .eq("exam_id", id)
-    .order("order_index");
   const selectedIds = (current ?? []).map((r) => r.question_id);
 
   return (
